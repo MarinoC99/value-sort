@@ -1,4 +1,4 @@
-.PHONY: data build eval demo test
+.PHONY: data load build eval demo test
 
 # Each target fails loudly until its step is implemented, so nothing
 # pretends to have produced output it hasn't.
@@ -13,6 +13,9 @@ export PYTHONPATH := src
 data:   ## Step 2: stream one category's metadata to a slim Parquet in data/raw/, then profile it
 	uv run python -m value_sort.fetch --category $(CATEGORY)
 	uv run python -m value_sort.profile --category $(CATEGORY)
+
+load:   ## Step 3: validate every row into Item records; print drop count and price-null reasons
+	uv run python -m value_sort.loader --category $(CATEGORY)
 
 build:  ## Steps 3-7: load, score (CAR, unit price, attributes), rank
 	@echo "make build: not implemented yet (Steps 3-7)" && exit 1

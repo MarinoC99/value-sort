@@ -1,0 +1,14 @@
+{
+  "rows_read": 797563,
+  "items_loaded": 797523,
+  "malformed_rows_dropped": 0,
+  "price_null_reasons": {
+    "missing": 466336,
+    "dash": 65,
+    "from_range": 4,
+    "non_positive": 23
+  },
+  "price_null_total": 466428,
+  "items_with_valid_price": 331095,
+  "empty_titles_dropped": 40
+}
