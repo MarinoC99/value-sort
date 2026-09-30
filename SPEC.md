@@ -1,7 +1,25 @@
 # Value Sort — product spec v0.1
 
-> **Status: intended work. No results produced yet.** Nothing has been built, run, or
-> measured. Every number below is a formula, a pre-committed threshold, or an assumption.
+> **Status: partial results.** Stage 1 is built. Stage 2's pack-size extractor is built and
+> audited; the NUP score and composite ranker are not yet built (Step 7). The unit-price
+> extractor's precision is measured at 93.1% (95% CI 85.8-96.8%, n=87) against 200
+> hand-labelled items. Stage 3 (attribute extraction) is not built and remains conditional on
+> its grounding guardrail. No experiment has been run: there is no traffic, no clickstream,
+> and no simulated lift anywhere in this project.
+>
+> *Superseded status banner (v0.1, kept for the record):* ~~**Status: intended work. No
+> results produced yet.** Nothing has been built, run, or measured. Every number below is a
+> formula, a pre-committed threshold, or an assumption.~~
+
+## Amendments
+
+Both amendments are already implemented. Each original claim is kept in place below and
+marked as superseded.
+
+| # | Summary | Section |
+|---|---|---|
+| 1 | Priors C and m are computed over the candidate set at rank time, not over the category. | [§3 CAR, Amendment 1](#amendment-1) |
+| 2 | NUP is a targeted correction on consumables, not a signal with reach comparable to CAR. | [§3 Composite, Amendment 2](#amendment-2) |
 
 A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
@@ -80,9 +98,23 @@ CAR = (v / (v + m)) · R  +  (m / (v + m)) · C
 
 R = item average_rating
 v = item rating_number
-C = category mean rating
-m = prior weight (default: category median rating count)
+C = category mean rating                                   ← superseded, see Amendment 1
+m = prior weight (default: category median rating count)   ← superseded, see Amendment 1
 ```
+
+<a id="amendment-1"></a>
+> **Amendment 1: priors are candidate-set-local, not category-level.** Supersedes the
+> definitions of C ("category mean rating") and m ("category median rating count") above.
+>
+> C and m are computed over the candidate set at rank time. Health & Household spans
+> vitamins, toilet paper, thermometers, router batteries and protein powder, so a prior
+> fitted across all 797,563 items is the wrong reference class - an item should shrink
+> toward the mean of comparable products, not the department average. Where a candidate set
+> holds fewer than 30 rated items, a stored fallback is used (C = 4.2486 simple, m = 50,
+> computed over the 331,095 priced items) and the item is flagged. Observed per-query priors
+> ranged C 4.28-4.52 and m 54-123, confirming the variation the amendment assumed. Note that
+> those figures came from a prototype matcher since removed, so they are indicative and are
+> re-verified at Step 7.
 
 Few ratings pull toward the category average; thousands leave the item untouched. `m` is the
 most consequential parameter in the system and must be reported with sensitivity analysis
@@ -122,6 +154,21 @@ the v2 question, not opened until stage 3 clears its guardrail.
 ValueScore = w₁·z(CAR) + w₂·(−z(ln NUP)) + w₃·z(AMS)
 defaults: w₁ = 0.45, w₂ = 0.35, w₃ = 0.20
 ```
+
+*Superseded framing:* listing NUP at 0.35 beside CAR at 0.45 implied the two signals have
+comparable reach. See Amendment 2.
+
+<a id="amendment-2"></a>
+> **Amendment 2: NUP is a targeted correction, not a co-equal signal.** Supersedes the
+> framing above.
+>
+> Unit-price ranking reaches a minority of the category. 41.5% of items carry a price; of 200
+> hand-labelled audit items, 65 are durable goods where unit price is not meaningful at any
+> level of data quality; and of the 113 with a size expressible in the format, the extractor
+> returns one for 83 (three further items had a determinable size the format could not
+> express). NUP is therefore a targeted correction on consumables rather than a general
+> reordering. The weight is unchanged for now, because it applies only to items where a unit
+> price exists, but the spec no longer claims the two signals have comparable reach.
 
 If stage 3 is cut, `w₃` goes to zero and the rest renormalize to 0.56 / 0.44. Removing the
 conditional module is a configuration change, not a rewrite.
@@ -201,6 +248,13 @@ What it produces instead, offline and clearly bounded:
   defensible. Subjective, labeled as such.
 - **Extraction precision.** The one genuinely measured number here, on a 200-item hand-labeled
   set.
+
+A format limitation found during labelling: the truth format's unit list (oz, fl oz, lb, g,
+kg, mg, ml, l, ct) cannot express length or gallon measures. Four audit items had a fully
+determinable size the format could not hold - a 10 yd tape roll, a 1000 ft foil roll, a
+286 yd ribbon set, and a 1 gallon soap. Three, labelled NONE, are reported as a separate
+category rather than as extractor failures; the soap was converted to 128 fl oz and scored
+normally. Whether unit price should support length at all is an open question.
 
 **Honest summary:** this demonstrates that the re-ranking produces materially different and
 plausibly better orderings, and specifies exactly what evidence would be needed to claim more.
