@@ -217,7 +217,7 @@ Amendment 2.
 
 ## 10. What the verification discipline actually caught
 
-The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans more often, by roughly five instances to two.
+The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans more often, by roughly five instances to two (later two to one; see below).
 
 The agent's first instance was its own Step 4 test, which assumed SPEC.md's 4.9-vs-4.5 example would flip order at m = 50. It doesn't. The agent checked the spec, found no such claim, and rewrote the test to verify what the formula actually does rather than adjusting numbers until it passed.
 
@@ -226,5 +226,7 @@ The agent's second instance was the p50/p80/p95 framing of the m sweep in its St
 The human instances were all in document-writing. Across two prompts, the agent flagged that the draft text asserted more than the repo supported: four errors described as four error classes when they were two; format-limited items described as lacking a determinable size when they had one the format could not express; and a durable-goods share measured on priced items generalised to the whole category. It also flagged that the status banner claimed a module was built when only its extractor was, and offered either to correct the sentence or to build NUP next; the human chose to treat the sentence as the error rather than the code.
 
 A further instance: the first draft of this very section contained two overclaims of its own, both flagged and corrected before it was written.
+
+A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it. That brings the tally to roughly eight human instances to four, or two to one.
 
 None of these was deliberate and each would have survived casual review. The lesson is that a verification step is not primarily a guard against model confabulation. It is a guard against whoever is writing the summary, and the direction of error is consistently toward claiming more.
