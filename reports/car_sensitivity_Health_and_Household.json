@@ -1,10 +1,13 @@
 {
+  "distinct_star_ratings": 41,
+  "distinct_rating_and_count_pairs": 35520,
   "category": "Health_and_Household",
   "population": "all priced items (loader.priced)",
   "n_items": 331095,
   "top_k": 20,
   "m_values": [
     25,
+    50,
     120,
     500
   ],
@@ -18,6 +21,8 @@
       "C_source": "C_simple",
       "C": 4.248569745843338,
       "m": 25,
+      "distinct_car": 35520,
+      "distinct_car_at_2dp": 280,
       "top": [
         {
           "parent_asin": "B0C81LJW31",
@@ -162,10 +167,162 @@
       ]
     },
     {
+      "id": "simple C, m=50",
+      "C_source": "C_simple",
+      "C": 4.248569745843338,
+      "m": 50,
+      "distinct_car": 35520,
+      "distinct_car_at_2dp": 256,
+      "top": [
+        {
+          "parent_asin": "B0C81LJW31",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 411,
+          "car": 4.918499972434201
+        },
+        {
+          "parent_asin": "B0C9FRCHCP",
+          "title": "MEOLY Psoriasis Cream, Psoriasis Treatment, Eczema Cream Rosacea Cream, Moisturizing Cream for Psoriasis Treatment, Anti-Itch Cream, Skin Crack Dry Skin Treatment, Eczema Specialized Treatment 60 ML",
+          "average_rating": 5.0,
+          "rating_number": 407,
+          "car": 4.9177866242717005
+        },
+        {
+          "parent_asin": "B0CB1R4XVX",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 406,
+          "car": 4.9176063317810685
+        },
+        {
+          "parent_asin": "B0CFLPKXRT",
+          "title": "Heating Pad for Back & Cramps Relief,Electric Heat Pad Fast Heat,6 Level Heat Setting,3 Level Timming,Auto Shut Off, Machine Washable,Suitable for Back,Neck,Abdomen Pain Relief(Dark Grey, 17'' \u00d7 33'')",
+          "average_rating": 5.0,
+          "rating_number": 375,
+          "car": 4.911596440687452
+        },
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.899231169297585
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.8990604461676
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.898915511996144
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.898087179192634
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.898043047782514
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.897856855329134
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.8977020239376445
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.897447573645653
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.897205121614224
+        },
+        {
+          "parent_asin": "B0000UTUVA",
+          "title": "Mrs. Meyer's Multi-Surface Cleaner Concentrate, Use to Clean Floors, Tile, Counters, Lavender, 32 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 11309,
+          "car": 4.897132536956789
+        },
+        {
+          "parent_asin": "B0C6B7MW2T",
+          "title": "Advil - 300 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 11254,
+          "car": 4.89711858521693
+        },
+        {
+          "parent_asin": "B07DK33HTB",
+          "title": "Little Remedies Infant Fever & Pain Reliever with Acetaminophen, Natural Berry Flavor, 2 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 10904,
+          "car": 4.897026518832589
+        },
+        {
+          "parent_asin": "B000V5NVXW",
+          "title": "Clorox Bleach Free Wipe, Crisp Lemon, 75 Count",
+          "average_rating": 4.9,
+          "rating_number": 10754,
+          "car": 4.896985235773062
+        },
+        {
+          "parent_asin": "B0C9F5KC52",
+          "title": "Blood Pressure Monitor, Blood Pressure Machine Automatic Upper Arm, Adjustable BP Cuff with Large Backlit Display, 2 * 99 Memory Blood Pressure Monitors for Home Use with Storage Bag(White)",
+          "average_rating": 5.0,
+          "rating_number": 314,
+          "car": 4.896781558494965
+        },
+        {
+          "parent_asin": "B0C6NY1LX8",
+          "title": "simplehuman Code P Custom Fit Drawstring Trash Bags, 200 Count, 30 Liter / 8 Gallon, White",
+          "average_rating": 4.9,
+          "rating_number": 9868,
+          "car": 4.8967159192672085
+        },
+        {
+          "parent_asin": "B073Q34KKQ",
+          "title": "Tylenol Infants Liquid Pain Relief and Fever Medicine, Oral Suspension, Dye-Free Acetaminophen for Sore Throat, Headache & Teething, Fever Reducer for Kids; Cherry Flavor, 2 fl. oz.; Pack of 1",
+          "average_rating": 4.9,
+          "rating_number": 9851,
+          "car": 4.8967102805062295
+        }
+      ]
+    },
+    {
       "id": "simple C, m=120",
       "C_source": "C_simple",
       "C": 4.248569745843338,
       "m": 120,
+      "distinct_car": 35519,
+      "distinct_car_at_2dp": 220,
       "top": [
         {
           "parent_asin": "B0C22HR3JS",
@@ -314,6 +471,8 @@
       "C_source": "C_simple",
       "C": 4.248569745843338,
       "m": 500,
+      "distinct_car": 35519,
+      "distinct_car_at_2dp": 187,
       "top": [
         {
           "parent_asin": "B0C22HR3JS",
@@ -462,6 +621,8 @@
       "C_source": "C_weighted",
       "C": 4.476784142751094,
       "m": 25,
+      "distinct_car": 35519,
+      "distinct_car_at_2dp": 274,
       "top": [
         {
           "parent_asin": "B0C81LJW31",
@@ -606,10 +767,162 @@
       ]
     },
     {
+      "id": "count-weighted C, m=50",
+      "C_source": "C_weighted",
+      "C": 4.476784142751094,
+      "m": 50,
+      "distinct_car": 35520,
+      "distinct_car_at_2dp": 253,
+      "top": [
+        {
+          "parent_asin": "B0C81LJW31",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 411,
+          "car": 4.943252076220292
+        },
+        {
+          "parent_asin": "B0C9FRCHCP",
+          "title": "MEOLY Psoriasis Cream, Psoriasis Treatment, Eczema Cream Rosacea Cream, Moisturizing Cream for Psoriasis Treatment, Anti-Itch Cream, Skin Crack Dry Skin Treatment, Eczema Specialized Treatment 60 ML",
+          "average_rating": 5.0,
+          "rating_number": 407,
+          "car": 4.94275537666861
+        },
+        {
+          "parent_asin": "B0CB1R4XVX",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 406,
+          "car": 4.942629840213936
+        },
+        {
+          "parent_asin": "B0CFLPKXRT",
+          "title": "Heating Pad for Back & Cramps Relief,Electric Heat Pad Fast Heat,6 Level Heat Setting,3 Level Timming,Auto Shut Off, Machine Washable,Suitable for Back,Neck,Abdomen Pain Relief(Dark Grey, 17'' \u00d7 33'')",
+          "average_rating": 5.0,
+          "rating_number": 375,
+          "car": 4.938445193264835
+        },
+        {
+          "parent_asin": "B0C9F5KC52",
+          "title": "Blood Pressure Monitor, Blood Pressure Machine Automatic Upper Arm, Adjustable BP Cuff with Large Backlit Display, 2 * 99 Memory Blood Pressure Monitors for Home Use with Storage Bag(White)",
+          "average_rating": 5.0,
+          "rating_number": 314,
+          "car": 4.928129689938338
+        },
+        {
+          "parent_asin": "B0CJBRXWGW",
+          "title": "Smart Scale for Body Weight and Fat Percentage, RunSTAR High Accuracy Digital Bathroom Scale with Large Display for BMI Heart Rate FSA&HSA Eligible 15 Body Composition Analyzer Sync with Fitness App",
+          "average_rating": 5.0,
+          "rating_number": 308,
+          "car": 4.926925159602108
+        },
+        {
+          "parent_asin": "B0CGWPD4P2",
+          "title": "Blood Pressure Monitors for Home Use,Extra Large Upper Arm Blood Pressure Cuff Automatic Blood Pressure Machine, Rechargeable Blood Pressure Monitors with Large VA Display",
+          "average_rating": 5.0,
+          "rating_number": 279,
+          "car": 4.9204839122722035
+        },
+        {
+          "parent_asin": "B0C5R3KZXM",
+          "title": "8.6'' Thrusting Realistic Dildo Vibrator, Onismo Automatic Dildos with 3 Thrusting & 5 Vibrating Modes, Liquid Silicone Penis G Spot Anal Vibrator with Suction Cup, Adult Sex Toy for Men Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 266,
+          "car": 4.917212680815047
+        },
+        {
+          "parent_asin": "B0C65NH99S",
+          "title": "Acvioo Rose Realistic Dildo G-Spot Dildos with Strong Suction Cup for Hands-Free Play Soft Liquid Silicone Fake Penis Deep Throat Training Anal Sex Toys for Women & Couple Insertable 6.1\"",
+          "average_rating": 5.0,
+          "rating_number": 228,
+          "car": 4.905896428552356
+        },
+        {
+          "parent_asin": "B0BWFN5HFK",
+          "title": "Thrusting Vibrator Dildo G Spot Vibrators with Remote Control & APP, Rose Adult Sex Toys for Women, Wearable Clitoral Vibrators with 9 Thrusting & Vibrating Modes, Anal Dildos for Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 222,
+          "car": 4.903820614476304
+        },
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.89950051238375
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.89938959838283
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.89929543874068
+        },
+        {
+          "parent_asin": "B0C1RVL432",
+          "title": "Anal Plug Rose Vibrator Couples Sex Toys for Women, Amorovo Vibrating Butt Plug with 10 Vibrations Adult Toys, Women Sex Toys Anal Vibrators Rose Sex Toy, Light Up Anal Toys Adult Sex Toys & Games",
+          "average_rating": 5.0,
+          "rating_number": 209,
+          "car": 4.898993077751177
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.898757294288088
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.898728623356018
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.898607659372125
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.898507069785351
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.89834176060948
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.898184246364987
+        }
+      ]
+    },
+    {
       "id": "count-weighted C, m=120",
       "C_source": "C_weighted",
       "C": 4.476784142751094,
       "m": 120,
+      "distinct_car": 35520,
+      "distinct_car_at_2dp": 221,
       "top": [
         {
           "parent_asin": "B0C22HR3JS",
@@ -758,6 +1071,8 @@
       "C_source": "C_weighted",
       "C": 4.476784142751094,
       "m": 500,
+      "distinct_car": 35520,
+      "distinct_car_at_2dp": 181,
       "top": [
         {
           "parent_asin": "B0C22HR3JS",
@@ -905,49 +1220,81 @@
   "pairwise_overlap": {
     "simple C, m=25": {
       "simple C, m=25": 20,
+      "simple C, m=50": 10,
       "simple C, m=120": 5,
       "simple C, m=500": 5,
       "count-weighted C, m=25": 15,
+      "count-weighted C, m=50": 16,
       "count-weighted C, m=120": 5,
       "count-weighted C, m=500": 5
     },
+    "simple C, m=50": {
+      "simple C, m=25": 10,
+      "simple C, m=50": 20,
+      "simple C, m=120": 15,
+      "simple C, m=500": 15,
+      "count-weighted C, m=25": 5,
+      "count-weighted C, m=50": 14,
+      "count-weighted C, m=120": 15,
+      "count-weighted C, m=500": 15
+    },
     "simple C, m=120": {
       "simple C, m=25": 5,
+      "simple C, m=50": 15,
       "simple C, m=120": 20,
       "simple C, m=500": 20,
       "count-weighted C, m=25": 0,
+      "count-weighted C, m=50": 9,
       "count-weighted C, m=120": 20,
       "count-weighted C, m=500": 20
     },
     "simple C, m=500": {
       "simple C, m=25": 5,
+      "simple C, m=50": 15,
       "simple C, m=120": 20,
       "simple C, m=500": 20,
       "count-weighted C, m=25": 0,
+      "count-weighted C, m=50": 9,
       "count-weighted C, m=120": 20,
       "count-weighted C, m=500": 20
     },
     "count-weighted C, m=25": {
       "simple C, m=25": 15,
+      "simple C, m=50": 5,
       "simple C, m=120": 0,
       "simple C, m=500": 0,
       "count-weighted C, m=25": 20,
+      "count-weighted C, m=50": 11,
       "count-weighted C, m=120": 0,
       "count-weighted C, m=500": 0
     },
+    "count-weighted C, m=50": {
+      "simple C, m=25": 16,
+      "simple C, m=50": 14,
+      "simple C, m=120": 9,
+      "simple C, m=500": 9,
+      "count-weighted C, m=25": 11,
+      "count-weighted C, m=50": 20,
+      "count-weighted C, m=120": 9,
+      "count-weighted C, m=500": 9
+    },
     "count-weighted C, m=120": {
       "simple C, m=25": 5,
+      "simple C, m=50": 15,
       "simple C, m=120": 20,
       "simple C, m=500": 20,
       "count-weighted C, m=25": 0,
+      "count-weighted C, m=50": 9,
       "count-weighted C, m=120": 20,
       "count-weighted C, m=500": 20
     },
     "count-weighted C, m=500": {
       "simple C, m=25": 5,
+      "simple C, m=50": 15,
       "simple C, m=120": 20,
       "simple C, m=500": 20,
       "count-weighted C, m=25": 0,
+      "count-weighted C, m=50": 9,
       "count-weighted C, m=120": 20,
       "count-weighted C, m=500": 20
     }
@@ -955,9 +1302,11 @@
   "raw_rating_sort": {
     "overlap_with_each_combo": {
       "simple C, m=25": 15,
+      "simple C, m=50": 5,
       "simple C, m=120": 0,
       "simple C, m=500": 0,
       "count-weighted C, m=25": 20,
+      "count-weighted C, m=50": 11,
       "count-weighted C, m=120": 0,
       "count-weighted C, m=500": 0
     },

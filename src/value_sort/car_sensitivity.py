@@ -39,9 +39,13 @@ def run(category: str, config: dict) -> dict:
     for c_key in config["C_sources"]:
         for m in config["m_values"]:
             ranked = rank_by_car(pool, priors[c_key], m)
+            cars = [s.car for s in ranked]
             combos.append({
                 "id": f"{C_LABEL[c_key]} C, m={m}",
                 "C_source": c_key, "C": priors[c_key], "m": m,
+                # rounded to 1e-9 so float noise can't manufacture distinct values
+                "distinct_car": len({round(c, 9) for c in cars}),
+                "distinct_car_at_2dp": len({round(c, 2) for c in cars}),
                 "top": [
                     {"parent_asin": s.item.parent_asin, "title": s.item.title,
                      "average_rating": s.item.average_rating, "rating_number": s.item.rating_number,
@@ -55,6 +59,8 @@ def run(category: str, config: dict) -> dict:
     ids = {c["id"]: [t["parent_asin"] for t in c["top"]] for c in combos}
 
     return {
+        "distinct_star_ratings": len({i.average_rating for i in pool}),
+        "distinct_rating_and_count_pairs": len({(i.average_rating, i.rating_number) for i in pool}),
         "category": category,
         "population": "all priced items (loader.priced)",
         "n_items": len(pool),
@@ -103,6 +109,17 @@ def to_markdown(r: dict) -> str:
         "| Setting | Overlap with raw-sort top " + str(k) + " |",
         "|---|---|",
         *[f"| {a} | {raw['overlap_with_each_combo'][a]} / {k} |" for a in names],
+        "",
+        "## Distinct values: CAR vs displayed star rating",
+        "",
+        f"Distinct star ratings: {r['distinct_star_ratings']}. Distinct (rating, rating count) pairs: "
+        f"{r['distinct_rating_and_count_pairs']:,}. CAR depends only on those two fields, so that is its "
+        "upper bound. Values are compared at 1e-9 so float noise cannot add distinct values; the 2 dp "
+        "column is what a two-decimal display would show.",
+        "",
+        "| Setting | Distinct CAR | Distinct CAR at 2 dp |",
+        "|---|---|---|",
+        *[f"| {c['id']} | {c['distinct_car']:,} | {c['distinct_car_at_2dp']:,} |" for c in combos],
         "",
         f"## Rank of every item that reaches the top {k} under any setting",
         "",

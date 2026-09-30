@@ -1,5 +1,5 @@
 {
-  "m_values": [25, 120, 500],
+  "m_values": [25, 50, 120, 500],
   "C_sources": ["C_simple", "C_weighted"],
   "top_k": 20
 }
