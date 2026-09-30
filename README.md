@@ -24,6 +24,42 @@ Across 331,095 priced items the displayed star rating takes only 41 distinct val
 CAR (m = 50, simple C) takes 35,520, one per distinct rating-and-count pair, or 256 when
 shown to two decimals, so it separates items the star display shows as tied.
 
+## Unit-price extraction: measured precision
+
+The extractor's precision is 93.1% (81 of 87 extractions correct), which
+clears the >=90% guardrail set in SPEC.md before any labels existed. The
+95% confidence interval is 85.8-96.8%. With 87 extractions, that interval
+straddles the threshold, so the defensible claim is that the point estimate
+passes, not that true precision exceeds 90%. The interval width was known
+before labelling began and is a consequence of the audit sample size, not
+of the result.
+
+The 200 audit labels were drawn at random from the priced pool and committed
+before the extractor existed; the extractor was developed on non-overlapping
+samples. Four errors were found (excluding the format-limited items), three of
+them the same shape: a number describing the product itself rather than what
+the price buys - load capacity (400 lbs), the item's own weight (30 lbs), and
+the capacity of a different product the item fits (35-count canisters).
+
+## What the module actually reaches
+
+Unit-price ranking applies to a minority of the category, and the
+constraints compound. 41.5% of Health & Household items carry a price.
+Of the 200 hand-labelled audit items, 65 are durable goods - braces,
+monitors, canes, brushes, devices - where unit price is not a meaningful
+comparison at any level of data quality. Of the 113 items with a size
+expressible in the format (three more had a size the format could not
+express), the extractor returns one for 83; it abstains on the other 30
+rather than guess.
+
+The resulting characterisation of the module: correct 93% of the time when
+it returns a size, silent on more than half of items, and inapplicable in
+principle to roughly a third of priced items (the durable-goods share of
+unpriced items is unmeasured). This makes Normalized Unit Price a targeted
+correction on consumables rather than a general reordering, which is a
+narrower claim than SPEC.md assumed when it weighted NUP as a co-equal
+signal alongside CAR.
+
 ## Setup
 
 ```bash
