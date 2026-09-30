@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Offline re-ranker for Amazon search results: credibility-adjusted rating, normalized unit price, review attributes."
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
-dependencies = []
+dependencies = [
+    "huggingface-hub>=2.0.0",
+    "pandas>=3.0.6",
+    "pyarrow>=25.0.1",
+]
 
 [dependency-groups]
 dev = ["pytest>=8"]
@@ -18,3 +22,4 @@ packages = ["src/value_sort"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src"]
