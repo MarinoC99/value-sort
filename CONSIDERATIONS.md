@@ -129,7 +129,7 @@ These are the rules that decide what the project is allowed to claim.
 | 7 | Extreme prices kept, not clipped | The log transform handles them. Silent winsorizing is a data edit disguised as cleaning. |
 | 8 | Empty titles dropped at load, before the price check | Can't be candidate-matched or pack-size parsed, so can't participate in ranking. Checking title first keeps the price-null counts interpretable. 40 rows. |
 | 9 | Unexpected price text fails the load rather than becoming null | Agent's call. Known formats ("—", "from $X", $0, negative) become null and are counted; anything unrecognized is a bug, not data. |
-| 10 | Sensitivity sweep spans the distribution, not the median | m = 25, 120, 500 sit near p50/p80/p95 of rating count; m = 50, the priced-pool median, was added later (row 18). C varied two ways, simple and count-weighted; candidate-set C was deferred to Step 7 (row 12). |
+| 10 | Sensitivity sweep spans the distribution, not the median | m = 25, 120, 500 sit near p50/p77/p90 of rating count across the whole category; m = 50, the priced-pool median, was added later (row 18). C varied two ways, simple and count-weighted; candidate-set C was deferred to Step 7 (row 12). |
 | 11 | Weights are a product decision, not learned | Fixed interpretable weights mean every position can be explained to a shopper and audited. Learning them is v2, after the interpretable version has a baseline. |
 | 12 | Candidate-set-mean C sensitivity deferred to Step 7; prototype matcher reverted | A throwaway keyword matcher in Step 4 would have produced sensitivity results from different matching logic than the final system uses. Step 4 varies C over simple and count-weighted means only. (DECISIONS #22) |
 | 13 | Fallback priors computed over priced items, not the whole category | The whole-category values (C = 4.1266, m = 24) include 466k items that can never be ranked. The fallback file is role-tagged, and the reader refuses any file without the tag, so it can't become a default by accident. (DECISIONS #21) |
@@ -217,9 +217,11 @@ Amendment 2.
 
 ## 10. What the verification discipline actually caught
 
-The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans more often, by roughly five instances to one.
+The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans more often, by roughly five instances to two.
 
-The agent's one instance was its own Step 4 test, which assumed SPEC.md's 4.9-vs-4.5 example would flip order at m = 50. It doesn't. The agent checked the spec, found no such claim, and rewrote the test to verify what the formula actually does rather than adjusting numbers until it passed.
+The agent's first instance was its own Step 4 test, which assumed SPEC.md's 4.9-vs-4.5 example would flip order at m = 50. It doesn't. The agent checked the spec, found no such claim, and rewrote the test to verify what the formula actually does rather than adjusting numbers until it passed.
+
+The agent's second instance was the p50/p80/p95 framing of the m sweep in its Step 2 summary. m = 500 sits near p90 of rating count, not p95. The framing was carried into row 10 of this file and repeated unchecked by the human reviewers for several turns, and by the agent itself in one earlier edit of that row, before the agent caught it while editing row 10 again. An error that survived three readers is better evidence for this section's point than a clean five-to-one would have been.
 
 The human instances were all in document-writing. Across two prompts, the agent flagged that the draft text asserted more than the repo supported: four errors described as four error classes when they were two; format-limited items described as lacking a determinable size when they had one the format could not express; and a durable-goods share measured on priced items generalised to the whole category. It also flagged that the status banner claimed a module was built when only its extractor was, and offered either to correct the sentence or to build NUP next; the human chose to treat the sentence as the error rather than the code.
 
