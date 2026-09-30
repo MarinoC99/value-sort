@@ -1,0 +1,9 @@
+{
+  "_note": "Items with a determinable size the truth format can't express (length units). Labelled NONE by the labeller. Designated after labelling, at the labeller's request; scored as a separate category beside the pre-registered rule, never instead of it. DECISIONS.md #39.",
+  "audit_ids": ["62", "166", "184"],
+  "reasons": {
+    "62": "tape roll, 2 in x 10 yd",
+    "166": "foil roll, 12 in x 1000 ft",
+    "184": "ribbon set, 26 rolls, 286 yd total"
+  }
+}

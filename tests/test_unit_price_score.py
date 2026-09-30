@@ -64,3 +64,14 @@ def test_score_end_to_end():
 def test_wilson_bounds():
     lo, hi = wilson(90, 100)
     assert 0.82 < lo < 0.83 and 0.94 < hi < 0.95
+
+
+def test_format_limited_is_a_separate_category_not_a_replacement():
+    items = {"A": it("A", "Lutein 120 Softgels"), "R": it("R", "26 Rolls Curling Ribbon (286 Yards)")}
+    rows = [{"audit_id": "1", "parent_asin": "A", "title": "", "truth": "1 x 120 ct"},
+            {"audit_id": "2", "parent_asin": "R", "title": "", "truth": "NONE"}]
+    r = score(rows, items, 0.7, format_limited={"2"})
+    assert r["precision_all"]["correct"] == 1 and r["precision_all"]["returned"] == 2  # pre-registered rule unchanged
+    fl = r["format_limited"]
+    assert fl["precision_excluding_format_limited"]["precision"] == 1.0
+    assert [x["audit_id"] for x in fl["returned"]] == ["2"]

@@ -91,7 +91,14 @@ def read_labels(path: Path) -> list[dict]:
     return rows
 
 
-def score(rows: list[dict], items_by_id: dict, threshold: float) -> dict:
+FORMAT_LIMITED = Path("audit/format_limited.json")
+
+
+def load_format_limited(path: Path = FORMAT_LIMITED) -> set[str]:
+    return set(json.loads(path.read_text())["audit_ids"]) if path.exists() else set()
+
+
+def score(rows: list[dict], items_by_id: dict, threshold: float, format_limited: set[str] = frozenset()) -> dict:
     results = []
     for r in rows:
         t = parse_truth(r["truth"])
@@ -116,7 +123,14 @@ def score(rows: list[dict], items_by_id: dict, threshold: float) -> dict:
     all_p = prec(results)
     no_na = prec([x for x in results if x["truth_kind"] != "na"])
     ret = [x for x in results if x["verdict"] != "abstained"]
+    fl_returned = [x for x in ret if x["audit_id"] in format_limited]
+    split = prec([x for x in results if x["audit_id"] not in format_limited])
     return {
+        "format_limited": {
+            "audit_ids": sorted(format_limited, key=int),
+            "returned": [{k: x[k] for k in ("audit_id", "extracted", "truth", "title")} for x in fl_returned],
+            "precision_excluding_format_limited": split,
+        },
         "threshold": threshold,
         "n_labelled": len(results),
         "truth_kinds": dict(kinds),
@@ -165,7 +179,7 @@ def main() -> None:
         return
 
     rows = read_labels(AUDIT_CSV)
-    res = score(rows, {i.parent_asin: i for i in pool}, threshold)
+    res = score(rows, {i.parent_asin: i for i in pool}, threshold, load_format_limited())
     Path("reports/unit_price_precision.json").write_text(json.dumps(res, indent=2))
     p, q = res["precision_all"], res["precision_excluding_na"]
     fmt = lambda x: "n/a" if x["precision"] is None else f"{100 * x['precision']:.1f}% ({x['correct']}/{x['returned']}), 95% CI {100 * x['ci95'][0]:.1f}–{100 * x['ci95'][1]:.1f}%"
@@ -173,9 +187,17 @@ def main() -> None:
     print(f"Coverage on audit set:     {100 * res['coverage']:.1f}%")
     print(f"PRECISION (all):           {fmt(p)}")
     print(f"Precision (excluding N/A): {fmt(q)}")
+    fl = res["format_limited"]
+    print(f"Precision (format-limited items as a separate category, not wrong): "
+          f"{fmt(fl['precision_excluding_format_limited'])}")
+    print(f"  format-limited items where the extractor returned a size: {len(fl['returned'])}")
+    for x in fl["returned"]:
+        print(f"    #{x['audit_id']}: extracted {x['extracted']} (truth NONE, format can't express) | {x['title'][:70]}")
     print(f"Exact count and size:      {res['exact_count_and_size_match']} of {p['returned']}")
     print(f"Guardrail >= {GUARDRAIL:.0%}:          {'PASS' if res['passes_guardrail'] else 'FAIL: SPEC kill criterion 3 (drop the NUP module)'}")
     for x in res["errors"]:
+        if x["audit_id"] in fl["audit_ids"]:
+            continue
         print(f"  WRONG #{x['audit_id']}: extracted {x['extracted']} vs truth {x['truth']} | {x['title'][:80]}")
 
 
