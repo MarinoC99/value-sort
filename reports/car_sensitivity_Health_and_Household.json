@@ -1,0 +1,1068 @@
+{
+  "category": "Health_and_Household",
+  "population": "all priced items (loader.priced)",
+  "n_items": 331095,
+  "top_k": 20,
+  "m_values": [
+    25,
+    120,
+    500
+  ],
+  "C_values": {
+    "simple": 4.248569745843338,
+    "count-weighted": 4.476784142751094
+  },
+  "combos": [
+    {
+      "id": "simple C, m=25",
+      "C_source": "C_simple",
+      "C": 4.248569745843338,
+      "m": 25,
+      "top": [
+        {
+          "parent_asin": "B0C81LJW31",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 411,
+          "car": 4.956913402857989
+        },
+        {
+          "parent_asin": "B0C9FRCHCP",
+          "title": "MEOLY Psoriasis Cream, Psoriasis Treatment, Eczema Cream Rosacea Cream, Moisturizing Cream for Psoriasis Treatment, Anti-Itch Cream, Skin Crack Dry Skin Treatment, Eczema Specialized Treatment 60 ML",
+          "average_rating": 5.0,
+          "rating_number": 407,
+          "car": 4.956514452884452
+        },
+        {
+          "parent_asin": "B0CB1R4XVX",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 406,
+          "car": 4.9564135583435815
+        },
+        {
+          "parent_asin": "B0CFLPKXRT",
+          "title": "Heating Pad for Back & Cramps Relief,Electric Heat Pad Fast Heat,6 Level Heat Setting,3 Level Timming,Auto Shut Off, Machine Washable,Suitable for Back,Neck,Abdomen Pain Relief(Dark Grey, 17'' \u00d7 33'')",
+          "average_rating": 5.0,
+          "rating_number": 375,
+          "car": 4.953035609115209
+        },
+        {
+          "parent_asin": "B0C9F5KC52",
+          "title": "Blood Pressure Monitor, Blood Pressure Machine Automatic Upper Arm, Adjustable BP Cuff with Large Backlit Display, 2 * 99 Memory Blood Pressure Monitors for Home Use with Storage Bag(White)",
+          "average_rating": 5.0,
+          "rating_number": 314,
+          "car": 4.944584789516471
+        },
+        {
+          "parent_asin": "B0CJBRXWGW",
+          "title": "Smart Scale for Body Weight and Fat Percentage, RunSTAR High Accuracy Digital Bathroom Scale with Large Display for BMI Heart Rate FSA&HSA Eligible 15 Body Composition Analyzer Sync with Fitness App",
+          "average_rating": 5.0,
+          "rating_number": 308,
+          "car": 4.943586317255506
+        },
+        {
+          "parent_asin": "B0CGWPD4P2",
+          "title": "Blood Pressure Monitors for Home Use,Extra Large Upper Arm Blood Pressure Cuff Automatic Blood Pressure Machine, Rechargeable Blood Pressure Monitors with Large VA Display",
+          "average_rating": 5.0,
+          "rating_number": 279,
+          "car": 4.9382047488358
+        },
+        {
+          "parent_asin": "B0C5R3KZXM",
+          "title": "8.6'' Thrusting Realistic Dildo Vibrator, Onismo Automatic Dildos with 3 Thrusting & 5 Vibrating Modes, Liquid Silicone Penis G Spot Anal Vibrator with Suction Cup, Adult Sex Toy for Men Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 266,
+          "car": 4.935444136240836
+        },
+        {
+          "parent_asin": "B0C65NH99S",
+          "title": "Acvioo Rose Realistic Dildo G-Spot Dildos with Strong Suction Cup for Hands-Free Play Soft Liquid Silicone Fake Penis Deep Throat Training Anal Sex Toys for Women & Couple Insertable 6.1\"",
+          "average_rating": 5.0,
+          "rating_number": 228,
+          "car": 4.92574799860112
+        },
+        {
+          "parent_asin": "B0BWFN5HFK",
+          "title": "Thrusting Vibrator Dildo G Spot Vibrators with Remote Control & APP, Rose Adult Sex Toys for Women, Wearable Clitoral Vibrators with 9 Thrusting & Vibrating Modes, Anal Dildos for Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 222,
+          "car": 4.923944306259448
+        },
+        {
+          "parent_asin": "B0C1RVL432",
+          "title": "Anal Plug Rose Vibrator Couples Sex Toys for Women, Amorovo Vibrating Butt Plug with 10 Vibrations Adult Toys, Women Sex Toys Anal Vibrators Rose Sex Toy, Light Up Anal Toys Adult Sex Toys & Games",
+          "average_rating": 5.0,
+          "rating_number": 209,
+          "car": 4.919718989940527
+        },
+        {
+          "parent_asin": "B0C68W9MS6",
+          "title": "G Spot Vibrator for Woman, Clitoral Licking Thrusting Dildo Vibrator 10 Vibrating 3 Thrusting Adult Sex Toy Vibrator for Woman Vagina Clitoral Nipple Anal Stimulator Waterproof Male Couple Pleasure",
+          "average_rating": 5.0,
+          "rating_number": 186,
+          "car": 4.910967979365324
+        },
+        {
+          "parent_asin": "B0C596N7S8",
+          "title": "Deep Neck Pain Relief w/Conductive Magnetic Therapy Heated Neck Stretcher, Graphene-Tech Instant Heating Cervical Traction Device Pillow, Smart Control Neck Hump Corrector Relax Gifts For TMJ Migraine",
+          "average_rating": 5.0,
+          "rating_number": 180,
+          "car": 4.908362164127237
+        },
+        {
+          "parent_asin": "B0BZ7G95RT",
+          "title": "Adult Sex Toys Women Sex Toy - 3IN1 App Remote Control Vibrator Wearable, Adult Toys with 9 Vibrating Rabbit Ears & 9 Thrusting Dildo Clitoral G Spot Anal Dildo Vibrators Sex Machine for Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 179,
+          "car": 4.907912959049428
+        },
+        {
+          "parent_asin": "B0CH821W7G",
+          "title": "Anal Beads Rose Sex Toy,Vibrating Butt Plug with 9 Modes,Prostate Massager for Women & Men,Waterproof Silicone Rose Toy Sex Stimulator for Adult,Rechargeable",
+          "average_rating": 5.0,
+          "rating_number": 174,
+          "car": 4.905599214301928
+        },
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.899615357667598
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.899529884061143
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.899457304263591
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.899042183358589
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.899020051967392
+        }
+      ]
+    },
+    {
+      "id": "simple C, m=120",
+      "C_source": "C_simple",
+      "C": 4.248569745843338,
+      "m": 120,
+      "top": [
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.898157850111964
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.897749614805575
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.897403280942772
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.895428024886022
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.895322984892976
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.894880034680456
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.894511960790593
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.893907596407233
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.89333234130853
+        },
+        {
+          "parent_asin": "B0000UTUVA",
+          "title": "Mrs. Meyer's Multi-Surface Cleaner Concentrate, Use to Clean Floors, Tile, Counters, Lavender, 32 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 11309,
+          "car": 4.893160238822399
+        },
+        {
+          "parent_asin": "B0C6B7MW2T",
+          "title": "Advil - 300 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 11254,
+          "car": 4.893127164542043
+        },
+        {
+          "parent_asin": "B07DK33HTB",
+          "title": "Little Remedies Infant Fever & Pain Reliever with Acetaminophen, Natural Berry Flavor, 2 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 10904,
+          "car": 4.89290895949757
+        },
+        {
+          "parent_asin": "B000V5NVXW",
+          "title": "Clorox Bleach Free Wipe, Crisp Lemon, 75 Count",
+          "average_rating": 4.9,
+          "rating_number": 10754,
+          "car": 4.892811143047748
+        },
+        {
+          "parent_asin": "B0C6NY1LX8",
+          "title": "simplehuman Code P Custom Fit Drawstring Trash Bags, 200 Count, 30 Liter / 8 Gallon, White",
+          "average_rating": 4.9,
+          "rating_number": 9868,
+          "car": 4.892173445084222
+        },
+        {
+          "parent_asin": "B073Q34KKQ",
+          "title": "Tylenol Infants Liquid Pain Relief and Fever Medicine, Oral Suspension, Dye-Free Acetaminophen for Sore Throat, Headache & Teething, Fever Reducer for Kids; Cherry Flavor, 2 fl. oz.; Pack of 1",
+          "average_rating": 4.9,
+          "rating_number": 9851,
+          "car": 4.892160101243728
+        },
+        {
+          "parent_asin": "B0BSZG4PKT",
+          "title": "Motrin Children's Oral Suspension 100mg Ibuprofen Medicine, NSAID Fever Reducer & Pain Reliever for Minor Aches & Pains Due to Cold & Flu, Dye Free, Alcohol-Free, Berry Flavored, 8 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 9750,
+          "car": 4.892079875329403
+        },
+        {
+          "parent_asin": "B0C615HXJR",
+          "title": "Motrin Children's Oral Suspension, Berry, 72 Count",
+          "average_rating": 4.9,
+          "rating_number": 8446,
+          "car": 4.8908741967664255
+        },
+        {
+          "parent_asin": "B09TQ693H8",
+          "title": "Tide PODS 4 in 1 Febreze Sport Odor Defense, Laundry Detergent Soap PODS, High Efficiency (HE), 73 Count",
+          "average_rating": 4.9,
+          "rating_number": 8109,
+          "car": 4.8905004702273915
+        },
+        {
+          "parent_asin": "B0BN572G61",
+          "title": "BlenderBottle Star Wars Shaker Bottle Pro Series Perfect for Protein Shakes and Pre Workout, 28-Ounce, Trench",
+          "average_rating": 4.9,
+          "rating_number": 7889,
+          "car": 4.89023952672009
+        },
+        {
+          "parent_asin": "B0BVH8L2Y4",
+          "title": "Excedrin Migraine Relief Caplets to Alleviate Migraine Symptoms - 200 Count",
+          "average_rating": 4.9,
+          "rating_number": 7594,
+          "car": 4.8898662651673845
+        }
+      ]
+    },
+    {
+      "id": "simple C, m=500",
+      "C_source": "C_simple",
+      "C": 4.248569745843338,
+      "m": 500,
+      "top": [
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.892392499659504
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.890724858983446
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.889315210370086
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.881364279260881
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.880945646011564
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.879184871735792
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.877727357284031
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.875345157287236
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.873090290228162
+        },
+        {
+          "parent_asin": "B0000UTUVA",
+          "title": "Mrs. Meyer's Multi-Surface Cleaner Concentrate, Use to Clean Floors, Tile, Counters, Lavender, 32 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 11309,
+          "car": 4.872418060201682
+        },
+        {
+          "parent_asin": "B0C6B7MW2T",
+          "title": "Advil - 300 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 11254,
+          "car": 4.872288997185781
+        },
+        {
+          "parent_asin": "B07DK33HTB",
+          "title": "Little Remedies Infant Fever & Pain Reliever with Acetaminophen, Natural Berry Flavor, 2 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 10904,
+          "car": 4.8714385191969205
+        },
+        {
+          "parent_asin": "B000V5NVXW",
+          "title": "Clorox Bleach Free Wipe, Crisp Lemon, 75 Count",
+          "average_rating": 4.9,
+          "rating_number": 10754,
+          "car": 4.871057834807329
+        },
+        {
+          "parent_asin": "B0C6NY1LX8",
+          "title": "simplehuman Code P Custom Fit Drawstring Trash Bags, 200 Count, 30 Liter / 8 Gallon, White",
+          "average_rating": 4.9,
+          "rating_number": 9868,
+          "car": 4.868584574934575
+        },
+        {
+          "parent_asin": "B073Q34KKQ",
+          "title": "Tylenol Infants Liquid Pain Relief and Fever Medicine, Oral Suspension, Dye-Free Acetaminophen for Sore Throat, Headache & Teething, Fever Reducer for Kids; Cherry Flavor, 2 fl. oz.; Pack of 1",
+          "average_rating": 4.9,
+          "rating_number": 9851,
+          "car": 4.868532979704538
+        },
+        {
+          "parent_asin": "B0BSZG4PKT",
+          "title": "Motrin Children's Oral Suspension 100mg Ibuprofen Medicine, NSAID Fever Reducer & Pain Reliever for Minor Aches & Pains Due to Cold & Flu, Dye Free, Alcohol-Free, Berry Flavored, 8 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 9750,
+          "car": 4.868222914431382
+        },
+        {
+          "parent_asin": "B0C615HXJR",
+          "title": "Motrin Children's Oral Suspension, Berry, 72 Count",
+          "average_rating": 4.9,
+          "rating_number": 8446,
+          "car": 4.863590976181721
+        },
+        {
+          "parent_asin": "B09TQ693H8",
+          "title": "Tide PODS 4 in 1 Febreze Sport Odor Defense, Laundry Detergent Soap PODS, High Efficiency (HE), 73 Count",
+          "average_rating": 4.9,
+          "rating_number": 8109,
+          "car": 4.862165742005073
+        },
+        {
+          "parent_asin": "B0BN572G61",
+          "title": "BlenderBottle Star Wars Shaker Bottle Pro Series Perfect for Protein Shakes and Pre Workout, 28-Ounce, Trench",
+          "average_rating": 4.9,
+          "rating_number": 7889,
+          "car": 4.861173545466881
+        },
+        {
+          "parent_asin": "B0BVH8L2Y4",
+          "title": "Excedrin Migraine Relief Caplets to Alleviate Migraine Symptoms - 200 Count",
+          "average_rating": 4.9,
+          "rating_number": 7594,
+          "car": 4.859758447358744
+        }
+      ]
+    },
+    {
+      "id": "count-weighted C, m=25",
+      "C_source": "C_weighted",
+      "C": 4.476784142751094,
+      "m": 25,
+      "top": [
+        {
+          "parent_asin": "B0C81LJW31",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 411,
+          "car": 4.969999090754076
+        },
+        {
+          "parent_asin": "B0C9FRCHCP",
+          "title": "MEOLY Psoriasis Cream, Psoriasis Treatment, Eczema Cream Rosacea Cream, Moisturizing Cream for Psoriasis Treatment, Anti-Itch Cream, Skin Crack Dry Skin Treatment, Eczema Specialized Treatment 60 ML",
+          "average_rating": 5.0,
+          "rating_number": 407,
+          "car": 4.969721304557355
+        },
+        {
+          "parent_asin": "B0CB1R4XVX",
+          "title": "Electric Spin Scrubber, Up to 450RPM Cordless Cleaning Brush with 2 Speeds & 8 Replaceable Brush Heads, 51 Inch Shower Power Scrubber with Adjustable Extension Arm for Bathtub Tile Floor Sink",
+          "average_rating": 5.0,
+          "rating_number": 406,
+          "car": 4.969651052363752
+        },
+        {
+          "parent_asin": "B0CFLPKXRT",
+          "title": "Heating Pad for Back & Cramps Relief,Electric Heat Pad Fast Heat,6 Level Heat Setting,3 Level Timming,Auto Shut Off, Machine Washable,Suitable for Back,Neck,Abdomen Pain Relief(Dark Grey, 17'' \u00d7 33'')",
+          "average_rating": 5.0,
+          "rating_number": 375,
+          "car": 4.967299008921944
+        },
+        {
+          "parent_asin": "B0C9F5KC52",
+          "title": "Blood Pressure Monitor, Blood Pressure Machine Automatic Upper Arm, Adjustable BP Cuff with Large Backlit Display, 2 * 99 Memory Blood Pressure Monitors for Home Use with Storage Bag(White)",
+          "average_rating": 5.0,
+          "rating_number": 314,
+          "car": 4.961414759789904
+        },
+        {
+          "parent_asin": "B0CJBRXWGW",
+          "title": "Smart Scale for Body Weight and Fat Percentage, RunSTAR High Accuracy Digital Bathroom Scale with Large Display for BMI Heart Rate FSA&HSA Eligible 15 Body Composition Analyzer Sync with Fitness App",
+          "average_rating": 5.0,
+          "rating_number": 308,
+          "car": 4.9607195302365685
+        },
+        {
+          "parent_asin": "B0CGWPD4P2",
+          "title": "Blood Pressure Monitors for Home Use,Extra Large Upper Arm Blood Pressure Cuff Automatic Blood Pressure Machine, Rechargeable Blood Pressure Monitors with Large VA Display",
+          "average_rating": 5.0,
+          "rating_number": 279,
+          "car": 4.956972380160452
+        },
+        {
+          "parent_asin": "B0C5R3KZXM",
+          "title": "8.6'' Thrusting Realistic Dildo Vibrator, Onismo Automatic Dildos with 3 Thrusting & 5 Vibrating Modes, Liquid Silicone Penis G Spot Anal Vibrator with Suction Cup, Adult Sex Toy for Men Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 266,
+          "car": 4.955050184085145
+        },
+        {
+          "parent_asin": "B0C65NH99S",
+          "title": "Acvioo Rose Realistic Dildo G-Spot Dildos with Strong Suction Cup for Hands-Free Play Soft Liquid Silicone Fake Penis Deep Throat Training Anal Sex Toys for Women & Couple Insertable 6.1\"",
+          "average_rating": 5.0,
+          "rating_number": 228,
+          "car": 4.948298828335088
+        },
+        {
+          "parent_asin": "B0BWFN5HFK",
+          "title": "Thrusting Vibrator Dildo G Spot Vibrators with Remote Control & APP, Rose Adult Sex Toys for Women, Wearable Clitoral Vibrators with 9 Thrusting & Vibrating Modes, Anal Dildos for Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 222,
+          "car": 4.947042929428249
+        },
+        {
+          "parent_asin": "B0C1RVL432",
+          "title": "Anal Plug Rose Vibrator Couples Sex Toys for Women, Amorovo Vibrating Butt Plug with 10 Vibrations Adult Toys, Women Sex Toys Anal Vibrators Rose Sex Toy, Light Up Anal Toys Adult Sex Toys & Games",
+          "average_rating": 5.0,
+          "rating_number": 209,
+          "car": 4.94410086995204
+        },
+        {
+          "parent_asin": "B0C68W9MS6",
+          "title": "G Spot Vibrator for Woman, Clitoral Licking Thrusting Dildo Vibrator 10 Vibrating 3 Thrusting Adult Sex Toy Vibrator for Woman Vagina Clitoral Nipple Anal Stimulator Waterproof Male Couple Pleasure",
+          "average_rating": 5.0,
+          "rating_number": 186,
+          "car": 4.938007599852025
+        },
+        {
+          "parent_asin": "B0C596N7S8",
+          "title": "Deep Neck Pain Relief w/Conductive Magnetic Therapy Heated Neck Stretcher, Graphene-Tech Instant Heating Cervical Traction Device Pillow, Smart Control Neck Hump Corrector Relax Gifts For TMJ Migraine",
+          "average_rating": 5.0,
+          "rating_number": 180,
+          "car": 4.936193188140377
+        },
+        {
+          "parent_asin": "B0BZ7G95RT",
+          "title": "Adult Sex Toys Women Sex Toy - 3IN1 App Remote Control Vibrator Wearable, Adult Toys with 9 Vibrating Rabbit Ears & 9 Thrusting Dildo Clitoral G Spot Anal Dildo Vibrators Sex Machine for Women Couples",
+          "average_rating": 5.0,
+          "rating_number": 179,
+          "car": 4.935880409650869
+        },
+        {
+          "parent_asin": "B0CH821W7G",
+          "title": "Anal Beads Rose Sex Toy,Vibrating Butt Plug with 9 Modes,Prostate Massager for Women & Men,Waterproof Silicone Rose Toy Sex Stimulator for Adult,Rechargeable",
+          "average_rating": 5.0,
+          "rating_number": 174,
+          "car": 4.934269364667223
+        },
+        {
+          "parent_asin": "B0CJ91HBF4",
+          "title": "Migraine Headache Relief Cap, Migraine Relief Cap Odorless Migraine Headache Hat Hot & Cold Therapy Hangover Hat Mask for Puffy Eyes Hangover Tension Sinus & Stress Relief",
+          "average_rating": 5.0,
+          "rating_number": 151,
+          "car": 4.925679565731689
+        },
+        {
+          "parent_asin": "B0CFPZXSS8",
+          "title": "Wrist Blood Pressure Monitor Adjustable Cuff Home Automatic Digital Blood Pressure Machine LED Display Bp Monitor Dual Users Mode with Portable Storage Bag",
+          "average_rating": 5.0,
+          "rating_number": 145,
+          "car": 4.923056491581043
+        },
+        {
+          "parent_asin": "B0BWRQCJ47",
+          "title": "Thrusting Dildo G Spot Rabbit Vibrator - 3 in 1 Dildos Clitoral Stimulator Prostate Massager Anal Toys with 10 Thrusting 10 Flapping 10 Vibration Modes, Adult Sex Toys Games for Women Couples Pleasure",
+          "average_rating": 5.0,
+          "rating_number": 135,
+          "car": 4.918247522304858
+        },
+        {
+          "parent_asin": "B088VF81YB",
+          "title": "CALBESTRAD FITS for Jeep Compass 2011 2012 2013 Tail Light Right Passenger Side",
+          "average_rating": 5.0,
+          "rating_number": 134,
+          "car": 4.917733355778474
+        },
+        {
+          "parent_asin": "B0BL6RG2PR",
+          "title": "Double Tongue Licking Kneading Rose Swing Toy, Skin Friendly Touch Clitoral Nipple Anal Vibrators, 10 Stimulating Vibration Modes, Waterproof Sex Toy for Women Couple (Rose)",
+          "average_rating": 5.0,
+          "rating_number": 133,
+          "car": 4.917212680815047
+        }
+      ]
+    },
+    {
+      "id": "count-weighted C, m=120",
+      "C_source": "C_weighted",
+      "C": 4.476784142751094,
+      "m": 120,
+      "top": [
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.89880320719053
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.898537988229558
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.898312984890053
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.897029716758108
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.896961475238132
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.8966737029820635
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.896434575760329
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.896041937271463
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.895668210263573
+        },
+        {
+          "parent_asin": "B0000UTUVA",
+          "title": "Mrs. Meyer's Multi-Surface Cleaner Concentrate, Use to Clean Floors, Tile, Counters, Lavender, 32 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 11309,
+          "car": 4.895556400133882
+        },
+        {
+          "parent_asin": "B0C6B7MW2T",
+          "title": "Advil - 300 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 11254,
+          "car": 4.895534912707062
+        },
+        {
+          "parent_asin": "B07DK33HTB",
+          "title": "Little Remedies Infant Fever & Pain Reliever with Acetaminophen, Natural Berry Flavor, 2 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 10904,
+          "car": 4.895393151045912
+        },
+        {
+          "parent_asin": "B000V5NVXW",
+          "title": "Clorox Bleach Free Wipe, Crisp Lemon, 75 Count",
+          "average_rating": 4.9,
+          "rating_number": 10754,
+          "car": 4.89532960245817
+        },
+        {
+          "parent_asin": "B0C6NY1LX8",
+          "title": "simplehuman Code P Custom Fit Drawstring Trash Bags, 200 Count, 30 Liter / 8 Gallon, White",
+          "average_rating": 4.9,
+          "rating_number": 9868,
+          "car": 4.894915308082713
+        },
+        {
+          "parent_asin": "B073Q34KKQ",
+          "title": "Tylenol Infants Liquid Pain Relief and Fever Medicine, Oral Suspension, Dye-Free Acetaminophen for Sore Throat, Headache & Teething, Fever Reducer for Kids; Cherry Flavor, 2 fl. oz.; Pack of 1",
+          "average_rating": 4.9,
+          "rating_number": 9851,
+          "car": 4.894906638966015
+        },
+        {
+          "parent_asin": "B0BSZG4PKT",
+          "title": "Motrin Children's Oral Suspension 100mg Ibuprofen Medicine, NSAID Fever Reducer & Pain Reliever for Minor Aches & Pains Due to Cold & Flu, Dye Free, Alcohol-Free, Berry Flavored, 8 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 9750,
+          "car": 4.8948545184529015
+        },
+        {
+          "parent_asin": "B0C615HXJR",
+          "title": "Motrin Children's Oral Suspension, Berry, 72 Count",
+          "average_rating": 4.9,
+          "rating_number": 8446,
+          "car": 4.894071223106483
+        },
+        {
+          "parent_asin": "B09TQ693H8",
+          "title": "Tide PODS 4 in 1 Febreze Sport Odor Defense, Laundry Detergent Soap PODS, High Efficiency (HE), 73 Count",
+          "average_rating": 4.9,
+          "rating_number": 8109,
+          "car": 4.8938284235180625
+        },
+        {
+          "parent_asin": "B0BN572G61",
+          "title": "BlenderBottle Star Wars Shaker Bottle Pro Series Perfect for Protein Shakes and Pre Workout, 28-Ounce, Trench",
+          "average_rating": 4.9,
+          "rating_number": 7889,
+          "car": 4.893658895883398
+        },
+        {
+          "parent_asin": "B0BVH8L2Y4",
+          "title": "Excedrin Migraine Relief Caplets to Alleviate Migraine Symptoms - 200 Count",
+          "average_rating": 4.9,
+          "rating_number": 7594,
+          "car": 4.893416398383476
+        }
+      ]
+    },
+    {
+      "id": "count-weighted C, m=500",
+      "C_source": "C_weighted",
+      "C": 4.476784142751094,
+      "m": 500,
+      "top": [
+        {
+          "parent_asin": "B0C22HR3JS",
+          "title": "Biotrue Hydration Plus Contact Lens Solution, Multi-Purpose Solution for Soft Contact Lenses, 4 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 42315,
+          "car": 4.895057621660062
+        },
+        {
+          "parent_asin": "B09TQ5C4KX",
+          "title": "Tide PODS Laundry Detergent Soap PODS, High Efficiency (HE), Spring Meadow Scent, 96 Count",
+          "average_rating": 4.9,
+          "rating_number": 34617,
+          "car": 4.893974202562165
+        },
+        {
+          "parent_asin": "B0BXW8PHBC",
+          "title": "Dreft Blissfuls Laundry Scent Booster Beads for Washer, Baby Fresh Scent, 14.8 Oz",
+          "average_rating": 4.9,
+          "rating_number": 29984,
+          "car": 4.893058393628643
+        },
+        {
+          "parent_asin": "B0006SW71G",
+          "title": "Advil Pain Reliever and Fever Reducer, Pain Relief Medicine with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 16978,
+          "car": 4.887892898007526
+        },
+        {
+          "parent_asin": "B000GCRZL4",
+          "title": "Clorox Disinfecting Wipes, Fresh Scent, 35-ct",
+          "average_rating": 4.9,
+          "rating_number": 16594,
+          "car": 4.887620923796393
+        },
+        {
+          "parent_asin": "B0BXB2VZT9",
+          "title": "Advil Liqui-Gels Pain Reliever and Fever Reducer, Pain Medicine for Adults with Ibuprofen 200mg for Headache, Backache, Menstrual Pain and Joint Pain Relief - 50x2 Liquid Filled Capsules",
+          "average_rating": 4.9,
+          "rating_number": 15148,
+          "car": 4.886476998426352
+        },
+        {
+          "parent_asin": "B00MK2D954",
+          "title": "Tylenol Infants Oral Suspension Liquid Medicine with Acetaminophen, Baby Fever Reducer & Pain Reliever for Minor Aches & Pains, Sore Throat, Headache & Toothache, Grape Flavor, 2 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 14124,
+          "car": 4.885530092408065
+        },
+        {
+          "parent_asin": "B000WZWZ1U",
+          "title": "Aspirin Regimen Bayer 81mg Enteric Coated Tablets, #1 Doctor Recommended Aspirin Brand, Pain Reliever,300 Count",
+          "average_rating": 4.9,
+          "rating_number": 12711,
+          "car": 4.88398244427943
+        },
+        {
+          "parent_asin": "B07Z8HLQRV",
+          "title": "Braun ThermoScan Lens Filters for Ear Thermometer, Disposable Covers LF40US01 (40 Count)",
+          "average_rating": 4.9,
+          "rating_number": 11604,
+          "car": 4.882517520767973
+        },
+        {
+          "parent_asin": "B0000UTUVA",
+          "title": "Mrs. Meyer's Multi-Surface Cleaner Concentrate, Use to Clean Floors, Tile, Counters, Lavender, 32 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 11309,
+          "car": 4.882080791885473
+        },
+        {
+          "parent_asin": "B0C6B7MW2T",
+          "title": "Advil - 300 Coated Tablets",
+          "average_rating": 4.9,
+          "rating_number": 11254,
+          "car": 4.881996943285311
+        },
+        {
+          "parent_asin": "B07DK33HTB",
+          "title": "Little Remedies Infant Fever & Pain Reliever with Acetaminophen, Natural Berry Flavor, 2 Fl Oz",
+          "average_rating": 4.9,
+          "rating_number": 10904,
+          "car": 4.881444411730582
+        },
+        {
+          "parent_asin": "B000V5NVXW",
+          "title": "Clorox Bleach Free Wipe, Crisp Lemon, 75 Count",
+          "average_rating": 4.9,
+          "rating_number": 10754,
+          "car": 4.881197091822957
+        },
+        {
+          "parent_asin": "B0C6NY1LX8",
+          "title": "simplehuman Code P Custom Fit Drawstring Trash Bags, 200 Count, 30 Liter / 8 Gallon, White",
+          "average_rating": 4.9,
+          "rating_number": 9868,
+          "car": 4.879590284661994
+        },
+        {
+          "parent_asin": "B073Q34KKQ",
+          "title": "Tylenol Infants Liquid Pain Relief and Fever Medicine, Oral Suspension, Dye-Free Acetaminophen for Sore Throat, Headache & Teething, Fever Reducer for Kids; Cherry Flavor, 2 fl. oz.; Pack of 1",
+          "average_rating": 4.9,
+          "rating_number": 9851,
+          "car": 4.8795567646967015
+        },
+        {
+          "parent_asin": "B0BSZG4PKT",
+          "title": "Motrin Children's Oral Suspension 100mg Ibuprofen Medicine, NSAID Fever Reducer & Pain Reliever for Minor Aches & Pains Due to Cold & Flu, Dye Free, Alcohol-Free, Berry Flavored, 8 fl. oz",
+          "average_rating": 4.9,
+          "rating_number": 9750,
+          "car": 4.879355324036639
+        },
+        {
+          "parent_asin": "B0C615HXJR",
+          "title": "Motrin Children's Oral Suspension, Berry, 72 Count",
+          "average_rating": 4.9,
+          "rating_number": 8446,
+          "car": 4.87634608443724
+        },
+        {
+          "parent_asin": "B09TQ693H8",
+          "title": "Tide PODS 4 in 1 Febreze Sport Odor Defense, Laundry Detergent Soap PODS, High Efficiency (HE), 73 Count",
+          "average_rating": 4.9,
+          "rating_number": 8109,
+          "car": 4.8754201500029675
+        },
+        {
+          "parent_asin": "B0BN572G61",
+          "title": "BlenderBottle Star Wars Shaker Bottle Pro Series Perfect for Protein Shakes and Pre Workout, 28-Ounce, Trench",
+          "average_rating": 4.9,
+          "rating_number": 7889,
+          "car": 4.8747755479050605
+        },
+        {
+          "parent_asin": "B0BVH8L2Y4",
+          "title": "Excedrin Migraine Relief Caplets to Alleviate Migraine Symptoms - 200 Count",
+          "average_rating": 4.9,
+          "rating_number": 7594,
+          "car": 4.87385619858853
+        }
+      ]
+    }
+  ],
+  "pairwise_overlap": {
+    "simple C, m=25": {
+      "simple C, m=25": 20,
+      "simple C, m=120": 5,
+      "simple C, m=500": 5,
+      "count-weighted C, m=25": 15,
+      "count-weighted C, m=120": 5,
+      "count-weighted C, m=500": 5
+    },
+    "simple C, m=120": {
+      "simple C, m=25": 5,
+      "simple C, m=120": 20,
+      "simple C, m=500": 20,
+      "count-weighted C, m=25": 0,
+      "count-weighted C, m=120": 20,
+      "count-weighted C, m=500": 20
+    },
+    "simple C, m=500": {
+      "simple C, m=25": 5,
+      "simple C, m=120": 20,
+      "simple C, m=500": 20,
+      "count-weighted C, m=25": 0,
+      "count-weighted C, m=120": 20,
+      "count-weighted C, m=500": 20
+    },
+    "count-weighted C, m=25": {
+      "simple C, m=25": 15,
+      "simple C, m=120": 0,
+      "simple C, m=500": 0,
+      "count-weighted C, m=25": 20,
+      "count-weighted C, m=120": 0,
+      "count-weighted C, m=500": 0
+    },
+    "count-weighted C, m=120": {
+      "simple C, m=25": 5,
+      "simple C, m=120": 20,
+      "simple C, m=500": 20,
+      "count-weighted C, m=25": 0,
+      "count-weighted C, m=120": 20,
+      "count-weighted C, m=500": 20
+    },
+    "count-weighted C, m=500": {
+      "simple C, m=25": 5,
+      "simple C, m=120": 20,
+      "simple C, m=500": 20,
+      "count-weighted C, m=25": 0,
+      "count-weighted C, m=120": 20,
+      "count-weighted C, m=500": 20
+    }
+  },
+  "raw_rating_sort": {
+    "overlap_with_each_combo": {
+      "simple C, m=25": 15,
+      "simple C, m=120": 0,
+      "simple C, m=500": 0,
+      "count-weighted C, m=25": 20,
+      "count-weighted C, m=120": 0,
+      "count-weighted C, m=500": 0
+    },
+    "median_rating_number_in_top": 222,
+    "top": [
+      {
+        "parent_asin": "B0C81LJW31",
+        "average_rating": 5.0,
+        "rating_number": 411
+      },
+      {
+        "parent_asin": "B0C9FRCHCP",
+        "average_rating": 5.0,
+        "rating_number": 407
+      },
+      {
+        "parent_asin": "B0CB1R4XVX",
+        "average_rating": 5.0,
+        "rating_number": 406
+      },
+      {
+        "parent_asin": "B0CFLPKXRT",
+        "average_rating": 5.0,
+        "rating_number": 375
+      },
+      {
+        "parent_asin": "B0C9F5KC52",
+        "average_rating": 5.0,
+        "rating_number": 314
+      },
+      {
+        "parent_asin": "B0CJBRXWGW",
+        "average_rating": 5.0,
+        "rating_number": 308
+      },
+      {
+        "parent_asin": "B0CGWPD4P2",
+        "average_rating": 5.0,
+        "rating_number": 279
+      },
+      {
+        "parent_asin": "B0C5R3KZXM",
+        "average_rating": 5.0,
+        "rating_number": 266
+      },
+      {
+        "parent_asin": "B0C65NH99S",
+        "average_rating": 5.0,
+        "rating_number": 228
+      },
+      {
+        "parent_asin": "B0BWFN5HFK",
+        "average_rating": 5.0,
+        "rating_number": 222
+      },
+      {
+        "parent_asin": "B0C1RVL432",
+        "average_rating": 5.0,
+        "rating_number": 209
+      },
+      {
+        "parent_asin": "B0C68W9MS6",
+        "average_rating": 5.0,
+        "rating_number": 186
+      },
+      {
+        "parent_asin": "B0C596N7S8",
+        "average_rating": 5.0,
+        "rating_number": 180
+      },
+      {
+        "parent_asin": "B0BZ7G95RT",
+        "average_rating": 5.0,
+        "rating_number": 179
+      },
+      {
+        "parent_asin": "B0CH821W7G",
+        "average_rating": 5.0,
+        "rating_number": 174
+      },
+      {
+        "parent_asin": "B0CJ91HBF4",
+        "average_rating": 5.0,
+        "rating_number": 151
+      },
+      {
+        "parent_asin": "B0CFPZXSS8",
+        "average_rating": 5.0,
+        "rating_number": 145
+      },
+      {
+        "parent_asin": "B0BWRQCJ47",
+        "average_rating": 5.0,
+        "rating_number": 135
+      },
+      {
+        "parent_asin": "B088VF81YB",
+        "average_rating": 5.0,
+        "rating_number": 134
+      },
+      {
+        "parent_asin": "B0BL6RG2PR",
+        "average_rating": 5.0,
+        "rating_number": 133
+      }
+    ]
+  }
+}
