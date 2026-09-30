@@ -1,7 +1,13 @@
 # Value Sort
 
-> **Status: scaffold only. No results yet.** The full README (problem, finding,
-> limitations, setup) comes in Step 10.
+> **Status: partial results.** Stage 1 is built. Stage 2's pack-size extractor is built and
+> audited; the NUP score and composite ranker are not yet built (Step 7). The unit-price
+> extractor's precision is measured at 93.1% (95% CI 85.8-96.8%, n=87) against 200
+> hand-labelled items. Stage 3 (attribute extraction) is not built and remains conditional on
+> its grounding guardrail. No experiment has been run: there is no traffic, no clickstream,
+> and no simulated lift anywhere in this project.
+
+The full README (problem, finding, limitations, setup) comes in Step 10.
 
 A re-ranker that reorders Amazon search results by rating credibility, per-unit price,
 and what reviewers say a product is good at. The contract is [SPEC.md](SPEC.md);
