@@ -16,6 +16,7 @@ data:   ## Step 2: stream one category's metadata to a slim Parquet in data/raw/
 
 load:   ## Step 3: validate every row into Item records; print drop count and price-null reasons
 	uv run python -m value_sort.loader --category $(CATEGORY)
+	uv run python -m value_sort.priors --category $(CATEGORY)
 
 build:  ## Steps 3-7: load, score (CAR, unit price, attributes), rank
 	@echo "make build: not implemented yet (Steps 3-7)" && exit 1

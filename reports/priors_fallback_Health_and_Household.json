@@ -1,0 +1,10 @@
+{
+  "role": "fallback_only_when_candidate_set_lt_30",
+  "use": "Only when a candidate set has fewer than 30 items; the result must be flagged. The primary path computes C and m over the candidate set at rank time.",
+  "population": "all loaded items with a valid price > 0 (loader.priced)",
+  "min_candidate_set": 30,
+  "n_items": 331095,
+  "C_simple": 4.248569745843338,
+  "C_weighted": 4.476784142751094,
+  "m_median": 50.0
+}
