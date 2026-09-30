@@ -1,0 +1,4 @@
+{
+  "confidence_threshold": 0.7,
+  "_note": "Fixed before scoring against hand labels (DECISIONS.md #34). Changing it after seeing precision would be tuning on the audit set."
+}

@@ -51,4 +51,16 @@ Rules of thumb:
 - **Coverage** (share of items where the extractor returns a pack size) is reported
   alongside precision, so abstaining on everything can't inflate precision.
 - `N/A` items are reported separately. Precision is given both with and without them,
-  because trivial `1 x 1 ct` cases would otherwise inflate it.
+  because trivial `1 x 1 ct` cases would otherwise inflate it. When truth is `N/A`, an
+  extraction counts as correct only if it is exactly 1 count in total (unit price = listed
+  price); anything else is wrong.
+- Precision comes with a 95% Wilson interval. With about 100 extractions the interval is
+  roughly ±6 points, so a result near 90% is not decisive either way.
+
+## Run the score
+
+```bash
+make score-unit-price
+```
+
+It refuses to run until every row has a `truth` value.

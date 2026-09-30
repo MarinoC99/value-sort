@@ -1,0 +1,21 @@
+{
+  "n_items": 331095,
+  "extracted": 151922,
+  "coverage": 0.4588471586704722,
+  "by_dimension": {
+    "count": 102096,
+    "weight": 30315,
+    "volume": 19511
+  },
+  "abstain_reasons": {
+    "no_size_found": 141925,
+    "sources_disagree": 17178,
+    "title_is_kit": 8862,
+    "only_weak_sources": 5702,
+    "title_conflicting_counts": 2343,
+    "title_size_count_ambiguous": 1432,
+    "title_conflicting_weight": 1028,
+    "title_conflicting_volume": 439,
+    "title_conflicting_pack_counts": 264
+  }
+}

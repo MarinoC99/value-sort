@@ -1,4 +1,4 @@
-.PHONY: data load car build eval demo test
+.PHONY: data load car audit unit-price score-unit-price build eval demo test
 
 # Each target fails loudly until its step is implemented, so nothing
 # pretends to have produced output it hasn't.
@@ -20,6 +20,15 @@ load:   ## Step 3: validate every row into Item records; print drop count and pr
 
 car:    ## Step 4: CAR sensitivity over m and C -> reports/car_sensitivity_<Category>.md
 	uv run python -m value_sort.car_sensitivity --category $(CATEGORY)
+
+audit:  ## Step 5a: write the 200-item labelling set (refuses to overwrite labels)
+	uv run python -m value_sort.unit_price_audit --category $(CATEGORY)
+
+unit-price: ## Step 5b: extractor coverage over the priced pool (no labels needed)
+	uv run python -m value_sort.unit_price_score --category $(CATEGORY) --coverage-only
+
+score-unit-price: ## Step 5c: precision against hand labels in audit/unit_price_labels.csv
+	uv run python -m value_sort.unit_price_score --category $(CATEGORY)
 
 build:  ## Steps 3-7: load, score (CAR, unit price, attributes), rank
 	@echo "make build: not implemented yet (Steps 3-7)" && exit 1
