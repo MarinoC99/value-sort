@@ -7,7 +7,7 @@
 > its grounding guardrail. No experiment has been run: there is no traffic, no clickstream,
 > and no simulated lift anywhere in this project.
 
-The full README (problem, finding, limitations, setup) comes in Step 10.
+This README records results as they land; it will be rewritten for a general reader once the project is complete.
 
 A planned three-axis re-ranker that would reorder an already-retrieved result set of Amazon
 products by rating credibility, per-unit price and, if it passes its grounding test, what
@@ -68,10 +68,49 @@ correction on consumables rather than a general reordering, which is a
 narrower claim than SPEC.md assumed when it weighted NUP as a co-equal
 signal alongside CAR.
 
+## Data
+
+The data is one category of Amazon Reviews 2023 (McAuley Lab, UC San Diego): item metadata
+for Health & Household. `make data` streams the 2.47 GB source file from Hugging Face, checks
+it against the published size and sha256, and writes a 104 MiB Parquet of six fields to
+`data/raw/`. The Parquet is gitignored and has never been committed; only its fetch manifest
+(`data/raw/meta_Health_and_Household.manifest.json`: source path, published hash, byte and row
+counts, fields) is, so a rebuild can be compared with it. `make data` also regenerates
+`reports/profile_*`.
+
+**Data notice.** No license is granted for this dataset. Its card states none, and its first
+author has said publicly that the lab is not in a position to assign one
+([discussion](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/discussions/1)).
+The authors collected it from public Amazon pages: the card describes prices as of the time of
+crawling, and Appendix B of the April 2026 revision of the paper (arXiv:2403.03952v2)
+describes how the reviews were collected. This repository does not redistribute the dataset.
+It does include small excerpts, mainly product IDs, titles, prices, ratings and some
+product-detail fields: for 240 products on `main` (in `audit/` and `reports/`), a few titles
+used as test fixtures in `tests/`, about 2,400 more products in `spike/` on the `spike/step7`
+branch, and a few quoted title fragments in the project's notes. The audit and several
+reported figures can't be checked without the dataset; these excerpts let a reader check them
+without downloading it. They will be removed on request. The MIT license in
+[LICENSE](LICENSE) covers this project's code only, not these excerpts.
+
+If you use the dataset, cite it with the citation from its dataset card:
+
+```bibtex
+@article{hou2024bridging,
+  title={Bridging Language and Items for Retrieval and Recommendation},
+  author={Hou, Yupeng and Li, Jiacheng and He, Zhankui and Yan, An and Chen, Xiusi and McAuley, Julian},
+  journal={arXiv preprint arXiv:2403.03952},
+  year={2024}
+}
+```
+
+The current arXiv version (v2, 20 April 2026) is a revised paper with an added author,
+Xiangjun Fu, and a subtitle.
+
 ## Setup
 
 ```bash
 uv sync
+make data   # downloads about 2.5 GB; writes the Parquet to data/raw/ (gitignored) and regenerates reports/profile_*
 make test
 ```
 
