@@ -2,7 +2,10 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-data/raw/
+data/raw/*
+!data/raw/*.manifest.json
 cache/
 .env
 .DS_Store
+.vercel/
+dist/

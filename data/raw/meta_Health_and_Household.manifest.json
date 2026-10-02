@@ -1,0 +1,18 @@
+{
+  "source": "hf://datasets/McAuley-Lab/Amazon-Reviews-2023/raw/meta_categories/meta_Health_and_Household.jsonl",
+  "source_bytes": 2468505069,
+  "source_sha256": "1a26906c721929a04e887eb7aac560e58e0c4f0a65ec5b24a047a560a43f0bc1",
+  "rows_written": 797563,
+  "unparseable_json_lines": 0,
+  "unparseable_examples": [],
+  "fields": [
+    "parent_asin",
+    "title",
+    "price",
+    "average_rating",
+    "rating_number",
+    "details"
+  ],
+  "output": "data/raw/meta_Health_and_Household.slim.parquet",
+  "output_bytes": 109232553
+}
