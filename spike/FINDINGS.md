@@ -100,7 +100,11 @@ Option 1 (unit price only in the set's dominant dimension; everything else fails
   being extracted in "oz". *[Corrected: the original said 88 real products. By the agent's
   reading about 76 are sanitizer; about 12 are holders, a pump holster and a skin ointment.
   The holders' "1 oz" is the capacity of the bottle they fit, the Step 5 error shape again.]* Accessories were filtered only as a side
-  effect: all 10 sampled accessories had count extractions, the non-dominant dimension.
+  effect: all 10 sampled accessories got no unit price under Option 1, 4 because their
+  extractions were counts (the non-dominant dimension) and 6 because they had no pack size.
+  *[Corrected: the original said all 10 had count extractions; only 4 had any extraction.
+  "No unit price" here is Option 1's filtering, not Finding 3's question of whether
+  accessories get a pack size.]*
 
 ## Finding 9: CAR per query (the #28 question, on a real matcher for the first time)
 
@@ -118,7 +122,10 @@ are heavily contaminated (Finding 2).
 
 **CAR does not behave differently across protein powder and hand sanitizer**, even though
 m = 123 and m = 54 straddle the transition the Step 4 sweep found. In both, the star-sort
-top 20 is all 5.0-star items with single-digit rating counts, and CAR replaces all of them
+top 20 is all 5.0-star items with a median single-digit rating count (in each set, 6 of 20
+have 10 or more; the highest are 38 for protein powder and 31 for hand sanitizer)
+*[Corrected: the original said "single-digit rating counts"; that holds for the median, not
+every item.]*, and CAR replaces all of them
 at every m from 50 up, and all but one at m = 25 (overlap 1, 0, 0, 0 at m = 25/50/120/500
 for protein powder; 0 throughout for hand sanitizer). *[Corrected: the original said
 "every one at every m tested".]* The Step 4 transition was a property of the 331,095-item pool, which
@@ -132,7 +139,8 @@ top is, not where m falls.
 
 Two further checks:
 - **m matters less within a set than across the pool.** CAR's own top 20 at the set's m
-  keeps 14–20 of 20 items at m = 25 or 50 and 13–18 at m = 500, across the four sets. Over
+  keeps 13–20 of 20 items at m = 25 or 50 and 13–18 at m = 500, across the four sets
+  *[Corrected: the original said 14–20; blood pressure monitors keep 13 at m = 25.]*. Over
   the whole pool, the top 20 was replaced entirely between m = 25 and m = 120.
 - **CAR is not a popularity sort.** Its top 20 shares 3/20 (protein powder) and 8/20 (hand
   sanitizer) with the 20 most-reviewed items. Across each set it tracks the star rating
@@ -223,3 +231,17 @@ CONSIDERATIONS.md §11 entry and corrected in place (marked *[Corrected …]*):
 4. "CAR replaces every one at every m" was contradicted by the file's own m = 25 figure.
 
 Each claimed more than had been checked.
+
+Three more were found later by a separate read-only pre-publication review pass, also run by
+the agent (2 October 2026), which the earlier re-check had missed. Both the errors and the
+catch were the agent's. Corrected in place the same way:
+5. "All 10 sampled accessories had count extractions" (Finding 8): 4 had any extraction.
+6. "Single-digit rating counts" for the star-sort top 20 (Finding 9): true of the median; in
+   each set 6 of 20 have 10 or more. This one had also been carried into main's
+   CONSIDERATIONS.md §11.10.
+7. "14–20 of 20 … across the four sets" (Finding 9): the range is 13–20.
+
+`fce9549` also changed wording without a *[Corrected …]* marker: in lines that repeated the
+first four claims (the summary table, implication 2 and a limits bullet) and in parts of the
+marked passages (for example "listed in" became "extracted in" "oz", and an `Item Weight`
+example was dropped). The original wording is in that commit's diff.
