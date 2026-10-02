@@ -28,6 +28,21 @@ unpublishable.
 withholds. Cost: a September 2023 snapshot with no sales, shipping, or live pricing. Every
 claim in the project is bounded by that, stated up front rather than discovered later.
 
+**Correction to the reasoning (2 October 2026, pre-publication review).** The two paragraphs
+above treat the dataset as the clean alternative to scraping. It isn't one, and this corrects
+the reasoning, not just its wording. The dataset was itself collected by its authors from
+public Amazon pages: Appendix B of the April 2026 revision of the paper (arXiv:2403.03952v2)
+describes how the reviews were collected, and the dataset card describes item prices as of the
+time of crawling. No license is granted for it: the first author has said publicly that the lab
+is "not in a position to assign a license to this dataset". Amazon's Conditions of Use exclude
+any collection and use of product listings, descriptions or prices from the access they license
+to site users. So choosing the dataset didn't escape the provenance problem that ruled out
+scraping; it moved it one step upstream, to someone else's crawl. What the choice does buy is
+real: no scraping by this project, a public and citable source, and reproducibility. Of the
+routes this section considers, it was the cleanest, not a clean one. The repository has never
+contained the dataset itself (`data/raw/` has been gitignored from the first commit); the small
+excerpts it does contain are covered by the data notice in README.md.
+
 ---
 
 ## 2. Framing: from three analyses to one thesis
