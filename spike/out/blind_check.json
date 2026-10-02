@@ -1,0 +1,68 @@
+{
+ "_note": "SPIKE. INDICATIVE ONLY. Three blind LLM judges per query (workflow wf_f72bb759-a42) classified the same 40 sampled titles without seeing the agent's flags. A robustness check on the flags, not a classifier.",
+ "results": [
+  {
+   "query": "protein powder",
+   "judges_returned": 3,
+   "my_flag_count": 4,
+   "majority_flag_count": 8,
+   "agreement_with_mine": "36/40",
+   "judges_unanimous_on": "39/40",
+   "disagreements": [
+    {
+     "n": 12,
+     "mine": false,
+     "votes_not_product": "2/3"
+    },
+    {
+     "n": 14,
+     "mine": false,
+     "votes_not_product": "3/3"
+    },
+    {
+     "n": 18,
+     "mine": false,
+     "votes_not_product": "3/3"
+    },
+    {
+     "n": 32,
+     "mine": false,
+     "votes_not_product": "3/3"
+    }
+   ]
+  },
+  {
+   "query": "toilet paper",
+   "judges_returned": 3,
+   "my_flag_count": 15,
+   "majority_flag_count": 14,
+   "agreement_with_mine": "39/40",
+   "judges_unanimous_on": "40/40",
+   "disagreements": [
+    {
+     "n": 34,
+     "mine": true,
+     "votes_not_product": "0/3"
+    }
+   ]
+  },
+  {
+   "query": "blood pressure monitor",
+   "judges_returned": 3,
+   "my_flag_count": 7,
+   "majority_flag_count": 7,
+   "agreement_with_mine": "40/40",
+   "judges_unanimous_on": "39/40",
+   "disagreements": []
+  },
+  {
+   "query": "hand sanitizer",
+   "judges_returned": 3,
+   "my_flag_count": 10,
+   "majority_flag_count": 10,
+   "agreement_with_mine": "40/40",
+   "judges_unanimous_on": "40/40",
+   "disagreements": []
+  }
+ ]
+}

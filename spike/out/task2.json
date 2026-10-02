@@ -1,0 +1,149 @@
+{
+ "_note": "SPIKE. INDICATIVE ONLY.",
+ "threshold": 0.7,
+ "queries": {
+  "protein powder": {
+   "set_size": 1625,
+   "extracted": 1071,
+   "share": 0.6590769230769231,
+   "units": {
+    "oz": 540,
+    "lb": 406,
+    "g": 81,
+    "ct": 34,
+    "kg": 5,
+    "fl oz": 4,
+    "ml": 1
+   },
+   "dimensions": {
+    "weight": 1032,
+    "count": 34,
+    "volume": 5
+   },
+   "top_dimension_share_of_extracted": 0.9635854341736695,
+   "abstain_reasons": {
+    "no_size_found": 217,
+    "title_conflicting_weight": 196,
+    "sources_disagree": 117,
+    "title_is_kit": 11,
+    "title_size_count_ambiguous": 8,
+    "only_weak_sources": 5
+   },
+   "sample_split": {
+    "flagged": [
+     3,
+     4
+    ],
+    "rest": [
+     26,
+     36
+    ]
+   }
+  },
+  "toilet paper": {
+   "set_size": 736,
+   "extracted": 272,
+   "share": 0.3695652173913043,
+   "units": {
+    "ct": 259,
+    "oz": 4,
+    "fl oz": 4,
+    "lb": 3,
+    "ml": 2
+   },
+   "dimensions": {
+    "count": 259,
+    "weight": 7,
+    "volume": 6
+   },
+   "top_dimension_share_of_extracted": 0.9522058823529411,
+   "abstain_reasons": {
+    "sources_disagree": 266,
+    "no_size_found": 104,
+    "title_conflicting_counts": 72,
+    "title_is_kit": 14,
+    "only_weak_sources": 7,
+    "title_conflicting_pack_counts": 1
+   },
+   "sample_split": {
+    "flagged": [
+     5,
+     15
+    ],
+    "rest": [
+     5,
+     25
+    ]
+   }
+  },
+  "blood pressure monitor": {
+   "set_size": 484,
+   "extracted": 8,
+   "share": 0.01652892561983471,
+   "units": {
+    "ct": 7,
+    "lb": 1
+   },
+   "dimensions": {
+    "count": 7,
+    "weight": 1
+   },
+   "top_dimension_share_of_extracted": 0.875,
+   "abstain_reasons": {
+    "no_size_found": 430,
+    "title_is_kit": 46
+   },
+   "sample_split": {
+    "flagged": [
+     0,
+     7
+    ],
+    "rest": [
+     0,
+     33
+    ]
+   }
+  },
+  "hand sanitizer": {
+   "set_size": 652,
+   "extracted": 282,
+   "share": 0.4325153374233129,
+   "units": {
+    "fl oz": 94,
+    "oz": 87,
+    "ct": 77,
+    "ml": 13,
+    "gal": 8,
+    "l": 2,
+    "g": 1
+   },
+   "dimensions": {
+    "volume": 117,
+    "weight": 88,
+    "count": 77
+   },
+   "top_dimension_share_of_extracted": 0.4148936170212766,
+   "abstain_reasons": {
+    "sources_disagree": 158,
+    "no_size_found": 134,
+    "only_weak_sources": 39,
+    "title_is_kit": 19,
+    "title_size_count_ambiguous": 8,
+    "title_conflicting_counts": 7,
+    "title_conflicting_weight": 2,
+    "title_conflicting_pack_counts": 2,
+    "title_conflicting_volume": 1
+   },
+   "sample_split": {
+    "flagged": [
+     4,
+     10
+    ],
+    "rest": [
+     15,
+     30
+    ]
+   }
+  }
+ }
+}
