@@ -35,3 +35,29 @@ agent's own sample-level judgments, not a classifier. Three blind LLM judges agr
 155/160; they flagged collagen powders as not protein powder where the agent didn't, and
 didn't flag a toilet-paper holder that comes with boxed tissue, which the agent did.
 Not extrapolated to the full sets.
+
+## Finding 3: accessories do not fail open, and they feed the extractor its known failure mode
+
+On the sampled titles (agent's own flags, not extrapolated), flagged items got a pack size
+at about the same rate as real products: **12/36 (33%) vs 46/124 (37%)**. Contamination and
+coverage do not cancel; accessories reach the unit-price axis.
+
+One flagged toilet-paper item, a grab bar with a paper holder, was read as `1 x 250 lb`
+from its load rating. That is the same error shape as the Step 5 transfer bench
+("400 lbs Weight Capacity"): a number describing the product rather than what the price
+buys. Accessory contamination therefore structurally feeds the extractor its known failure
+mode. **The matcher needs a filter before Step 7 proper.**
+
+## Finding 4: toilet paper's "ct" is incoherent
+
+Count is 95% of toilet-paper extractions, but "ct" means rolls on some listings, sheets on
+others, and mega rolls aren't regular rolls. Sampled values run from `1 x 60 ct` (a gag
+roll) to `1 x 11520 ct` (sheets in 36 mega rolls). 37% coverage that can't support a unit
+price. Excluded from Task 3.
+
+## Finding 5 (known extractor artifact, not fixed): oz vs fl oz in hand sanitizer
+
+Hand sanitizer listed in plain "oz" is a liquid, but the extractor treats plain "oz" as
+weight by design, so the set splits into volume (117), weight (88) and count (77). Not
+fixed during the spike: changing the extractor would make Task 2 and Task 3 numbers come
+from different code.
