@@ -1,0 +1,15 @@
+{
+  "_note": "SPIKE. INDICATIVE ONLY. The agent's own sample-level judgments from Task 1, written down per title BEFORE running the extractor on these sets. Flag = not the queried product (an accessory, or a different product). Not a classifier; applies only to the 40 sampled titles per query and must not be extrapolated to the full sets. Indices refer to spike/task1_samples.json.",
+  "excluded_queries": {"vitamin d": "matcher defect: single-letter whole-word 'd' matches D-Mannose etc. and excludes 'D3'; dropped from Tasks 2-4"},
+  "flags": {
+    "protein powder": {"flagged": [5, 22, 36, 40],
+      "why": {"5": "BCAA powder", "22": "brewer's yeast", "36": "wound-care drink mix", "40": "powder funnel accessory"}},
+    "toilet paper": {"flagged": [2, 4, 8, 10, 16, 17, 18, 19, 24, 25, 27, 31, 34, 36, 38],
+      "why": {"2": "compressed towel tablets", "4": "wiping tongs", "8": "safety rail", "10": "toilet aid kit", "16": "TP foam", "17": "roll extender tabs", "18": "foam dispenser", "19": "toilet-brush refills", "24": "sign", "25": "flushable wipes", "27": "grab bar with holder", "31": "roll extender tabs", "34": "holder + boxed tissue (borderline)", "36": "napkins", "38": "TP foam"},
+      "not_flagged_note": "1, 22, 32, 39 are novelty/gag rolls: still toilet paper, so not flagged"},
+    "blood pressure monitor": {"flagged": [1, 6, 7, 11, 16, 28, 31],
+      "why": {"1": "replacement arm cuff", "6": "replacement cuff", "7": "storage case", "11": "storage case", "16": "replacement cuff", "28": "bedside table bundle", "31": "replacement cuff"}},
+    "hand sanitizer": {"flagged": [3, 4, 5, 7, 10, 13, 31, 32, 34, 37],
+      "why": {"3": "keychain holders + empty bottles", "4": "empty bottle holders", "5": "empty bottles", "7": "touch-free dispenser", "10": "holder", "13": "holder", "31": "holder", "32": "signs", "34": "floor stand", "37": "sanitizer wipes (borderline: related product)"}}
+  }
+}
