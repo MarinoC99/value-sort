@@ -1,0 +1,7 @@
+# Pre-registered spike queries. Committed before any matching code exists.
+# INDICATIVE ONLY: spike output, not reproducible as a project result.
+protein powder
+toilet paper
+vitamin d
+blood pressure monitor
+hand sanitizer
