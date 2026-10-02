@@ -28,7 +28,7 @@ committed with its reasoning; every judgment call logged. SPEC.md was amended in
 superseded claims kept visible.
 
 The agreement was aimed at the model, but in practice it caught
-overclaiming in the human-written summaries more often, always in the
+overclaiming in the human-written summaries as well, consistently in the
 same direction: text asserting more than the repository supported.
 
 ## The problem
