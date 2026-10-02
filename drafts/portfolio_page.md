@@ -99,16 +99,16 @@ That clears the ≥90% guardrail set before labelling. But the interval straddle
 threshold, so the defensible claim is that the point estimate passes, not that true precision
 exceeds 90%.
 
-Six extractions were scored wrong under the pre-registered rule: four genuine errors, plus
-two length-sold items the label format couldn't express. The four fall into two classes.
-Three share one shape: a number that describes the product rather than what the price buys.
-A transfer bench's 400 lb load capacity, a wheelchair's own 30 lb weight, and the 35-count
+Six extractions were scored wrong under the pre-registered rule: four other errors, plus two
+length-sold items the label format couldn't express. The four fall into two classes. Three
+share one shape: a number that describes the product rather than what the price buys. A
+transfer bench's 400 lb load capacity, a wheelchair's own 30 lb weight, and the 35-count
 canister a cover is sized to fit. The fourth is a container-capacity case the labelling
 guide didn't cover.
 
 ## The coverage finding
 
-Unit pricing reaches far less of the category than the original spec assumed:
+Unit pricing can reach far less of the category than the original spec assumed:
 
 | | |
 |---|---|
@@ -117,11 +117,11 @@ Unit pricing reaches far less of the category than the original spec assumed:
 | Audit items that are durable goods, where unit price isn't meaningful | 65 of 200 |
 | Audit items with an expressible size that get one | 83 of 113 (the other 30 abstain) |
 
-The module is correct 93% of the time when it returns a size, silent on more than half of
-items, and inapplicable in principle to roughly a third of priced items. (The durable-goods
-share of unpriced items is unmeasured.) That makes unit price a targeted correction on
-consumables, not a general reordering. The spec originally weighted it as a co-equal signal
-alongside the rating; it has been amended to say so.
+The pack-size extractor is correct 93% of the time when it returns a size, silent on more
+than half of items, and inapplicable in principle to roughly a third of priced items. (The
+durable-goods share of unpriced items is unmeasured.) That makes unit price a targeted
+correction on consumables, not a general reordering. The spec originally weighted it as a
+co-equal signal alongside the rating; it has been amended to say so.
 
 ## What isn't built
 

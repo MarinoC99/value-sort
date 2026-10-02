@@ -30,7 +30,7 @@ Across 331,095 priced items the displayed star rating takes only 41 distinct val
 CAR (m = 50, simple C) takes 35,520, one per distinct rating-and-count pair, or 256 when
 shown to two decimals, so it separates items the star display shows as tied.
 
-## Unit-price extraction: measured precision
+## Pack-size extraction: measured precision
 
 The extractor's precision is 93.1% (81 of 87 extractions correct), which
 clears the >=90% guardrail set in SPEC.md before any labels existed. The
