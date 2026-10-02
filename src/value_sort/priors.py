@@ -1,6 +1,7 @@
 """CAR priors (C, m) over a set of items.
 
-Primary path (Step 4): priors are computed over each candidate set at rank time.
+Primary path (designed at Step 4; no candidate matcher exists until Step 7): priors are to
+be computed over each candidate set at rank time.
 Fallback only: when a candidate set has fewer than MIN_CANDIDATE_SET items, the global
 priced-set priors stored in reports/priors_fallback_<Category>.json are used instead and
 the result is flagged. The fallback file is never the default. See DECISIONS.md #12, #21.

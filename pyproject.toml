@@ -1,7 +1,7 @@
 [project]
 name = "value-sort"
 version = "0.1.0"
-description = "Offline re-ranker for Amazon search results: credibility-adjusted rating, normalized unit price, review attributes."
+description = "Planned offline re-ranker for result sets of Amazon products (2023 metadata). Built so far: credibility-adjusted rating and an audited pack-size extractor."
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 dependencies = [

@@ -151,7 +151,7 @@ def load_items(path: Path, manifest: Path | None = None) -> tuple[list[Item], Lo
 
 
 def priced(items: list[Item]) -> list[Item]:
-    """Items eligible for ranking: valid price > 0. Unpriced items never enter a candidate set."""
+    """Items eligible for ranking: valid price > 0. Unpriced items are not to enter a candidate set."""
     return [it for it in items if it.price is not None]
 
 

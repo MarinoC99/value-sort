@@ -1,8 +1,8 @@
 # Value Sort: re-ranking marketplace search results for the shopper
 
-A re-ranker that reorders an already-retrieved result set on three axes the default sort
-ignores: how credible a rating is, what a product costs per unit, and what reviewers say it
-is good at.
+A planned re-ranker that would reorder an already-retrieved result set on three
+shopper-side axes: how credible a rating is, what a product costs per unit, and what reviewers
+say it is good at.
 
 Three findings, stated up front. The pack-size extractor measures 93.1% precision against a
 90% guardrail set before labelling, on an interval (85.8-96.8%) that straddles the
@@ -40,14 +40,15 @@ cost), which overlap with a shopper's but aren't the same. It leaves three gaps 
 3. **What decides a purchase is buried in review text.** Taste, mixability, tolerance: no
    filter, no sort.
 
-Value Sort re-orders a result set on those three axes, in stages ordered by how likely each
+Value Sort is designed to re-order a result set on those three axes, in stages ordered by how likely each
 one is to be confidently wrong: arithmetic first, text parsing second, LLM extraction last
 and only if it passes a pre-set grounding test.
 
 ## The data
 
-One category, Health & Household: **797,563 items**. Only **41.5%** have a price, so ranking
-works on the **331,095 priced items**. The metadata was checked row by row against a strict
+One category, Health & Household: **797,563 items**. Only **41.5%** have a price; the CAR figures and
+the audit below use the **331,095 priced items**, and any future ranking would use priced items
+only. The metadata was checked row by row against a strict
 schema before any modeling: 0 malformed rows, 40 items dropped for having no title, and
 every missing price counted by reason rather than silently discarded.
 
@@ -56,11 +57,11 @@ every missing price counted by reason rather than silently discarded.
 ### 1. Credibility-Adjusted Rating (CAR)
 
 A Bayesian average that pulls ratings backed by only a few reviews toward a reference mean,
-and leaves heavily reviewed items almost untouched. The reference mean and prior weight are
-computed over each result set, so a protein powder is compared with protein powders, not the
-department average. A stored fallback (mean 4.2486, weight 50, from the 331,095 priced
-items) is used only when a result set has fewer than 30 rated items, and that result is
-flagged.
+and leaves heavily reviewed items almost untouched. The code computes the reference mean and prior
+weight over whatever result set it is given, so once a matcher builds result sets, a protein
+powder would be compared with protein powders, not the department average. A stored fallback
+(mean 4.2486, weight 50, from the 331,095 priced items) is used only when a set has fewer than
+30 rated items, and that result is flagged.
 
 What the computation shows across the priced pool:
 
@@ -84,7 +85,7 @@ below).
 
 A rule-based extractor reads pack count and size from the title and a fixed set of product
 fields. It returns a size only when its sources agree, or when one clear source is
-uncontradicted. Otherwise it abstains and the item keeps its listed price. A wrong unit
+uncontradicted. Otherwise it abstains; under the spec, the planned unit-price score would then leave the item at its listed price. A wrong unit
 price is worse than none.
 
 The audit came first: 200 items drawn at random from the priced pool and committed before

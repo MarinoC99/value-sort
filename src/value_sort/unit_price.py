@@ -3,7 +3,8 @@
 Reads the title plus EXTRACTOR_DETAIL_KEYS only. Never guesses: every source produces
 *readings* (dimension + total quantity), readings are grouped by agreement, and a result is
 returned only if its confidence clears the threshold. Otherwise the result is None with a
-flag reason, and the item keeps its listed price (fails open).
+flag reason; per SPEC §3, the planned NUP score is to fail open on such items (keep the
+listed price).
 
 Confidence levels (fixed before scoring; threshold lives in config/unit_price.json):
   0.95  title agrees with at least one strong details source

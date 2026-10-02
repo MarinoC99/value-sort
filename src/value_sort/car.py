@@ -2,8 +2,8 @@
 
     CAR = (v / (v + m)) · R  +  (m / (v + m)) · C
 
-Primary path: C and m are computed over the candidate set at rank time
-(C = simple mean rating, m = median rating count). If the candidate set has fewer than
+Primary path: C and m are computed over whatever candidate set the caller passes in
+(C = simple mean rating, m = median rating count); no candidate matcher exists until Step 7. If the candidate set has fewer than
 MIN_CANDIDATE_SET rated items, the stored fallback priors are used and the result is
 flagged. See DECISIONS.md #12, #21.
 """

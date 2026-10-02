@@ -9,8 +9,9 @@
 
 The full README (problem, finding, limitations, setup) comes in Step 10.
 
-A re-ranker that reorders Amazon search results by rating credibility, per-unit price,
-and what reviewers say a product is good at. The contract is [SPEC.md](SPEC.md);
+A planned three-axis re-ranker that would reorder an already-retrieved result set of Amazon
+products by rating credibility, per-unit price and, if it passes its grounding test, what
+reviewers say a product is good at. The contract is [SPEC.md](SPEC.md);
 judgment calls are logged in [DECISIONS.md](DECISIONS.md).
 
 ## What the data shows
@@ -49,7 +50,7 @@ the capacity of a different product the item fits (35-count canisters).
 
 ## What the module actually reaches
 
-Unit-price ranking applies to a minority of the category, and the
+Unit-price ranking could apply only to a minority of the category, and the
 constraints compound. 41.5% of Health & Household items carry a price.
 Of the 200 hand-labelled audit items, 65 are durable goods - braces,
 monitors, canes, brushes, devices - where unit price is not a meaningful
