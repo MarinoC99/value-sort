@@ -1,7 +1,7 @@
 # Value Sort — product spec v0.1
 
 > **Status: partial results.** Stage 1 is built. Stage 2's pack-size extractor is built and
-> audited; the NUP score and composite ranker are not yet built (Step 7). The unit-price
+> audited; the NUP score and composite ranker are not yet built (Step 7). The pack-size
 > extractor's precision is measured at 93.1% (95% CI 85.8-96.8%, n=87) against 200
 > hand-labelled items. Stage 3 (attribute extraction) is not built and remains conditional on
 > its grounding guardrail. No experiment has been run: there is no traffic, no clickstream,
