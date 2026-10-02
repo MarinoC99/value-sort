@@ -1,0 +1,172 @@
+{
+ "_note": "SPIKE. INDICATIVE ONLY.",
+ "primary": [
+  {
+   "query": "protein powder",
+   "set_size": 1625,
+   "C": 4.294769230769231,
+   "m": 123.0,
+   "source": "candidate_set",
+   "flagged_under_30": false,
+   "overlap_car_vs_raw_top20": 0,
+   "median_ratings_raw_top20": 8.5,
+   "median_ratings_car_top20": 4544.5,
+   "raw_top20_ratings_of_5.0": 20,
+   "overlap_at_m_sweep (set C)": {
+    "25": 1,
+    "50": 0,
+    "120": 0,
+    "500": 0
+   }
+  },
+  {
+   "query": "hand sanitizer",
+   "set_size": 652,
+   "C": 4.37239263803681,
+   "m": 54.0,
+   "source": "candidate_set",
+   "flagged_under_30": false,
+   "overlap_car_vs_raw_top20": 0,
+   "median_ratings_raw_top20": 6.5,
+   "median_ratings_car_top20": 1519.0,
+   "raw_top20_ratings_of_5.0": 20,
+   "overlap_at_m_sweep (set C)": {
+    "25": 0,
+    "50": 0,
+    "120": 0,
+    "500": 0
+   }
+  }
+ ],
+ "supplementary": [
+  {
+   "query": "toilet paper",
+   "set_size": 736,
+   "C": 4.209918478260869,
+   "m": 109.0,
+   "source": "candidate_set",
+   "flagged_under_30": false,
+   "overlap_car_vs_raw_top20": 1,
+   "median_ratings_raw_top20": 2.0,
+   "median_ratings_car_top20": 2517.0,
+   "raw_top20_ratings_of_5.0": 19,
+   "overlap_at_m_sweep (set C)": {
+    "25": 1,
+    "50": 1,
+    "120": 1,
+    "500": 1
+   }
+  },
+  {
+   "query": "blood pressure monitor",
+   "set_size": 484,
+   "C": 4.197314049586777,
+   "m": 153.5,
+   "source": "candidate_set",
+   "flagged_under_30": false,
+   "overlap_car_vs_raw_top20": 8,
+   "median_ratings_raw_top20": 132.0,
+   "median_ratings_car_top20": 1197.0,
+   "raw_top20_ratings_of_5.0": 10,
+   "overlap_at_m_sweep (set C)": {
+    "25": 15,
+    "50": 12,
+    "120": 9,
+    "500": 4
+   }
+  }
+ ],
+ "car_vs_car_across_m": {
+  "protein powder": {
+   "set_m": 123.0,
+   "car_top20_overlap_set_m_vs_25": 14,
+   "car_top20_overlap_set_m_vs_50": 18,
+   "car_top20_overlap_set_m_vs_120": 20,
+   "car_top20_overlap_set_m_vs_500": 15
+  },
+  "hand sanitizer": {
+   "set_m": 54.0,
+   "car_top20_overlap_set_m_vs_25": 20,
+   "car_top20_overlap_set_m_vs_50": 20,
+   "car_top20_overlap_set_m_vs_120": 20,
+   "car_top20_overlap_set_m_vs_500": 18
+  },
+  "toilet paper": {
+   "set_m": 109.0,
+   "car_top20_overlap_set_m_vs_25": 19,
+   "car_top20_overlap_set_m_vs_50": 19,
+   "car_top20_overlap_set_m_vs_120": 19,
+   "car_top20_overlap_set_m_vs_500": 13
+  },
+  "blood pressure monitor": {
+   "set_m": 153.5,
+   "car_top20_overlap_set_m_vs_25": 13,
+   "car_top20_overlap_set_m_vs_50": 16,
+   "car_top20_overlap_set_m_vs_120": 19,
+   "car_top20_overlap_set_m_vs_500": 14
+  }
+ },
+ "car_vs_popularity": {
+  "protein powder": {
+   "car_top20_overlap_with_most_reviewed_top20": 3,
+   "car_top20_min_rating": 4.7,
+   "most_reviewed_top20_min_rating": 4.1,
+   "most_reviewed_top20_ratings": [
+    4.1,
+    4.3,
+    4.4,
+    4.5,
+    4.6,
+    4.7
+   ],
+   "spearman_car_vs_rating_count_whole_set": 0.387,
+   "spearman_car_vs_avg_rating_whole_set": 0.883
+  },
+  "hand sanitizer": {
+   "car_top20_overlap_with_most_reviewed_top20": 8,
+   "car_top20_min_rating": 4.8,
+   "most_reviewed_top20_min_rating": 4.3,
+   "most_reviewed_top20_ratings": [
+    4.3,
+    4.5,
+    4.6,
+    4.7,
+    4.8,
+    4.9
+   ],
+   "spearman_car_vs_rating_count_whole_set": 0.471,
+   "spearman_car_vs_avg_rating_whole_set": 0.876
+  },
+  "toilet paper": {
+   "car_top20_overlap_with_most_reviewed_top20": 5,
+   "car_top20_min_rating": 4.7,
+   "most_reviewed_top20_min_rating": 3.5,
+   "most_reviewed_top20_ratings": [
+    3.5,
+    4.2,
+    4.3,
+    4.4,
+    4.5,
+    4.6,
+    4.7,
+    4.8
+   ],
+   "spearman_car_vs_rating_count_whole_set": 0.531,
+   "spearman_car_vs_avg_rating_whole_set": 0.866
+  },
+  "blood pressure monitor": {
+   "car_top20_overlap_with_most_reviewed_top20": 4,
+   "car_top20_min_rating": 4.6,
+   "most_reviewed_top20_min_rating": 4.2,
+   "most_reviewed_top20_ratings": [
+    4.2,
+    4.3,
+    4.4,
+    4.5,
+    4.6
+   ],
+   "spearman_car_vs_rating_count_whole_set": 0.536,
+   "spearman_car_vs_avg_rating_whole_set": 0.896
+  }
+ }
+}
