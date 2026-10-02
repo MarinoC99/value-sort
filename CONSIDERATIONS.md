@@ -230,3 +230,144 @@ A further instance: the first draft of this very section contained two overclaim
 A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it. That brings the tally to roughly eight human instances to four, or two to one.
 
 None of these was deliberate and each would have survived casual review. The lesson is that a verification step is not primarily a guard against model confabulation. It is a guard against whoever is writing the summary, and the direction of error is consistently toward claiming more.
+
+---
+
+## 11. Spike findings (indicative, branch spike/step7)
+
+**Read this first.** Everything in this section was raised by a throwaway spike on branch
+`spike/step7` (not merged; findings in `spike/FINDINGS.md`, final commit `fce9549`). The
+spike's matcher is known to be defective on one of its five queries and known to admit
+accessories into every candidate set. Its figures are **indicative only and not
+reproducible as project results**. This is the same failure mode as DECISIONS #22 and #28:
+numbers produced by a matcher the final system won't use. This section records the
+questions, consequences and mechanisms the spike raised, not results. **Nothing here may be
+cited in README.md, SPEC.md or the portfolio page until re-measured in Step 7 proper.**
+Where a figure is given, it is there to make a point and is labelled indicative.
+
+**What not to conclude.** The full list is in `spike/FINDINGS.md` ("What should NOT be
+concluded"). In particular:
+- the star sort used for comparison is a baseline the spike constructed (rating, then
+  rating count), not Amazon's ordering;
+- four hand-picked queries don't represent the category;
+- the tail-error rate is not extractor precision (that is the Step 5 audit).
+
+### 11.1 Matcher quality
+
+**Found:** title-keyword AND produces candidate sets with meaningful contamination:
+toilet-paper tongs, empty sanitizer bottles, replacement blood-pressure cuffs, a book.
+Indicative: 4 to 15 of 40 sampled titles per query were not the queried product.
+
+**For Step 7:** an open decision between a stopword/exclusion list, an adjacency (phrase)
+requirement, or a product-type classifier. DECISIONS #6 dropped `categories`, so title text
+is the only key available without a re-stream.
+
+### 11.2 Single-letter matching defect
+
+**Found:** "vitamin d" matches D-Mannose, multivitamins listing "C, D, E", and a book, while
+excluding most "D3" products. This is a defect in the rule, not a finding about the data.
+
+**For Step 7:** must be fixed before any matcher ships.
+
+### 11.3 Accessories do not fail open
+
+**Found:** on sampled titles, flagged accessories got a pack size at about the same rate as
+real products (indicative: 33% vs 37%, the agent's own sample-level judgments). So
+contamination and coverage don't cancel. A grab bar was read as 250 lb from its load
+rating, the same error shape as the Step 5 transfer bench. Sanitizer holders "for 1 oz
+bottle" were read as 1 oz of product, the Step 5 "product the item fits" shape.
+
+**For Step 7:** accessory contamination structurally feeds the extractor its known failure
+modes. A matcher filter is a precondition, not a refinement.
+
+### 11.4 Dimension coherence
+
+**Found:** unit price is only meaningful within a consistent dimension.
+- Toilet paper's "ct" mixes rolls, sheets and mega rolls, so its coverage (indicative: 37%)
+  can't support a unit price.
+- Hand sanitizer splits across oz and fl oz. The Step 5 extractor treats plain "oz" as
+  weight, consistent with its labelling guide, and sanitizer is usually listed in plain "oz".
+
+**For Step 7, open:** should NUP be gated on dimension coherence per set, not only on
+extraction success?
+
+### 11.5 Dominant-dimension rule
+
+**Found:** the spike used option 1, a unit price only within the set's dominant dimension,
+everything else fails open. It worked for protein powder and poorly for hand sanitizer,
+where only 18% of the set got a unit price (indicative). It dropped 88 items extracted in
+"oz", about 76 of them real sanitizer, and filtered accessories only as a side effect.
+
+**For Step 7:** an open design choice, not settled.
+
+### 11.6 A missing unit-price axis is the normal case
+
+**Found:** of four sets tested, one had a clean unit-price axis.
+
+**For Step 7:** this sharpens Amendment 2. NUP works on consumables sold in a consistent
+dimension, which is narrower than "consumables". It also forces the decision deliberately
+left open: how fail-open items enter a weighted sum, and how a query with no unit-price
+axis rebalances its weights.
+
+### 11.7 The two axes are near-independent
+
+**Found:** in both sets tested, z(CAR) and −z(ln unit price) were near-uncorrelated
+(indicative: Spearman 0.10 and 0.13). That is the precondition for a two-axis view to carry
+information beyond a single sort, and it held. Near-equal quadrant counts mostly restate a
+near-zero correlation; the meaningful figure is the count of clearly off-diagonal items
+(indicative: 121 in protein powder, |z| > 0.5 on both axes).
+
+**For Step 7:** the matrix isn't decoration where both axes exist.
+
+### 11.8 Unit-price tails are extraction errors
+
+**Found:** in protein powder, roughly 1.6% of extractions (indicative: about 17) are errors
+in two shapes:
+- `Unit Count` in ounces where the seller meant grams ("454.0 Ounce" on a 45-serving
+  collagen);
+- per-serving protein grams read as package size ("19g Per Serving", "Whey Protein 3g x 90").
+
+They reach z = −7.6. The nutrition filter (#36) catches "25g protein" but not these. Not
+every tiny weight is an error: genuine sample packs also sit in the light tail.
+
+**For Step 7:** a weighted composite over z(ln NUP) is fragile at exactly the tails where
+the extractor is wrong.
+
+### 11.9 Item Weight as a veto
+
+**Found:** `Item Weight` contradicted most of those tail errors (indicative: 12 of about
+17). It carried the same wrong value in 2 and was absent in 3. It would also have rejected
+one correct extraction, a multi-pack where `Item Weight` is per unit.
+
+**For Step 7, open:** #35 excluded `Item Weight` as a *source*; using it only to reject
+implausible extractions is a different mechanism. #45 refused to use it to rescue a single
+audit item; this is a different purpose over many items. It is a partial veto with known
+misses and at least one false rejection. Not a change to make now.
+
+### 11.10 #28 is partly answered; the mechanism matters more than the numbers
+
+**Found:** per-set priors on a real matcher were m = 123 (protein powder) and m = 54 (hand
+sanitizer), indicative. These straddle the Step 4 transition, yet CAR displaced the
+star-sort top 20 in both sets at every m from 25 to 500: entirely from m = 50 up, all but
+one item at m = 25. CAR's own top 20 kept 14–20 of 20 items across that sweep in those two
+sets.
+
+The explanation is the mechanism, not the figures. The Step 4 transition was a property of
+the 331,095-item pool, which has enough 5.0-star items with hundreds of ratings to survive a
+small m. Candidate sets of a few hundred to a few thousand don't: their star-sort top 20 is
+5.0s with single-digit counts, which lose at almost any m.
+
+**For Step 7:** m appears far less consequential at candidate-set scale than the pool-wide
+sweep implied. Caveat: blood pressure monitors (a supplementary set) behaved differently,
+with more of the star-sort top 20 surviving and m mattering more. So the deciding factor
+appears to be how thin the star-sort top 20 is, not where m falls. This bears on #27: the
+m = 50 convention matters less than feared, but is not yet defended.
+
+### 11.11 CAR is not a popularity sort
+
+**Found:** CAR's top 20 overlapped the 20 most-reviewed items by only 3/20 and 8/20
+(indicative). Within each set, CAR tracked the star rating (Spearman about 0.88) far more
+than the review count (0.39–0.54 across the four sets).
+
+**For Step 7:** recorded because it is the first objection a reader will raise, and it is
+now measured rather than argued, pending re-measurement.
