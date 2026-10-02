@@ -217,17 +217,32 @@ Amendment 2.
 
 ## 10. What the verification discipline actually caught
 
-The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans more often, by roughly five instances to two (later two to one; see below).
+The working agreement was written to stop the coding agent fabricating results. In practice it caught overclaiming from the humans as well as from the model.
 
 The agent's first instance was its own Step 4 test, which assumed SPEC.md's 4.9-vs-4.5 example would flip order at m = 50. It doesn't. The agent checked the spec, found no such claim, and rewrote the test to verify what the formula actually does rather than adjusting numbers until it passed.
 
-The agent's second instance was the p50/p80/p95 framing of the m sweep in its Step 2 summary. m = 500 sits near p90 of rating count, not p95. The framing was carried into row 10 of this file and repeated unchecked by the human reviewers for several turns, and by the agent itself in one earlier edit of that row, before the agent caught it while editing row 10 again. An error that survived three readers is better evidence for this section's point than a clean five-to-one would have been.
+The agent's second instance was the p50/p80/p95 framing of the m sweep in its Step 2 summary. m = 500 sits near p90 of rating count, not p95. The framing was carried into row 10 of this file and repeated unchecked by the human reviewers for several turns, and by the agent itself in one earlier edit of that row, before the agent caught it while editing row 10 again. An error that survived three readers is better evidence for this section's point than a clean record would have been.
 
 The human instances were all in document-writing. Across two prompts, the agent flagged that the draft text asserted more than the repo supported: four errors described as four error classes when they were two; format-limited items described as lacking a determinable size when they had one the format could not express; and a durable-goods share measured on priced items generalised to the whole category. It also flagged that the status banner claimed a module was built when only its extractor was, and offered either to correct the sentence or to build NUP next; the human chose to treat the sentence as the error rather than the code.
 
 A further instance: the first draft of this very section contained two overclaims of its own, both flagged and corrected before it was written.
 
-A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it. That brings the tally to roughly eight human instances to four, or two to one.
+A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it.
+
+A further four were the agent's, in the Step 7 spike (branch `spike/step7`, corrected in
+commit `fce9549`). It had claimed that every implausibly light extraction was an error;
+that `Item Weight` contradicted every tail error; that all of the items dropped from hand
+sanitizer for being listed in "oz" were real sanitizer; and that CAR replaced the entire
+star-sort top 20 at every m tested. Each claimed more than had been checked; the corrected
+statements are in §11 and `spike/FINDINGS.md`. All four had already been made in the
+agent's Task 3 and Task 4 reports, written into `spike/FINDINGS.md`, and carried into the
+human's request for §11. The agent caught all four on its own re-check, unprompted, while
+preparing that section, and before any of them entered the record.
+
+Earlier versions of this section stated a ratio of human to agent instances: five to one,
+then five to two, then two to one. It drifted three times as instances accumulated, which is
+itself evidence that the count was never the reliable part, and the latest figure was no
+longer supported. It has been removed. The mechanism and the conclusion stand.
 
 None of these was deliberate and each would have survived casual review. The lesson is that a verification step is not primarily a guard against model confabulation. It is a guard against whoever is writing the summary, and the direction of error is consistently toward claiming more.
 
@@ -275,7 +290,12 @@ excluding most "D3" products. This is a defect in the rule, not a finding about 
 real products (indicative: 33% vs 37%, the agent's own sample-level judgments). So
 contamination and coverage don't cancel. A grab bar was read as 250 lb from its load
 rating, the same error shape as the Step 5 transfer bench. Sanitizer holders "for 1 oz
-bottle" were read as 1 oz of product, the Step 5 "product the item fits" shape.
+bottle" were read as 1 oz of product, the Step 5 "product the item fits" shape. Across the
+project this is now the fifth instance of one error shape, a number describing the product
+rather than what the price buys: three in the Step 5 audit (a transfer bench's load
+capacity, a wheelchair's own weight, a cover sized to fit "35 Count" canisters) and two in
+the spike (a grab bar's load rating, holders sized to fit a 1 oz bottle). It is a recurring
+structural failure, not a series of incidents.
 
 **For Step 7:** accessory contamination structurally feeds the extractor its known failure
 modes. A matcher filter is a precondition, not a refinement.
@@ -296,7 +316,9 @@ extraction success?
 **Found:** the spike used option 1, a unit price only within the set's dominant dimension,
 everything else fails open. It worked for protein powder and poorly for hand sanitizer,
 where only 18% of the set got a unit price (indicative). It dropped 88 items extracted in
-"oz", about 76 of them real sanitizer, and filtered accessories only as a side effect.
+"oz", about 76 of them real sanitizer, and filtered accessories only as a side effect. The
+other dropped items include holders whose "1 oz" is the bottle they fit: the fifth instance
+of the recurring error shape described in 11.3.
 
 **For Step 7:** an open design choice, not settled.
 
