@@ -13,13 +13,18 @@
 
 ## Amendments
 
-Both amendments are already implemented. Each original claim is kept in place below and
-marked as superseded.
+Amendment 1 is implemented in `car.py` (candidate-set priors with a flagged fallback) but not
+yet exercised on candidate sets from a project matcher: none exists on main, and only the
+unmerged, throwaway spike (CONSIDERATIONS §11) has run it, indicatively. Amendment 2 changes the spec's
+framing; there is no unit-price score or composite code yet to implement it. Amendment 3
+corrects claims about what exists. Each original claim is kept in place below and marked as
+superseded.
 
 | # | Summary | Section |
 |---|---|---|
 | 1 | Priors C and m are computed over the candidate set at rank time, not over the category. | [§3 CAR, Amendment 1](#amendment-1) |
 | 2 | NUP is a targeted correction on consumables, not a signal with reach comparable to CAR. | [§3 Composite, Amendment 2](#amendment-2) |
+| 3 | Two of the three offline outputs, a "working re-ranker" after stage 1, and a demonstration of better orderings don't exist yet and are now marked as targets. Extraction precision does exist. | [§6 Limitations, Amendment 3](#amendment-3) |
 
 A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
@@ -71,7 +76,8 @@ modeled as a toggleable input, never a fetched fact.
 Stage 3 ships only if it clears the attribute-grounding guardrail. If not, it is cut, the cut
 is reported, and stages 1–2 stand as the finished system. **There is no half-built state:**
 after stage 1 there is a working re-ranker; after stage 2, one with a measured accuracy
-number behind it.
+number behind it. *(Superseded in part, see [Amendment 3](#amendment-3): stage 1 exists as a
+CAR scoring and ordering function, with no project candidate sets to apply it to yet.)*
 
 ### Data reality
 
@@ -240,7 +246,8 @@ The experiment above cannot be run. No live traffic; the data is a 2023 snapshot
 sales, no shipping, no clickstream. Presenting simulated results as evidence of lift would be
 dishonest, so the build does not do it.
 
-What it produces instead, offline and clearly bounded:
+What it produces instead, offline and clearly bounded *(present tense superseded: so far only
+extraction precision exists; see [Amendment 3](#amendment-3))*:
 
 - **Rank displacement.** Kendall's tau between default and re-ranked orders; share of top-10
   positions changed. Describes how much the system does, not whether it helps.
@@ -256,8 +263,27 @@ determinable size the format could not hold - a 10 yd tape roll, a 1000 ft foil 
 category rather than as extractor failures; the soap was converted to 128 fl oz and scored
 normally. Whether unit price should support length at all is an open question.
 
-**Honest summary:** this demonstrates that the re-ranking produces materially different and
-plausibly better orderings, and specifies exactly what evidence would be needed to claim more.
+~~**Honest summary:** this demonstrates that the re-ranking produces materially different and
+plausibly better orderings, and specifies exactly what evidence would be needed to claim more.~~
+*(superseded, see Amendment 3)*
+
+<a id="amendment-3"></a>
+> **Amendment 3: two of the three offline outputs, and the demonstration, are targets, not
+> results.** Supersedes the present tense of the "What it produces instead" list, the honest
+> summary above, and, in part, §2's "after stage 1 there is a working re-ranker". All were
+> written at scaffold time and left standing by the post-build reconciliation (`20bd3a4`).
+>
+> Of the three offline outputs, only extraction precision exists. Rank displacement and the
+> face-validity audit need candidate sets and the composite ranker; the candidate matcher, the
+> unit-price score and the composite are not built (Step 7). `car.py` can order a list by
+> CAR, but no project candidate sets exist yet to order (only the throwaway spike's). Rank displacement also needs a baseline
+> order, and the data has no Amazon default order, so the baseline will have to be a
+> constructed one, named as such. So nothing yet measures how much a re-ranked candidate set
+> differs from a baseline, or whether the changes are defensible. The pool-wide CAR sweep
+> (`reports/car_sensitivity_*`) compares top-20 lists over all priced items, which is not that
+> measure. The target is unchanged: once the ranker and a baseline exist, the build should
+> show whether the re-ranking produces materially different and plausibly better orderings,
+> and specify exactly what evidence would be needed to claim more.
 
 ---
 

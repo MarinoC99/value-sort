@@ -65,6 +65,10 @@ there is a working re-ranker. After stage 2, one with a measured accuracy number
 Stage 3 is additive, and if it fails its grounding guardrail it gets cut and the cut gets
 reported. Cutting it is a finding, not a failure.
 
+*Correction (2 October 2026):* stage 1 as built is a CAR scoring and ordering function with no
+project candidate sets to run on yet (the spike in §11 ran it on throwaway sets), so "after stage 1 there is a working re-ranker" describes the
+design, not the current state (SPEC Amendment 3).
+
 The composite was designed so removing stage 3 zeroes `w₃` and renormalizes the other two —
 a configuration change, not a rewrite.
 
@@ -112,7 +116,9 @@ These are the rules that decide what the project is allowed to claim.
   to fix.
 - **What the project can actually establish:** that the re-ranking produces materially
   different and plausibly better orderings, plus one genuinely measured number (extraction
-  precision). Everything beyond that is specified as what *would* be needed.
+  precision). Everything beyond that is specified as what *would* be needed. *(Correction,
+  2 October 2026: so far only the extraction precision exists; the orderings need the unbuilt
+  ranker and a constructed baseline order. See SPEC Amendment 3.)*
 
 ---
 
