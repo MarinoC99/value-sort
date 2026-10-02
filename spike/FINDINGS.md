@@ -74,14 +74,20 @@ so the matrix isn't decoration.
 
 ## Finding 7: unit-price tails are extraction errors
 
-In protein powder, 21 of 1,032 items (2%) have an implausible package weight (under 60 g),
-with z(value) down to **−7.6**. The cheapest tail is `Unit Count` written in grams but
+In protein powder, 21 of 1,032 items have an extracted package weight under 60 g, with
+z(value) down to **−7.6**. *[Corrected after per-item check: not all 21 are errors. By the
+agent's reading about 14 are per-serving grams read as package size; 6 are genuine small
+items (3 sample packs, 3 small spirulina jars, the latter contamination rather than
+extraction errors); 1 is unclear. Three more errors sit in the heavy tail (grams written as
+ounces). About 17 errors in all, roughly 1.6%.]* The cheapest tail is `Unit Count` written in grams but
 labelled ounces ("454.0 Ounce" on a 45-serving collagen). The priciest tail is per-serving
 protein grams read as package size ("19g Per Serving", "17g Whey", "3g x 90"). The
 quadrant result survives removing them (ρ = 0.096, 47.9% off-diagonal), but **a weighted
 sum would be dominated by them**.
 
-`Item Weight` contradicted every one of these cases (e.g. 2.4 lb against "20 g").
+*[Corrected: the original said `Item Weight` contradicted every case. Of the ~17 errors it
+contradicted 12, carried the same wrong value in 2, and was absent in 3. In the heavy tail it
+would also have vetoed one correct extraction: a multi-pack where `Item Weight` is per unit.]*
 DECISIONS #35 excluded it as a *source*. Using it as a *veto* on implausible extractions
 is a different mechanism. It is now an open decision for Step 7, not a change to make here.
 
@@ -90,8 +96,10 @@ is a different mechanism. It is now an open decision for Step 7, not a change to
 Option 1 (unit price only in the set's dominant dimension; everything else fails open):
 - **Protein powder:** weight is 96% of extractions, so 1,032 of 1,625 items (64%) get a
   comparable $/oz.
-- **Hand sanitizer:** only 117 of 652 (**18%**) get a unit price. 88 real products are
-  dropped for being listed in "oz" (Finding 5). Accessories were filtered only as a side
+- **Hand sanitizer:** only 117 of 652 (**18%**) get a unit price. 88 items are dropped for
+  being extracted in "oz". *[Corrected: the original said 88 real products. By the agent's
+  reading about 76 are sanitizer; about 12 are holders, a pump holster and a skin ointment.
+  The holders' "1 oz" is the capacity of the bottle they fit, the Step 5 error shape again.]* Accessories were filtered only as a side
   effect: all 10 sampled accessories had count extractions, the non-dominant dimension.
 
 ## Finding 9: CAR per query (the #28 question, on a real matcher for the first time)
@@ -110,9 +118,10 @@ are heavily contaminated (Finding 2).
 
 **CAR does not behave differently across protein powder and hand sanitizer**, even though
 m = 123 and m = 54 straddle the transition the Step 4 sweep found. In both, the star-sort
-top 20 is all 5.0-star items with single-digit rating counts, and CAR replaces every one at
-every m tested (overlap 1, 0, 0, 0 at m = 25/50/120/500 for protein powder; 0 throughout
-for hand sanitizer). The Step 4 transition was a property of the 331,095-item pool, which
+top 20 is all 5.0-star items with single-digit rating counts, and CAR replaces all of them
+at every m from 50 up, and all but one at m = 25 (overlap 1, 0, 0, 0 at m = 25/50/120/500
+for protein powder; 0 throughout for hand sanitizer). *[Corrected: the original said
+"every one at every m tested".]* The Step 4 transition was a property of the 331,095-item pool, which
 has enough 5.0-star items with hundreds of ratings to survive a small m. Sets of this size
 don't. The #28 worry, CAR near-inert on some sets, didn't appear in these two.
 
@@ -154,7 +163,7 @@ No composite score was built.
 | Do accessories fail open on their own? | No: 33% vs 37% get a pack size, and they feed the extractor its known error shape (Finding 3). |
 | Does a unit-price axis exist? | Cleanly for 1 of 4 sets (protein powder, 64%). Weak for hand sanitizer (18%), incoherent for toilet paper, absent for blood pressure monitors (1.7%) (Findings 4, 5, 8). |
 | Are the two axes redundant? | No: ρ ≈ 0.10–0.13, with 121 clearly off-diagonal items in protein powder (Finding 6). |
-| Is standardized unit price safe to put in a weighted sum? | Not as built: 2% extraction errors reach z = −7.6 (Finding 7). |
+| Is standardized unit price safe to put in a weighted sum? | Not as built: roughly 1.6% extraction errors reach z = −7.6 (Finding 7). |
 | Does CAR do anything per query? | Yes, decisively in both requested sets, and not as a popularity proxy. The feared inertness didn't appear (Finding 9). |
 
 ### What it implies for Step 7
@@ -168,8 +177,9 @@ before Step 7 proper, and each is a decision, not a tweak:
    extractor's known failure mode. This is the closest thing to a blocker the spike found.
    Ranking contaminated sets means ranking tongs against toilet paper.
 2. **Unit-price tails need a guard before any weighting.** Options include a plausibility
-   veto (`Item Weight` as veto is now an open decision), robust scaling, or both. Without
-   one, 2% of items can dominate a weighted sum.
+   veto (`Item Weight` as veto is now an open decision; it would miss some errors and reject
+   at least one correct multi-pack), robust scaling, or both. Without one, a small share of
+   errors can dominate a weighted sum.
 3. **"No usable unit-price axis" is the common case, not the edge case.** In 3 of 4 tested
    sets the axis is weak, incoherent or absent. Step 7 must decide how fail-open items
    enter a weighted sum (still undecided, deliberately) and how a query with no unit-price
@@ -194,7 +204,7 @@ candidate sets.
   constructed baseline (rating, then count), not Amazon's ordering.
 - **The accessory rates come from 160 sampled titles** judged by the agent, checked by three
   LLM judges. They are not a classifier and are not extrapolated to full sets.
-- **The 2% tail-error rate is not extractor precision.** Precision is the Step 5 audit
+- **The tail-error rate (~1.6%) is not extractor precision.** Precision is the Step 5 audit
   (93.1% on a random priced sample). This is a different population (one query's set) and a
   different question (implausible weights, not hand-checked labels).
 - **"CAR is not inert" holds for these sets only.** The supplementary blood-pressure set
@@ -202,3 +212,14 @@ candidate sets.
 - **Small n for hand sanitizer.** ρ = 0.13 rests on 117 items.
 - **The Task 3 plot was not visually inspected by the agent.** The browser couldn't open
   local files; placement was checked programmatically only.
+
+## Corrections log
+
+Four statements in this file were overclaims by the agent, found while preparing the
+CONSIDERATIONS.md §11 entry and corrected in place (marked *[Corrected …]*):
+1. "21 implausible weights" were treated as 21 errors; about 14 are.
+2. "`Item Weight` contradicted every case" was false (12 of ~17).
+3. "88 real products dropped" included about 12 holders and other items.
+4. "CAR replaces every one at every m" was contradicted by the file's own m = 25 figure.
+
+Each claimed more than had been checked.
