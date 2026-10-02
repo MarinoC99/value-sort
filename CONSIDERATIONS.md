@@ -278,6 +278,36 @@ was never the reliable part. It has been removed. The mechanism and the conclusi
 
 None of these was deliberate and each would have survived casual review. The lesson is that a verification step is not primarily a guard against model confabulation. It is a guard against whoever is writing the summary, and the direction of error is consistently toward claiming more.
 
+### Pending additions to §10 (approved, not yet integrated)
+
+*These notes were approved by the project owner on 2 October 2026 for integration into §10
+the next time it is edited. Until then they are recorded here so the repository is the single
+source; they are not yet part of §10's account.*
+
+- **Claims-against-repo, not text-against-text.** Two wrong claims on the portfolio page
+  survived a first draft, an edit pass and the markdown-to-HTML conversion check; a third
+  ("unit-price module") was introduced in the edit pass and survived only the conversion
+  check. The check that caught them compared claims against the repository, not text against
+  text.
+- **Drift, not error.** "CAR has only been run across the whole priced pool" was true when
+  written and false once the spike ran.
+- **Two families, never merged.** (a) The extractor error shape: a number describing the
+  product rather than what the price buys (five instances, §11.3). (b) Naming slips: a word
+  implying something is built when it isn't. Instances so far include "Stages 1 and 2 are
+  built" and "unit-price extractor" in the banner, "unit-price module" on the page, "a
+  re-ranker that reorders" in the page opening, README, package description and docstring,
+  and SPEC's "this demonstrates". Recount from the record before writing any number.
+- **Tooling.** A search missed one instance because the phrase wrapped across a line break.
+- **Claims widen under unchecked passes.** The pre-publication review was the fourth round of
+  self-review to find more overclaims, and one had propagated into §11.10. The stable finding
+  isn't a tally (the tally has been wrong every time); it's that claims widen under any pass
+  that isn't checking them against the source.
+- **An unmarked corrections pass.** `fce9549`, the commit whose purpose was marking
+  corrections in place, also changed "listed in" to "extracted in" and dropped the "2.4 lb
+  against 20 g" example without a marker. That is a different category from claims widening:
+  a corrections pass that edits unmarked makes a corrections log untrustworthy, not merely
+  incomplete.
+
 ---
 
 ## 11. Spike findings (indicative, branch spike/step7)

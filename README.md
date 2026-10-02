@@ -84,13 +84,14 @@ author has said publicly that the lab is not in a position to assign one
 The authors collected it from public Amazon pages: the card describes prices as of the time of
 crawling, and Appendix B of the April 2026 revision of the paper (arXiv:2403.03952v2)
 describes how the reviews were collected. This repository does not redistribute the dataset.
-It does include small excerpts, mainly product IDs, titles, prices, ratings and some
+It does include small excerpts, kept for research and education: mainly product IDs, titles, prices, ratings and some
 product-detail fields: for 240 products on `main` (in `audit/` and `reports/`), a few titles
-used as test fixtures in `tests/`, about 2,400 more products in `spike/` on the `spike/step7`
+used as test fixtures in `tests/`, 2,396 more products in `spike/` on the `spike/step7`
 branch, and a few quoted title fragments in the project's notes. The audit and several
 reported figures can't be checked without the dataset; these excerpts let a reader check them
 without downloading it. They will be removed on request. The MIT license in
-[LICENSE](LICENSE) covers this project's code only, not these excerpts.
+[LICENSE](LICENSE) covers this project's code only, not these excerpts. This is an independent
+student project, not affiliated with or endorsed by Amazon.
 
 If you use the dataset, cite it with the citation from its dataset card:
 
