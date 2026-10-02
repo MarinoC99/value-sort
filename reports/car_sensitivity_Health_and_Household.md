@@ -33,7 +33,7 @@ Median rating_number in the raw-sort top 20: 222.
 | count-weighted C, m=120 | 0 / 20 |
 | count-weighted C, m=500 | 0 / 20 |
 
-## Distinct values: CAR vs displayed star rating
+## Distinct values: CAR vs the star rating in the data (recorded to one decimal)
 
 Distinct star ratings: 41. Distinct (rating, rating count) pairs: 35,520. CAR depends only on those two fields, so that is its upper bound. Values are compared at 1e-9 so float noise cannot add distinct values; the 2 dp column is what a two-decimal display would show.
 

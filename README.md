@@ -27,9 +27,10 @@ get shrunk toward — the choice of C is not neutral.
 
 ## Rating resolution
 
-Across 331,095 priced items the displayed star rating takes only 41 distinct values, while
-CAR (m = 50, simple C) takes 35,520, one per distinct rating-and-count pair, or 256 when
-shown to two decimals, so it separates items the star display shows as tied.
+Across 331,095 priced items the star rating in the data, which is recorded to one decimal,
+takes only 41 distinct values, while CAR (m = 50, simple C) takes 35,520, one per distinct
+rating-and-count pair, or 256 when shown to two decimals, so it separates items the rating
+field shows as tied.
 
 ## Pack-size extraction: measured precision
 

@@ -65,9 +65,9 @@ powder would be compared with protein powders, not the department average. A sto
 
 What the computation shows across the priced pool:
 
-- **CAR separates items the star display shows as tied.** Stars take only 41 distinct
+- **CAR separates items the rating field shows as tied.** Stars take only 41 distinct
   values; CAR takes 35,520 (one per distinct rating-and-count pair), or 256 when shown to
-  two decimals. Star ratings in the data are rounded to one decimal, so the recorded quality
+  two decimals. Star ratings in the data are recorded to one decimal, so the recorded quality
   signal has 41 possible values across 331,095 items. CAR therefore discriminates between
   items the rating field presents as identical.
 - **The prior weight decides the ranking.** Against a plain star-rating sort, CAR's top 20

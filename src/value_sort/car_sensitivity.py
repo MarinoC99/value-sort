@@ -110,7 +110,7 @@ def to_markdown(r: dict) -> str:
         "|---|---|",
         *[f"| {a} | {raw['overlap_with_each_combo'][a]} / {k} |" for a in names],
         "",
-        "## Distinct values: CAR vs displayed star rating",
+        "## Distinct values: CAR vs the star rating in the data (recorded to one decimal)",
         "",
         f"Distinct star ratings: {r['distinct_star_ratings']}. Distinct (rating, rating count) pairs: "
         f"{r['distinct_rating_and_count_pairs']:,}. CAR depends only on those two fields, so that is its "
