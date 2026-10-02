@@ -11,7 +11,7 @@ covers roughly 19% of the category - far narrower than the spec assumed when it 
 unit price as a co-equal signal alongside the rating. And the working agreement written to
 stop the coding agent fabricating results caught overclaiming in the human-written summaries
 as well as in the model's output, consistently in the direction of claiming more. An earlier
-draft of this page gave a ratio for that; the underlying count drifted three times and was
+draft of this page gave a ratio for that; the underlying count changed twice and was
 dropped.
 
 **Status: partial results.** Stage 1 is built. Stage 2's pack-size extractor is built and

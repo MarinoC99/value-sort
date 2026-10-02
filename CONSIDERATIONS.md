@@ -248,7 +248,7 @@ The human instances were all in document-writing. Across two prompts, the agent 
 
 A further instance: the first draft of this very section contained two overclaims of its own, both flagged and corrected before it was written.
 
-A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it.
+A further instance: in editing the portfolio page, a sentence claimed star ratings were "displayed" to one decimal and that "the interface itself" presents items as identical. The repository shows only that the rating field is rounded; it says nothing about Amazon's display. The sentence was written into the uncommitted draft and flagged before commit. The same "display" wording had in fact already been committed elsewhere, in the README and the CAR report at Step 4 (`e101cac`) and in the page's lead (`17b9a93`), and stayed on main until the fix-forward commits of 2 October 2026. In the same period the agent overclaimed twice in its own first draft of the page ("any" search, "often" more expensive), catching both before delivering it.
 
 A further four were the agent's, in the Step 7 spike (branch `spike/step7`, corrected in
 commit `fce9549`). It had claimed that every implausibly light extraction was an error;
@@ -258,12 +258,23 @@ star-sort top 20 at every m tested. Each claimed more than had been checked; the
 statements are in §11 and `spike/FINDINGS.md`. All four had already been made in the
 agent's Task 3 and Task 4 reports, written into `spike/FINDINGS.md`, and carried into the
 human's request for §11. The agent caught all four on its own re-check, unprompted, while
-preparing that section, and before any of them entered the record.
+preparing that section, before any of them reached main, the README, SPEC or the portfolio
+page. They remain visible in the spike branch's history: made in `3bac79a`, corrected in
+`fce9549`.
+
+A later pre-publication review pass, also run by the agent, found three more of the agent's
+in the same file that the re-check had missed: that all 10 sampled sanitizer accessories had
+count extractions (4 had any extraction); that the star-sort top 20 had single-digit rating
+counts (true of the median in each set, not of every item); and a range of 14–20 for CAR's own
+top 20 at m = 25 or 50 across the four sets, which is 13–20. They are corrected on the spike
+branch in `2087066`. The second had been carried into §11.10, where it is corrected in the
+same pass; §11.10's own 14–20 covers only the two primary sets and was correct. The list of
+four above is therefore not complete.
 
 Earlier versions of this section stated a ratio of human to agent instances: five to one,
-then five to two, then two to one. It drifted three times as instances accumulated, which is
-itself evidence that the count was never the reliable part, and the latest figure was no
-longer supported. It has been removed. The mechanism and the conclusion stand.
+then five to two, then two to one. It changed twice as instances accumulated, and by the time
+it was removed the latest value no longer held either. That is itself evidence that the count
+was never the reliable part. It has been removed. The mechanism and the conclusion stand.
 
 None of these was deliberate and each would have survived casual review. The lesson is that a verification step is not primarily a guard against model confabulation. It is a guard against whoever is writing the summary, and the direction of error is consistently toward claiming more.
 
@@ -272,14 +283,17 @@ None of these was deliberate and each would have survived casual review. The les
 ## 11. Spike findings (indicative, branch spike/step7)
 
 **Read this first.** Everything in this section was raised by a throwaway spike on branch
-`spike/step7` (not merged; findings in `spike/FINDINGS.md`, final commit `fce9549`). The
+`spike/step7` (not merged; findings and corrections log in `spike/FINDINGS.md`). The
 spike's matcher is known to be defective on one of its five queries and known to admit
-accessories into every candidate set. Its figures are **indicative only and not
+accessories and other products into its candidate sets. Its figures are **indicative only and not
 reproducible as project results**. This is the same failure mode as DECISIONS #22 and #28:
 numbers produced by a matcher the final system won't use. This section records the
 questions, consequences and mechanisms the spike raised, not results. **Nothing here may be
 cited in README.md, SPEC.md or the portfolio page until re-measured in Step 7 proper.**
-Where a figure is given, it is there to make a point and is labelled indicative.
+Where a figure is given, it is there to make a point and is labelled indicative. This is a
+deliberate exception, decided by the project owner when this section was added (`864e1a7`),
+to `spike/FINDINGS.md`'s own rule that no spike figure enters CONSIDERATIONS.md.
+DECISIONS.md gained pointers only, no figures.
 
 **What not to conclude.** The full list is in `spike/FINDINGS.md` ("What should NOT be
 concluded"). In particular:
@@ -391,14 +405,16 @@ misses and at least one false rejection. Not a change to make now.
 
 **Found:** per-set priors on a real matcher were m = 123 (protein powder) and m = 54 (hand
 sanitizer), indicative. These straddle the Step 4 transition, yet CAR displaced the
-star-sort top 20 in both sets at every m from 25 to 500: entirely from m = 50 up, all but
-one item at m = 25. CAR's own top 20 kept 14–20 of 20 items across that sweep in those two
+star-sort top 20 in both sets at each m tested (25, 50, 120, 500 and the set's own m):
+entirely in hand sanitizer, and in protein powder entirely from m = 50 and all but one item at
+m = 25. CAR's own top 20 kept 14–20 of 20 items across that sweep in those two
 sets.
 
 The explanation is the mechanism, not the figures. The Step 4 transition was a property of
 the 331,095-item pool, which has enough 5.0-star items with hundreds of ratings to survive a
-small m. Candidate sets of a few hundred to a few thousand don't: their star-sort top 20 is
-5.0s with single-digit counts, which lose at almost any m.
+small m. The two primary sets don't: their star-sort top 20 is all 5.0s
+with a median single-digit rating count (indicative: 8.5 and 6.5; in each set 6 of 20 have 10
+or more), which lose at almost any m.
 
 **For Step 7:** m appears far less consequential at candidate-set scale than the pool-wide
 sweep implied. Caveat: blood pressure monitors (a supplementary set) behaved differently,
