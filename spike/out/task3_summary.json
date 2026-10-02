@@ -1,0 +1,74 @@
+[
+ {
+  "query": "protein powder",
+  "set_size": 1625,
+  "dominant_dimension": "weight",
+  "unit": "$/oz",
+  "priors": {
+   "C": 4.294769230769231,
+   "m": 123.0,
+   "source": "candidate_set",
+   "n_rated": 1625,
+   "flagged_under_30": false
+  },
+  "with_unit_price": 1032,
+  "fail_open": 593,
+  "fail_open_reasons": {
+   "non-dominant dimension": 39,
+   "no pack size": 554
+  },
+  "quadrants": {
+   "credible_and_cheap (+,+)": 264,
+   "credible_but_pricey (+,-)": 211,
+   "cheap_but_less_credible (-,+)": 284,
+   "less_credible_and_pricey (-,-)": 273
+  },
+  "off_diagonal_share": 0.4796511627906977,
+  "clearly_off_diagonal_|z|>0.5_both": 121,
+  "pearson_zcar_zvalue": 0.0648024487960198,
+  "spearman_zcar_zvalue": 0.09747806545994982,
+  "unit_price_range": [
+   0.07488986784140969,
+   1.7237073863636363,
+   471.5470679791667
+  ],
+  "sampled_accessories_with_unit_price": 2,
+  "sampled_accessories_fail_open": 2
+ },
+ {
+  "query": "hand sanitizer",
+  "set_size": 652,
+  "dominant_dimension": "volume",
+  "unit": "$/fl oz",
+  "priors": {
+   "C": 4.37239263803681,
+   "m": 54.0,
+   "source": "candidate_set",
+   "n_rated": 652,
+   "flagged_under_30": false
+  },
+  "with_unit_price": 117,
+  "fail_open": 535,
+  "fail_open_reasons": {
+   "no pack size": 370,
+   "non-dominant dimension": 165
+  },
+  "quadrants": {
+   "credible_and_cheap (+,+)": 36,
+   "credible_but_pricey (+,-)": 26,
+   "cheap_but_less_credible (-,+)": 25,
+   "less_credible_and_pricey (-,-)": 30
+  },
+  "off_diagonal_share": 0.4358974358974359,
+  "clearly_off_diagonal_|z|>0.5_both": 18,
+  "pearson_zcar_zvalue": 0.14095774308200323,
+  "spearman_zcar_zvalue": 0.12528988846640926,
+  "unit_price_range": [
+   0.16789940828402367,
+   1.25,
+   46.5
+  ],
+  "sampled_accessories_with_unit_price": 0,
+  "sampled_accessories_fail_open": 10
+ }
+]
