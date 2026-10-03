@@ -333,6 +333,13 @@ source; they are not yet part of §10's account.*
   pre-publication review) checked it against the repository, which holds no data on Amazon's
   interface, so a claim about that interface could rarely be contradicted and never
   confirmed.
+- **Checking a claim about Amazon against the dataset.** The page's third gap listed "Taste,
+  mixability, tolerance" as having no filter or sort. The dataset carries a structured
+  `Flavor` field for 38,191 priced items and `Scent` for 23,332, and nothing for mixability,
+  aftertaste or tolerance. So SPEC's three named dimensions held on the project's own data,
+  while the page's "Taste" sat beside an existing field (one that records which flavour, not
+  how it tastes). No pass had checked these claims against the dataset until 2 October. The
+  dataset can test what the metadata carries, though not what Amazon's interface offers.
 
 ---
 
