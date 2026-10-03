@@ -52,6 +52,10 @@ common cause: **a marketplace's default sort optimizes the marketplace's objecti
 not the shopper's.** GMV, ad revenue, fulfillment economics and near-term conversion
 correlate with shopper value but are not identical to it. The product opportunity is the gap.
 
+*Assumption, not a finding (2 October 2026): the bolded claim is an inference about the
+marketplace's internals, and the repository holds no data on how the default sort is built.
+The project rests on it. See SPEC.md Amendment 5.*
+
 That reframing is what makes this a PM project rather than a data exercise, and it is the
 answer to "what tradeoff did you make and why."
 
@@ -322,6 +326,13 @@ source; they are not yet part of §10's account.*
   reappeared in a course brief written outside the repo, found while answering a question about
   where the build plan lived. Verification passes checked claims against the record; nothing
   was checking the record's own founding assumptions.
+- **The problem statement was never audited.** Every measured result here answers a question
+  posed by claims about Amazon's interface that no pass audited. The measurements stand on
+  their own; their relevance rests on those claims. Most passes checked new writing against
+  the record, and these claims were the record. The one pass that read the original spec (the
+  pre-publication review) checked it against the repository, which holds no data on Amazon's
+  interface, so a claim about that interface could rarely be contradicted and never
+  confirmed.
 
 ---
 

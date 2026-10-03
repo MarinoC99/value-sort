@@ -35,15 +35,17 @@ superseded claims kept visible. The agreement was aimed at the model; [section 1
 
 ## The problem
 
-A marketplace's default sort is tuned to its own goals (sales, ad revenue, fulfillment
-cost), which overlap with a shopper's but aren't the same. Three gaps follow:
+This project assumes a marketplace's default sort is tuned to its own goals (sales, ad
+revenue, fulfillment cost), which overlap with a shopper's but aren't the same. Three gaps
+follow:
 
 1. **A star rating doesn't say how many ratings stand behind it.** A plain rating sort puts
    a hypothetical 4.9 from 46 ratings above 4.5 from 8,431.
 2. **Listed prices aren't comparable prices.** Pack sizes vary across near-identical items,
    so the cheaper-looking listing can be the more expensive one per unit.
-3. **What decides a purchase is buried in review text.** Taste, mixability, tolerance: no
-   filter, no sort.
+3. **Qualities like mixability and tolerance are buried in review text.** The dataset has no
+   structured field for them (it does have `Flavor` and `Scent`), so no filter or sort built
+   from its fields can use them.
 
 Value Sort is designed to re-order a result set on those three axes, in stages ordered by how likely each
 one is to be confidently wrong: arithmetic first, text parsing second, LLM extraction last

@@ -17,8 +17,8 @@ Amendment 1 is implemented in `car.py` (candidate-set priors with a flagged fall
 yet exercised on candidate sets from a project matcher: none exists on main, and only the
 unmerged, throwaway spike (CONSIDERATIONS §11) has run it, indicatively. Amendment 2 changes the spec's
 framing; there is no unit-price score or composite code yet to implement it. Amendment 3
-corrects claims about what exists. Amendment 4 corrects a founding claim about the
-marketplace interface. Each original claim is kept in place below and marked as
+corrects claims about what exists. Amendments 4 and 5 correct founding claims about
+the marketplace's interface and internals. Each original claim is kept in place below and marked as
 superseded.
 
 | # | Summary | Section |
@@ -27,9 +27,14 @@ superseded.
 | 2 | NUP is a targeted correction on consumables, not a signal with reach comparable to CAR. | [§3 Composite, Amendment 2](#amendment-2) |
 | 3 | Two of the three offline outputs, a "working re-ranker" after stage 1, and a demonstration of better orderings don't exist yet and are now marked as targets. Extraction precision does exist. | [§6 Limitations, Amendment 3](#amendment-3) |
 | 4 | §1's first failure mode asserted that ratings are shown without their sample size, a claim about the interface the repository can't support; the argument rests on how a rating sort orders items, not on what is displayed. | [§1 Problem, Amendment 4](#amendment-4) |
+| 5 | The intro's "axes the default sort ignores" and failure mode 3's "no facet, no filter, no sort" made claims about the marketplace the repository can't support; both are reworded. The root cause is labelled as an assumption. | [§1 Problem, Amendment 5](#amendment-5) |
 
-A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
+~~A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
+reviewers say it is good at.~~ *(superseded, see [Amendment 5](#amendment-5))*
+
+A re-ranker that reorders an already-retrieved set of Amazon search results on three
+shopper-side axes: how credible a rating is, what a product costs per unit, and what
 reviewers say it is good at.
 
 ---
@@ -45,9 +50,9 @@ Three failure modes, all visible on page one of a crowded consumable category:
 2. **Listed prices are not comparable prices.** Pack size and serving size vary across
    near-identical items. A $34.99 tub and a $61.99 tub can be $1.75 and $0.84 per serving.
    Unit-price display is inconsistently populated and placed.
-3. **The deciding dimensions are locked in prose.** Mixability, aftertaste, tolerance —
+3. ~~**The deciding dimensions are locked in prose.** Mixability, aftertaste, tolerance —
    these drive satisfaction and returns, and exist only in review text. No facet, no filter,
-   no sort.
+   no sort.~~ *(superseded, see [Amendment 5](#amendment-5))*
 
 <a id="amendment-4"></a>
 > **Amendment 4: the first failure mode is about sorting, not display.** Supersedes failure
@@ -63,10 +68,33 @@ Three failure modes, all visible on page one of a crowded consumable category:
 
 ### Root cause
 
+*Assumption, not a finding: this is an inference about the marketplace's internals, and the
+repository holds no data on how the default ordering is built. The project rests on it. (See
+[Amendment 5](#amendment-5).)*
+
 Not an oversight. A marketplace's default ordering is tuned against the marketplace's
 objective: GMV, ad revenue, fulfillment economics, near-term conversion. Those correlate
 with shopper value but are not identical to it. Where they diverge, the interface resolves
 in favor of the marketplace. The product opportunity is that gap.
+
+<a id="amendment-5"></a>
+> **Amendment 5: claims about the marketplace's interface and internals, reworded or
+> labelled.** Supersedes the intro's "three axes the default sort ignores" and failure mode 3,
+> and labels the root cause above; all three have stood since v0.1.
+>
+> "The default sort ignores" is a claim about the marketplace's internals that nothing here
+> can observe; the intro now says "three shopper-side axes". Failure mode 3's "no facet, no
+> filter, no sort" is a universal negative about the marketplace's interface, which a few
+> pages could refute but not establish. Restated against the project's own data:
+>
+> 3. **The deciding dimensions are locked in prose.** Mixability, aftertaste and tolerance
+>    have no structured field in this dataset (the metadata carries `Flavor` and `Scent`,
+>    but nothing for how a product mixes, tastes afterwards or is tolerated), so they live in
+>    review text, where no filter or sort built from the metadata can reach them. They are
+>    assumed to drive satisfaction and returns.
+>
+> The root cause stays as written, labelled as an assumption: an inference about the
+> marketplace's internals that the project rests on, not an observation.
 
 ---
 
