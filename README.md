@@ -9,6 +9,9 @@
 
 This README records results as they land; it will be rewritten for a general reader once the project is complete.
 
+**Data:** this repository includes small excerpts of Amazon Reviews 2023, for which no license
+is granted; see the [data notice](#data), which includes how to request removal.
+
 A planned three-axis re-ranker that would reorder an already-retrieved result set of Amazon
 products by rating credibility, per-unit price and, if it passes its grounding test, what
 reviewers say a product is good at. The contract is [SPEC.md](SPEC.md);
@@ -84,12 +87,13 @@ author has said publicly that the lab is not in a position to assign one
 The authors collected it from public Amazon pages: the card describes prices as of the time of
 crawling, and Appendix B of the April 2026 revision of the paper (arXiv:2403.03952v2)
 describes how the reviews were collected. This repository does not redistribute the dataset.
-It does include small excerpts, kept for research and education: mainly product IDs, titles, prices, ratings and some
-product-detail fields: for 240 products on `main` (in `audit/` and `reports/`), a few titles
+It does include small excerpts, kept for research and education. They are mainly product IDs,
+titles, prices, ratings and some product-detail fields, covering 240 products on `main` (in `audit/` and `reports/`), a few titles
 used as test fixtures in `tests/`, 2,396 more products in `spike/` on the `spike/step7`
 branch, and a few quoted title fragments in the project's notes. The audit and several
 reported figures can't be checked without the dataset; these excerpts let a reader check them
-without downloading it. They will be removed on request. The MIT license in
+without downloading it. They will be removed on request: open an issue on this
+repository at https://github.com/MarinoC99/value-sort/issues. The MIT license in
 [LICENSE](LICENSE) covers this project's code only, not these excerpts. This is an independent
 student project, not affiliated with or endorsed by Amazon.
 
