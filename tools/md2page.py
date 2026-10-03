@@ -9,7 +9,7 @@ visible text matches the markdown word for word (markdown syntax, link targets a
 site's "Projects" back-link aside) and exits non-zero if not.
 
 Handles exactly the constructs the page uses: #/##/### headings, paragraphs, **bold**,
-*italic* (whole-paragraph), [links](url), ordered/unordered lists with continuation lines,
+*italic* (whole-paragraph), [links](url), `code`, ordered/unordered lists with continuation lines,
 a pipe table, and --- rules. Text is HTML-escaped and otherwise left verbatim. The page
 shell (header, nav, footer, stylesheet) matches the personal site's other pages; the
 site's site.css supplies the .article styles.
@@ -28,11 +28,11 @@ def check(src: str, page: str) -> bool:
     t = re.sub(r"(?m)^\|?[-| ]+\|?$", "", t)
     t = re.sub(r"(?m)^(\d+)\. (?=\*\*)", "", t)
     t = re.sub(r"(?m)^- ", "", t)
-    t = re.sub(r"(?m)^---$", "", t).replace("**", "").replace("|", " ").replace("*", "")
+    t = re.sub(r"(?m)^---$", "", t).replace("**", "").replace("|", " ").replace("*", "").replace("`", "")
     title = md.split("\n", 1)[0].lstrip("# ")
     name, _, sub = title.partition(": ")
     a = " ".join(t.split()).replace(f"{name}: {sub}", f"{name} {sub[:1].upper() + sub[1:]}", 1).split()
-    h = re.sub(r"</?(strong|em|a)( [^>]*)?>", "", main)
+    h = re.sub(r"</?(strong|em|a|code)( [^>]*)?>", "", main)
     h = [w for w in html.unescape(re.sub(r"<[^>]+>", " ", h)).split() if w != "Projects"]
     print(f"word-for-word identical: {a == h} ({len(a)} vs {len(h)} words)")
     return a == h
@@ -48,6 +48,7 @@ lines = open(src, encoding="utf-8").read().split("\n")
 def inline(t: str) -> str:
     t = html.escape(t, quote=False)
     t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', t)
+    t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", t)
     return t
