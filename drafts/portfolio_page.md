@@ -4,6 +4,12 @@ A planned re-ranker that would reorder an already-retrieved result set on three
 shopper-side axes: how credible a rating is, what a product costs per unit, and what reviewers
 say it is good at.
 
+Today it's a research prototype that runs offline over a 2023 snapshot of Amazon product data,
+and this page reports its results; nothing is live, and no shopper can use it. If it shipped,
+the natural form would be a browser extension that re-orders the results page you're already
+looking at. The experiment in the spec is written as a marketplace-side test, and this project
+has neither a marketplace nor an extension with users, so it can't be run.
+
 Three findings, stated up front. The pack-size extractor measures 93.1% precision against a
 90% guardrail set before labelling, on an interval (85.8-96.8%) that straddles the
 threshold. Pack-size extraction, which sets the ceiling on what a unit price could reach,
@@ -25,8 +31,7 @@ experiment has been run.
 A written working agreement governed an AI coding agent: never fabricate a number; stop and
 ask before large downloads, new dependencies or paid API calls; one step at a time, each
 committed with its reasoning; every judgment call logged. SPEC.md was amended in place, with
-superseded claims kept visible. The agreement was aimed at the model; section 10 of
-CONSIDERATIONS.md records what it actually caught.
+superseded claims kept visible. The agreement was aimed at the model; [section 10 of CONSIDERATIONS.md](https://github.com/MarinoC99/value-sort/blob/main/CONSIDERATIONS.md#10-what-the-verification-discipline-actually-caught) records what it actually caught.
 
 ## The problem
 
@@ -144,6 +149,8 @@ co-equal signal alongside the rating; it has been amended to say so.
 
 *Last updated October 2026. Independent student project using the public Amazon Reviews 2023
 dataset (McAuley Lab, UC San Diego). Not affiliated with or endorsed by Amazon. The 4.9-vs-4.5
-pair above is illustrative, from the spec; every other figure comes from the repository:
-SPEC.md (the contract and its amendments), DECISIONS.md (every judgment call),
-CONSIDERATIONS.md (the reasoning), reports/ (every figure above).*
+pair above is illustrative, from the spec; every other figure comes from [the repository](https://github.com/MarinoC99/value-sort):
+[SPEC.md](https://github.com/MarinoC99/value-sort/blob/main/SPEC.md) (the contract and its amendments),
+[DECISIONS.md](https://github.com/MarinoC99/value-sort/blob/main/DECISIONS.md) (every judgment call),
+[CONSIDERATIONS.md](https://github.com/MarinoC99/value-sort/blob/main/CONSIDERATIONS.md) (the reasoning),
+[reports/](https://github.com/MarinoC99/value-sort/tree/main/reports) (every figure above).*
