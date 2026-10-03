@@ -36,10 +36,10 @@ superseded claims kept visible. The agreement was aimed at the model; [section 1
 ## The problem
 
 A marketplace's default sort is tuned to its own goals (sales, ad revenue, fulfillment
-cost), which overlap with a shopper's but aren't the same. It leaves three gaps open:
+cost), which overlap with a shopper's but aren't the same. Three gaps follow:
 
-1. **Star ratings are shown without their sample size.** A hypothetical 4.9 stars from 46
-   ratings is displayed with the same authority as 4.5 from 8,431.
+1. **A star rating doesn't say how many ratings stand behind it.** A plain rating sort puts
+   a hypothetical 4.9 from 46 ratings above 4.5 from 8,431.
 2. **Listed prices aren't comparable prices.** Pack sizes vary across near-identical items,
    so the cheaper-looking listing can be the more expensive one per unit.
 3. **What decides a purchase is buried in review text.** Taste, mixability, tolerance: no

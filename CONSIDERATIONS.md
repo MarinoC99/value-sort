@@ -315,6 +315,13 @@ source; they are not yet part of §10's account.*
   says star ratings "appear without their sample size"; that one is not a reappearance,
   because the repo never corrected it: SPEC.md §1 and the portfolio page still make the
   claim.
+- **Flagged and parked, not missed.** The "shown without their sample size" claim had been in
+  SPEC since v0.1 and shaped the project's framing. No review pass caught it as wrong until the
+  fix-forward drafting on 2 October, when the agent flagged it in passing while editing nearby
+  text; it was then listed as the owner's decision and left open. It was acted on only after it
+  reappeared in a course brief written outside the repo, found while answering a question about
+  where the build plan lived. Verification passes checked claims against the record; nothing
+  was checking the record's own founding assumptions.
 
 ---
 
