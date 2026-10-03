@@ -340,6 +340,15 @@ source; they are not yet part of §10's account.*
   while the page's "Taste" sat beside an existing field (one that records which flavour, not
   how it tastes). No pass had checked these claims against the dataset until 2 October. The
   dataset can test what the metadata carries, though not what Amazon's interface offers.
+- **The interface was never looked at.** The project made claims about Amazon's interface
+  from the first version of the spec without looking at it, and at least once treated the 2023
+  dataset as evidence about what Amazon displays (the "displayed star rating" wording,
+  `e101cac`); the dataset was never evidence about the interface. When the owner checked, it
+  took about ten minutes (two searches, 2 October 2026) and contradicted a founding claim: a
+  unit price was displayed on every listing checked. That narrows what the unit-price module
+  adds. In the categories checked, Amazon already displays a unit price; the remaining product
+  gap is ordering by it, not computing it. The extractor exists because the dataset carries no
+  unit price, which is a research constraint, not the product gap.
 
 ---
 

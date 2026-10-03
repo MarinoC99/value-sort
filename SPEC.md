@@ -17,8 +17,8 @@ Amendment 1 is implemented in `car.py` (candidate-set priors with a flagged fall
 yet exercised on candidate sets from a project matcher: none exists on main, and only the
 unmerged, throwaway spike (CONSIDERATIONS §11) has run it, indicatively. Amendment 2 changes the spec's
 framing; there is no unit-price score or composite code yet to implement it. Amendment 3
-corrects claims about what exists. Amendments 4 and 5 correct founding claims about
-the marketplace's interface and internals. Each original claim is kept in place below and marked as
+corrects claims about what exists. Amendments 4 to 6 correct founding claims about
+the marketplace's interface and internals; Amendment 6 rests on a dated observation. Each original claim is kept in place below and marked as
 superseded.
 
 | # | Summary | Section |
@@ -28,6 +28,7 @@ superseded.
 | 3 | Two of the three offline outputs, a "working re-ranker" after stage 1, and a demonstration of better orderings don't exist yet and are now marked as targets. Extraction precision does exist. | [§6 Limitations, Amendment 3](#amendment-3) |
 | 4 | §1's first failure mode asserted that ratings are shown without their sample size, a claim about the interface the repository can't support; the argument rests on how a rating sort orders items, not on what is displayed. | [§1 Problem, Amendment 4](#amendment-4) |
 | 5 | The intro's "axes the default sort ignores" and failure mode 3's "no facet, no filter, no sort" made claims about the marketplace the repository can't support; both are reworded. The root cause is labelled as an assumption. | [§1 Problem, Amendment 5](#amendment-5) |
+| 6 | Failure mode 2 said unit-price display is inconsistent; a dated owner observation (2 October 2026, two searches) found a per-unit price on every listing and no unit-price sort. §1's lead is reworded to match. | [§1 Problem, Amendment 6](#amendment-6) |
 
 ~~A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
@@ -41,7 +42,10 @@ reviewers say it is good at.
 
 ## 1. Problem
 
-Three failure modes, all visible on page one of a crowded consumable category:
+~~Three failure modes, all visible on page one of a crowded consumable category:~~
+*(superseded, see [Amendment 6](#amendment-6))*
+
+Three gaps a shopper-side sort would have to close:
 
 1. ~~**Ratings are shown without their sample size.** 4.9 stars from 46 ratings outranks 4.5
    from 8,431. The first carries far less information but is displayed with identical
@@ -49,7 +53,8 @@ Three failure modes, all visible on page one of a crowded consumable category:
    [Amendment 4](#amendment-4))*
 2. **Listed prices are not comparable prices.** Pack size and serving size vary across
    near-identical items. A $34.99 tub and a $61.99 tub can be $1.75 and $0.84 per serving.
-   Unit-price display is inconsistently populated and placed.
+   ~~Unit-price display is inconsistently populated and placed.~~ *(superseded, see
+   [Amendment 6](#amendment-6))*
 3. ~~**The deciding dimensions are locked in prose.** Mixability, aftertaste, tolerance —
    these drive satisfaction and returns, and exist only in review text. No facet, no filter,
    no sort.~~ *(superseded, see [Amendment 5](#amendment-5))*
@@ -95,6 +100,34 @@ in favor of the marketplace. The product opportunity is that gap.
 >
 > The root cause stays as written, labelled as an assumption: an inference about the
 > marketplace's internals that the project rests on, not an observation.
+
+<a id="amendment-6"></a>
+> **Amendment 6: unit price is displayed; what's missing is ordering by it.** Supersedes
+> failure mode 2's last sentence and this section's lead, both of which have stood since v0.1.
+>
+> Observed by the project owner on 2 October 2026, in a logged-in session, for two searches,
+> "protein powder" and "toilet paper". A per-unit price appeared on every listing in both
+> (per unit for protein powder, per sheet for toilet paper). The sort menu, opened and read on
+> both searches, offered: Featured, Price: Low to High, Price: High to Low, Avg. Customer
+> Review, Newest Arrivals, Best Sellers. No unit-price sort. This is a dated observation of two
+> searches, not a measurement.
+>
+> So the claim doesn't hold as written for these two categories. The narrower claim: unit
+> price is displayed but cannot be sorted on, so a shopper can read per-unit prices but cannot
+> order by them.
+>
+> The dataset is not evidence about the interface in either direction. The 2023 metadata
+> carries `Unit Count` for 28% of priced items, while the live site showed a unit price on
+> every listing checked.
+>
+> The section's lead, "Three failure modes, all visible on page one of a crowded consumable
+> category", no longer fits: failure mode 1 is about how a rating sort orders items
+> (Amendment 4), failure mode 2 is now about ordering rather than display, and failure mode 3
+> is about the dataset's fields (Amendment 5). It is replaced with "Three gaps a shopper-side
+> sort would have to close".
+>
+> Open, not observed: whether unit price can be filtered on, and whether unit-price display
+> holds in categories beyond these two.
 
 ---
 

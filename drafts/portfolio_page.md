@@ -41,8 +41,10 @@ follow:
 
 1. **A star rating doesn't say how many ratings stand behind it.** A plain rating sort puts
    a hypothetical 4.9 from 46 ratings above 4.5 from 8,431.
-2. **Listed prices aren't comparable prices.** Pack sizes vary across near-identical items,
-   so the cheaper-looking listing can be the more expensive one per unit.
+2. **Listed prices aren't comparable prices, and per-unit prices can't be sorted on.** Pack
+   sizes vary across near-identical items, so the cheaper-looking listing can be the more
+   expensive one per unit. In two searches checked on 2 October 2026, Amazon showed a
+   per-unit price on every listing but offered no way to sort by it.
 3. **Qualities like mixability and tolerance are buried in review text.** The dataset has no
    structured field for them (it does have `Flavor` and `Scent`), so no filter or sort built
    from its fields can use them.
@@ -93,7 +95,9 @@ below).
 A rule-based extractor reads pack count and size from the title and a fixed set of product
 fields. It returns a size only when its sources agree, or when one clear source is
 uncontradicted. Otherwise it abstains; under the spec, the planned unit-price score would then leave the item at its listed price. A wrong unit
-price is worse than none.
+price is worse than none. In the two categories checked, Amazon itself displays a per-unit
+price; the extractor exists because the 2023 dataset doesn't carry one, so a ranking input has
+to be derived.
 
 The audit came first: 200 items drawn at random from the priced pool and committed before
 any extractor code existed, with the confidence threshold and scoring rules fixed before the
