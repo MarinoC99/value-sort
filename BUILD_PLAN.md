@@ -106,6 +106,8 @@ Changes to the plan made after it was given. The plan text above is not edited; 
 points to the record that made it. Steps not listed have no recorded amendment.
 
 **Step 2 — Data**
+- The data is fetched by streaming the raw JSONL file with `huggingface_hub`, not through the
+  `datasets` configs named in the plan. (DECISIONS #47, logged retrospectively)
 - Metadata only, streamed: only the six contract fields are written to a slim Parquet, and
   the 2.47 GB source JSONL is never stored. (DECISIONS #5)
 - `categories` is not kept in the slim file. (DECISIONS #6)
@@ -130,6 +132,8 @@ points to the record that made it. Steps not listed have no recorded amendment.
   over the candidate-set mean was then deferred to Step 7 (DECISIONS #22).
 - The sensitivity check runs over the whole priced pool, compared pairwise, because no
   candidate sets exist yet. (DECISIONS #23)
+- m = 50 was added to the sweep, making it m = 25, 50, 120 and 500. (DECISIONS #48, logged
+  retrospectively)
 
 **Step 5 — Unit price extraction**
 - Items whose size is a length the truth format can't express are reported as a separate

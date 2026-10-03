@@ -307,6 +307,14 @@ source; they are not yet part of §10's account.*
   against 20 g" example without a marker. That is a different category from claims widening:
   a corrections pass that edits unmarked makes a corrections log untrustworthy, not merely
   incomplete.
+- **Corrections that don't travel.** A claim corrected in the repo reappeared in a document
+  drafted outside it. The course brief (2 October 2026, kept outside the repo) describes
+  Value Sort as "a tool that re-orders" Amazon result sets, wording the page and README had
+  already corrected to a planned re-ranker (`7b347f8`). Same mechanism as the build plan
+  living only in a transcript: the correction exists where the writing doesn't. The same brief
+  says star ratings "appear without their sample size"; that one is not a reappearance,
+  because the repo never corrected it: SPEC.md §1 and the portfolio page still make the
+  claim.
 
 ---
 
