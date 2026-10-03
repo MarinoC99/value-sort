@@ -17,7 +17,8 @@ Amendment 1 is implemented in `car.py` (candidate-set priors with a flagged fall
 yet exercised on candidate sets from a project matcher: none exists on main, and only the
 unmerged, throwaway spike (CONSIDERATIONS §11) has run it, indicatively. Amendment 2 changes the spec's
 framing; there is no unit-price score or composite code yet to implement it. Amendment 3
-corrects claims about what exists. Each original claim is kept in place below and marked as
+corrects claims about what exists. Amendment 4 corrects a founding claim about the
+marketplace interface. Each original claim is kept in place below and marked as
 superseded.
 
 | # | Summary | Section |
@@ -25,6 +26,7 @@ superseded.
 | 1 | Priors C and m are computed over the candidate set at rank time, not over the category. | [§3 CAR, Amendment 1](#amendment-1) |
 | 2 | NUP is a targeted correction on consumables, not a signal with reach comparable to CAR. | [§3 Composite, Amendment 2](#amendment-2) |
 | 3 | Two of the three offline outputs, a "working re-ranker" after stage 1, and a demonstration of better orderings don't exist yet and are now marked as targets. Extraction precision does exist. | [§6 Limitations, Amendment 3](#amendment-3) |
+| 4 | §1's first failure mode asserted that ratings are shown without their sample size, a claim about the interface the repository can't support; the argument rests on how a rating sort orders items, not on what is displayed. | [§1 Problem, Amendment 4](#amendment-4) |
 
 A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
@@ -36,15 +38,28 @@ reviewers say it is good at.
 
 Three failure modes, all visible on page one of a crowded consumable category:
 
-1. **Ratings are shown without their sample size.** 4.9 stars from 46 ratings outranks 4.5
+1. ~~**Ratings are shown without their sample size.** 4.9 stars from 46 ratings outranks 4.5
    from 8,431. The first carries far less information but is displayed with identical
-   authority and sorted with identical weight.
+   authority and sorted with identical weight.~~ *(superseded, see
+   [Amendment 4](#amendment-4))*
 2. **Listed prices are not comparable prices.** Pack size and serving size vary across
    near-identical items. A $34.99 tub and a $61.99 tub can be $1.75 and $0.84 per serving.
    Unit-price display is inconsistently populated and placed.
 3. **The deciding dimensions are locked in prose.** Mixability, aftertaste, tolerance —
    these drive satisfaction and returns, and exist only in review text. No facet, no filter,
    no sort.
+
+<a id="amendment-4"></a>
+> **Amendment 4: the first failure mode is about sorting, not display.** Supersedes failure
+> mode 1 above, which has stood since v0.1.
+>
+> The original asserts something about the marketplace interface that the repository can't
+> support: nothing in the data or the code shows how any marketplace displays ratings. The
+> project owner notes that it is also wrong on the facts, since Amazon's result pages show the
+> rating count beside the stars; the repository can't verify that either. The project's
+> argument doesn't depend on it. A plain rating sort puts a hypothetical 4.9 from 46 ratings
+> above 4.5 from 8,431, whatever either displays, and the first carries far less information.
+> That is the gap CAR addresses.
 
 ### Root cause
 
