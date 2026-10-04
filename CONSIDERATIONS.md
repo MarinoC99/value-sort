@@ -64,6 +64,16 @@ answer to "what tradeoff did you make and why."
 | Original | Became | Why |
 |---|---|---|
 | Rating/price matrix | Credibility-Adjusted Rating (CAR) | The interesting variable isn't price against rating, it's *how much the rating can be trusted*. Bayesian shrinkage by sample size makes that computable. |
+
+*Reversed in part (4 October 2026; DECISIONS 49).* The rating/price matrix returns as the
+deliverable, with CAR as its rating axis. The reasoning above, that how far a rating can be
+trusted matters more than the rating itself, is kept; what is reversed is translating the
+matrix away. Evidence: none of the six sort options observed on Amazon on 2 October 2026
+orders on price and rating together, though both are displayed (SPEC Amendments 4 and 6); and
+the spike found the two axes near-independent, Spearman 0.10 and 0.13 with 121 clearly
+off-diagonal items in protein powder (indicative, §11.7). Against: a clean unit-price axis
+existed in one of four queries tested (indicative, §11.6), which limits which queries can
+show a matrix.
 | Price including shipping | Normalized Unit Price (NUP) | Shipping cost does not exist as a field anywhere, in any source. Unit-price confusion is the same consumer harm, is actually derivable from title and `details`, and is arguably the sharper finding. |
 | Perceptual map | Attribute Match Score (AMS) | Kept the idea, made it LLM-driven rather than spec-driven, which is also where the project's AI-product story lives. |
 

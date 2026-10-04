@@ -154,3 +154,20 @@ points to the record that made it. Steps not listed have no recorded amendment.
   questions, and indicative figures as a deliberate exception, are recorded in
   CONSIDERATIONS.md §11. There is no DECISIONS entry for the spike itself; DECISIONS #27 and
   #28 point to it.
+- The deliverable is now the two-axis matrix, not a composite: `rank(query, candidate_items,
+  weights)` and the weights config are withdrawn in favour of a per-query result set with
+  credibility-adjusted rating, per-set unit price in a coherent dimension, and a fail-open
+  flag and reason per item, serialized for the demo. Unit price returns to scope under a
+  coherence rule, and a plausibility guard is required. (DECISIONS 49–52; SPEC Amendment 7)
+
+**Step 8 — Offline evaluation**
+- Kendall's tau and top-10 displacement, which assume one re-ranked order, are replaced by
+  descriptive matrix measures per query: rank correlation between the two axes, items clearly
+  off the diagonal, quadrant shares, and where the star-sort top 10 lands. (DECISIONS 50;
+  SPEC Amendment 7)
+
+**Step 9 — Demo**
+- The scatter is the primary deliverable. The category picker becomes a query picker over the
+  pre-registered queries, and the weight sliders and side-by-side ordering are withdrawn.
+  Queries with no unit-price axis are shown with their reason. At most 50 items per set are
+  published, under a demo-specific data notice with a removal route. (DECISIONS 53)

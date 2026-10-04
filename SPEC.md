@@ -18,7 +18,8 @@ yet exercised on candidate sets from a project matcher: none exists on main, and
 unmerged, throwaway spike (CONSIDERATIONS §11) has run it, indicatively. Amendment 2 changes the spec's
 framing; there is no unit-price score or composite code yet to implement it. Amendment 3
 corrects claims about what exists. Amendments 4 to 6 correct founding claims about
-the marketplace's interface and internals; Amendment 6 rests on a dated observation. Each original claim is kept in place below and marked as
+the marketplace's interface and internals; Amendment 6 rests on a dated observation.
+Amendment 7 changes the deliverable from a composite ranker to a two-axis matrix. Each original claim is kept in place below and marked as
 superseded.
 
 | # | Summary | Section |
@@ -29,6 +30,7 @@ superseded.
 | 4 | §1's first failure mode asserted that ratings are shown without their sample size, a claim about the interface the repository can't support; the argument rests on how a rating sort orders items, not on what is displayed. | [§1 Problem, Amendment 4](#amendment-4) |
 | 5 | The intro's "axes the default sort ignores" and failure mode 3's "no facet, no filter, no sort" made claims about the marketplace the repository can't support; both are reworded. The root cause is labelled as an assumption. | [§1 Problem, Amendment 5](#amendment-5) |
 | 6 | Failure mode 2 said unit-price display is inconsistent; a dated owner observation (2 October 2026, two searches) found a per-unit price on every listing and no unit-price sort. §1's lead is reworded to match. | [§1 Problem, Amendment 6](#amendment-6) |
+| 7 | The deliverable is the two-axis matrix (credibility-adjusted rating against per-set unit price), not a composite ranker. The composite and its weights are withdrawn; scope, experiment arms, two guardrails, kill criterion 5 and the offline outputs are amended to match. | [§3 Composite, Amendment 7](#amendment-7) |
 
 ~~A re-ranker that reorders an already-retrieved set of Amazon search results on three axes
 the default sort ignores: how credible a rating is, what a product costs per unit, and what
@@ -66,10 +68,17 @@ Three gaps a shopper-side sort would have to close:
 > The original asserts something about the marketplace interface that the repository can't
 > support: nothing in the data or the code shows how any marketplace displays ratings. The
 > project owner notes that it is also wrong on the facts, since Amazon's result pages show the
-> rating count beside the stars; the repository can't verify that either. The project's
+> rating count beside the stars; the repository can't verify that either. The owner then
+> observed it directly on 2 October 2026: rating counts appeared beside the stars. That is a
+> dated observation, not a measurement. The project's
 > argument doesn't depend on it. A plain rating sort puts a hypothetical 4.9 from 46 ratings
 > above 4.5 from 8,431, whatever either displays, and the first carries far less information.
 > That is the gap CAR addresses.
+>
+> **Open (observed by the owner on 2 October 2026, one query, not named in the record):** the
+> Avg. Customer Review sort appears to account for rating volume; the smallest rating count in
+> its top ten was about 10,000. One sorted page in one category is not a ranking rule. If it
+> holds, gap 1 is narrower than stated. Gap 1 is not rewritten on this evidence.
 
 ### Root cause
 
@@ -133,8 +142,11 @@ in favor of the marketplace. The product opportunity is that gap.
 
 ## 2. Scope
 
-**In scope.** Re-ordering an already-retrieved result set. Candidate set taken as given.
-Every position must be explainable in one sentence a shopper would understand.
+**In scope.** ~~Re-ordering an already-retrieved result set. Candidate set taken as given.
+Every position must be explainable in one sentence a shopper would understand.~~ *(superseded,
+see [Amendment 7](#amendment-7))* Placing an already-retrieved result set on two axes: credibility-adjusted rating
+against per-set unit price. Candidate set taken as given. Every point must be explainable in
+one sentence a shopper would understand.
 
 **Not in scope.** Retrieval or query understanding. Review-fraud detection. Personalization
 (v1 ranks identically for everyone, so any effect is attributable to the ranking logic).
@@ -206,7 +218,7 @@ across at least three values.
 
 ```
 NUP = price / (count × size_per_unit)
-rank input = −z(ln NUP)
+rank input = −z(ln NUP)                  ← superseded, see Amendment 7
 ```
 
 Log scale, because $0.10 means something different at $0.80 than at $8.00. Items whose pack
@@ -233,8 +245,8 @@ the v2 question, not opened until stage 3 clears its guardrail.
 ### Composite
 
 ```
-ValueScore = w₁·z(CAR) + w₂·(−z(ln NUP)) + w₃·z(AMS)
-defaults: w₁ = 0.45, w₂ = 0.35, w₃ = 0.20
+ValueScore = w₁·z(CAR) + w₂·(−z(ln NUP)) + w₃·z(AMS)    ← superseded, see Amendment 7
+defaults: w₁ = 0.45, w₂ = 0.35, w₃ = 0.20                  ← superseded, see Amendment 7
 ```
 
 *Superseded framing:* listing NUP at 0.35 beside CAR at 0.45 implied the two signals have
@@ -252,21 +264,55 @@ comparable reach. See Amendment 2.
 > reordering. The weight is unchanged for now, because it applies only to items where a unit
 > price exists, but the spec no longer claims the two signals have comparable reach.
 
-If stage 3 is cut, `w₃` goes to zero and the rest renormalize to 0.56 / 0.44. Removing the
-conditional module is a configuration change, not a rewrite.
+~~If stage 3 is cut, `w₃` goes to zero and the rest renormalize to 0.56 / 0.44. Removing the
+conditional module is a configuration change, not a rewrite.~~
 
-Weights are a product decision, not a learned parameter, and that is intentional for v1.
+~~Weights are a product decision, not a learned parameter, and that is intentional for v1.
 Fixed interpretable weights mean every position can be explained to a shopper and audited by
 a reviewer. Learning them is a v2 question, opened only after the interpretable version has a
-measured baseline.
+measured baseline.~~ *(both superseded, see [Amendment 7](#amendment-7))*
+
+<a id="amendment-7"></a>
+> **Amendment 7: the deliverable is the two-axis matrix; the composite is withdrawn.**
+> Supersedes the composite ValueScore and its weights, the scope's "re-ordering", NUP's "rank
+> input", the experiment's arms, the impression-concentration and latency guardrails (and kill
+> criterion 5), and the rank-displacement and face-validity outputs. Decided 4 October 2026;
+> recorded in DECISIONS 49–53.
+>
+> The project now places each candidate set on two axes, credibility-adjusted rating against
+> per-set unit price, instead of collapsing them into one ordering. No sort option on Amazon
+> orders on price and rating together (observed by the owner on 2 October 2026; Amendment 6),
+> and where both axes exist they are near-independent (indicative, CONSIDERATIONS §11.7), so a
+> two-axis view can show what a single sort cannot. CAR alone still gives a one-axis ordering.
+>
+> - **Composite withdrawn.** It collapses the two dimensions the matrix keeps apart, and it
+>   carries open decisions (weights, how fail-open items enter a sum, how a query with no
+>   unit-price axis rebalances) that the matrix doesn't need. Amendment 2's sentence about the
+>   weight is moot.
+> - **Unit price** is in scope again, as an axis: price over total quantity, per candidate set,
+>   only in the set's dominant dimension, and only if the set passes a pre-registered coherence
+>   rule. Otherwise the set has no unit-price axis and says why. The extractor is not changed,
+>   so the 93.1% audit stands; liquids listed in plain "oz" that fail coherence get no axis. A
+>   plausibility guard flags implausible pack sizes rather than letting them plot as best buys;
+>   whether `Item Weight` can veto an extraction stays open.
+> - **Experiment:** the arms become control, a CAR-only ordering, and the matrix view. The
+>   experiment still can't be run (§6).
+> - **Guardrails:** impression concentration and added latency were defined for a ranked list.
+>   A matrix view needs its own definitions, which are not yet specified.
+> - **Offline measures (Step 8)**, per query and descriptive only: rank correlation between the
+>   two axes; the number of items clearly off the diagonal; the share of items in each
+>   quadrant; and where the star-sort top 10 lands in the matrix. They describe the view, not
+>   whether it helps anyone.
+>
+> Stage 3 stays conditional and outside this sprint.
 
 ### Guardrails
 
 | Metric | Definition | Threshold |
 |---|---|---|
 | Revenue per session | GMV ÷ search sessions | No loss greater than 3% |
-| Impression concentration | Gini of impressions across candidate set | Must not rise vs. control |
-| Ranking latency | p95 added latency | Under 40 ms |
+| Impression concentration | ~~Gini of impressions across candidate set~~ *(superseded, see [Amendment 7](#amendment-7))* | Must not rise vs. control |
+| Ranking latency | ~~p95 added latency~~ *(superseded, see [Amendment 7](#amendment-7))* | Under 40 ms |
 | Unit-price precision | Correct pack-size extractions, 200-item hand-labeled audit | ≥ 90% |
 | Attribute grounding | Extracted attributes traceable to cited review text | ≥ 95% |
 
@@ -285,7 +331,7 @@ measured baseline.
 |---|---|
 | Randomization | User, not session. Reordering between visits is worse than either arm and would contaminate the 14-day repeat-search component of QPR. |
 | Exposure | Users searching the pilot category. Assigned at first qualifying search, sticky thereafter. |
-| Arms | Control · CAR-only · Full Value Sort. The middle arm attributes the effect; a win from the full model alone says nothing about which idea earned it. |
+| Arms | ~~Control · CAR-only · Full Value Sort. The middle arm attributes the effect; a win from the full model alone says nothing about which idea earned it.~~ *(superseded, see [Amendment 7](#amendment-7))* |
 | Primary | QPR. Powered for 2% relative lift, 80% power, α = 0.05, two-sided. |
 | Duration | Three full weeks minimum. Two complete weekly cycles plus a third to test novelty decay. No holiday overlap. |
 | Pre-registered segments | New vs. returning · mobile vs. desktop · high vs. low basket · attribute-intent vs. generic queries. |
@@ -305,7 +351,8 @@ Written before the experiment runs, because criteria written afterward are ratio
    price is a concrete harm, worse than the status quo it was meant to fix.
 4. **Return rate flat and query-refinement rate up.** Kill. Shoppers working harder and
    choosing no better is the exact failure this set out to fix.
-5. **p95 added latency >40 ms, not recoverable by pre-computation.** Kill.
+5. ~~**p95 added latency >40 ms, not recoverable by pre-computation.** Kill.~~ *(superseded with
+   the latency guardrail, see [Amendment 7](#amendment-7))*
 6. **Attribute grounding <95%.** Kill the AMS module. An unauditable LLM-derived score inside a
    ranking system is a liability the feature has not earned.
 
@@ -325,10 +372,11 @@ dishonest, so the build does not do it.
 What it produces instead, offline and clearly bounded *(present tense superseded: so far only
 extraction precision exists; see [Amendment 3](#amendment-3))*:
 
-- **Rank displacement.** Kendall's tau between default and re-ranked orders; share of top-10
-  positions changed. Describes how much the system does, not whether it helps.
-- **Face validity audit.** Hand-labeled sample recording whether each large position change is
-  defensible. Subjective, labeled as such.
+- ~~**Rank displacement.** Kendall's tau between default and re-ranked orders; share of top-10
+  positions changed. Describes how much the system does, not whether it helps.~~
+- ~~**Face validity audit.** Hand-labeled sample recording whether each large position change is
+  defensible. Subjective, labeled as such.~~ *(both superseded by the matrix measures, see
+  [Amendment 7](#amendment-7))*
 - **Extraction precision.** The one genuinely measured number here, on a 200-item hand-labeled
   set.
 
