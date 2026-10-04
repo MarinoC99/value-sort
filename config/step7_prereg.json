@@ -1,0 +1,60 @@
+{
+  "_note": "Step 7 pre-registration, committed 4 October 2026 before any Step 7 matcher code exists. Human-readable record and rationale: prereg/STEP7.md. Changing anything here after matcher output exists must be recorded as a deviation in prereg/STEP7.md, not edited silently.",
+  "seed": 20261004,
+  "queries": [
+    {"query": "protein powder", "role": "primary", "exposure": "fitted: the coherence rule was designed against its spike behaviour"},
+    {"query": "hand sanitizer", "role": "primary", "exposure": "fitted: its oz/fl oz split shaped the liquids rule"},
+    {"query": "toilet paper", "role": "negative_control", "expected": "no_axis", "exposure": "fitted: coherence condition 3 exists because of it"},
+    {"query": "blood pressure monitor", "role": "negative_control", "expected": "no_axis", "exposure": "spike"},
+    {"query": "vitamin d", "role": "primary", "exposure": "spike set only (matcher defect); coverage never measured"},
+    {"query": "dish soap", "role": "primary", "exposure": "none"},
+    {"query": "baby wipes", "role": "primary", "exposure": "none"},
+    {"query": "creatine", "role": "primary", "exposure": "set size and priors seen in the reverted Step 4 prototype; coverage never measured"}
+  ],
+  "fallback_five_queries": ["toilet paper", "blood pressure monitor", "dish soap", "baby wipes", "creatine"],
+  "matcher": {
+    "phrase": "query words adjacent and in order, whole words, case-insensitive; hyphen or space between words; optional plural 's' on the last word",
+    "short_token": "a query word of 1-2 characters matches only directly after the preceding query word and may carry a digit suffix (e.g. 'vitamin d' matches 'vitamin d', 'vitamin d3', 'vitamin d-3')",
+    "exclude_all": ["holder", "case", "keychain", "sign", "signs", "sticker", "stickers", "decal", "empty", "refillable bottle", "refillable bottles", "stand", "mount", "extender", "tongs", "grab bar", "rail", "organizer"],
+    "exclude_per_query": {
+      "protein powder": ["funnel", "shaker", "scoop"],
+      "creatine": ["funnel", "shaker", "scoop"],
+      "blood pressure monitor": ["replacement cuff", "cuff for"],
+      "hand sanitizer": ["dispenser only", "pump only"],
+      "dish soap": ["dispenser only", "pump only"],
+      "baby wipes": ["warmer", "dispenser"]
+    },
+    "exclusion_match": "whole words or whole phrases, case-insensitive, anywhere in the title"
+  },
+  "coherence": {
+    "min_items_in_dimension": 30,
+    "min_dominant_share": 0.80,
+    "count_max_p90_over_p10": 10,
+    "units": {"weight": "oz", "volume": "fl oz", "count": "ct"},
+    "axis_scale": "log"
+  },
+  "plausibility_guard": {
+    "flag_if_unit_price_ratio_to_set_median_exceeds": 10,
+    "flag_if_total_size_ratio_to_set_median_exceeds": 10,
+    "action": "flag only; never drop. Flagged items get a distinct marker, are listed with reason, and are excluded from quadrant medians and axis scaling.",
+    "item_weight": "shown on the item card when it disagrees with the extracted size by more than 3x; not used to flag or veto",
+    "report_flagged_split": ["flagged_and_correct", "flagged_and_wrong"]
+  },
+  "contamination_audit": {
+    "per_query_kept_sample": 40,
+    "per_query_excluded_sample": 20,
+    "file": "audit/step7_contamination.csv",
+    "label": "in_set (yes/no), from the title only",
+    "report": ["contamination = kept titles labelled no", "over_exclusion = excluded titles labelled yes", "95% Wilson interval on each"],
+    "demo_note_if_contamination_point_estimate_above": 0.10
+  },
+  "step8": {
+    "quadrant_split": "set medians of items with both axes, excluding flagged items",
+    "clearly_off_diagonal": "one axis in the top third and the other in the bottom third, by within-set percentile rank",
+    "star_sort": "average_rating desc, rating_number desc, parent_asin asc"
+  },
+  "publication": {
+    "max_items_per_set": 50,
+    "selection": "seeded random sample of the kept set (seed above); the page states '50 of N'; Step 8 measures use the full set"
+  }
+}
