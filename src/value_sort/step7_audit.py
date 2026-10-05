@@ -25,7 +25,7 @@ from value_sort.matcher import load_prereg, match, phrase_regex
 
 OUT = Path("audit/step7_contamination.csv")
 RECALL_OUT = Path("audit/step7_recall.csv")
-COLUMNS = ["audit_id", "query", "parent_asin", "title", "in_set"]
+COLUMNS = ["audit_id", "query", "parent_asin", "title", "in_set", "notes"]  # notes: added before labelling (audit/step7_README.md)
 
 
 def sample_rows(pool, prereg: dict) -> list[dict]:
@@ -43,7 +43,7 @@ def sample_rows(pool, prereg: dict) -> list[dict]:
             rng.sample(excl, min(a["per_query_excluded_sample"], len(excl)))
         rng.shuffle(pick)  # blind: kept and excluded rows interleaved
         titles = {i.parent_asin: i.title for i in r.kept} | {i.parent_asin: i.title for i, _ in r.excluded}
-        rows += [{"query": q, "parent_asin": p, "title": titles[p], "in_set": ""} for p in pick]
+        rows += [{"query": q, "parent_asin": p, "title": titles[p], "in_set": "", "notes": ""} for p in pick]
     for n, row in enumerate(rows, 1):
         row["audit_id"] = n
     return rows
@@ -69,7 +69,7 @@ def recall_rows(pool, prereg: dict) -> list[dict]:
         # the contamination sample: one RNG per query, sorted IDs, whole group if under quota.
         rng = random.Random(f"{prereg['seed']}:recall:{q}")
         pick = rng.sample(sorted(lost), min(a["per_query_sample"], len(lost)))
-        rows += [{"query": q, "parent_asin": p, "title": lost[p], "in_set": ""} for p in pick]
+        rows += [{"query": q, "parent_asin": p, "title": lost[p], "in_set": "", "notes": ""} for p in pick]
     for n, row in enumerate(rows, 1):
         row["audit_id"] = n
     return rows
