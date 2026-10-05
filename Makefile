@@ -1,4 +1,4 @@
-.PHONY: data load car audit unit-price score-unit-price step7-sample build eval demo test
+.PHONY: data load car audit unit-price score-unit-price step7-sample step7-recall-sample build eval demo test
 
 # Each target fails loudly until its step is implemented, so nothing
 # pretends to have produced output it hasn't.
@@ -32,6 +32,9 @@ score-unit-price: ## Step 5c: precision against hand labels in audit/unit_price_
 
 step7-sample: ## Step 7: draw the blind contamination-audit sample (refuses to overwrite labels)
 	uv run python -m value_sort.step7_audit --category $(CATEGORY)
+
+step7-recall-sample: ## Step 7, Deviation 1: draw the blind recall sample of adjacency-lost titles
+	uv run python -m value_sort.step7_audit --category $(CATEGORY) --recall
 
 build:  ## Steps 3-7: load, score (CAR, unit price, attributes), rank
 	@echo "make build: not implemented yet (Steps 3-7)" && exit 1

@@ -55,3 +55,20 @@ def test_per_query_terms_only_apply_to_their_query():
     items = [it("Protein Powder with Scoop", "A"), it("Creatine with Scoop", "B"), it("Hand Sanitizer with Scoop", "C")]
     assert match(items, "protein powder", PRE).excluded[0][1] == ["scoop"]
     assert match(items, "hand sanitizer", PRE).kept[0].parent_asin == "C"
+
+
+def test_adjacency_lost_is_any_order_minus_phrase():
+    from value_sort.step7_audit import adjacency_lost
+    items = [it("Whey Protein Isolate Powder", "A"), it("Whey Protein Powder", "B"),
+             it("Powder for protein shakes", "C"), it("Protein Bar", "D")]
+    assert [i.parent_asin for i in adjacency_lost(items, "protein powder")] == ["A", "C"]
+
+
+def test_recall_rows_ignore_exclusion_terms_and_cap_per_query():
+    from value_sort.step7_audit import recall_rows
+    items = [it(f"Protein Isolate Powder {n}", f"P{n:02}") for n in range(25)] + \
+        [it("Protein Isolate Powder Holder", "H")]
+    rows = [r for r in recall_rows(items, PRE) if r["query"] == "protein powder"]
+    assert len(rows) == PRE["recall_audit"]["per_query_sample"]
+    assert rows == [r for r in recall_rows(items, PRE) if r["query"] == "protein powder"]  # seeded
+    assert all(r["in_set"] == "" for r in rows)

@@ -48,6 +48,16 @@
     "report": ["contamination = kept titles labelled no", "over_exclusion = excluded titles labelled yes", "95% Wilson interval on each"],
     "demo_note_if_contamination_point_estimate_above": 0.10
   },
+  "recall_audit": {
+    "_deviation": "Added 4 October 2026 after matcher output existed; prereg/STEP7.md, Deviation 1. Not pre-registered.",
+    "group": "titles where every query word appears as a whole word in any order (the spike matcher's rule, DECISIONS 13) but the phrase match fails; exclusion terms not applied",
+    "queries": ["protein powder", "hand sanitizer", "toilet paper", "blood pressure monitor", "vitamin d", "dish soap", "baby wipes"],
+    "per_query_sample": 20,
+    "seeding": "random.Random('20261004:recall:<query>') over sorted parent_asin",
+    "file": "audit/step7_recall.csv",
+    "label": "in_set (yes/no), from the title only, same question as the contamination audit",
+    "report": ["missed = recall-sample titles labelled yes, with 95% Wilson interval", "scaled to the group size as an estimate of in-set titles the phrase rule loses"]
+  },
   "step8": {
     "quadrant_split": "set medians of items with both axes, excluding flagged items",
     "clearly_off_diagonal": "one axis in the top third and the other in the bottom third, by within-set percentile rank",

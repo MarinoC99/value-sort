@@ -121,6 +121,47 @@ At most 50 items per set are published: a seeded random sample of the kept set (
 Step 8 measures use the full set. A demo-specific data notice and removal route apply
 (DECISIONS 53).
 
+## Notes (not deviations)
+
+**Adjacency costs recall, and the audit as designed doesn't measure it.** Requiring the query
+words to be adjacent drops titles that contain both words apart, such as "Whey Protein Isolate
+Powder". Compared with the spike's any-order rule, it removes 417 protein-powder titles, 175
+dish-soap (40%) and 33 baby-wipes (46%). Those titles are in neither the kept nor the excluded
+set, so the contamination audit, which samples only those two sets, cannot quantify the loss.
+The precision side is measured; the recall side is not. (Recorded 4 October 2026. Protein
+powder's drop from 1,625 titles under the any-order rule to 1,158 kept is about 412 net lost to
+adjacency plus 55 removed by exclusion terms. Deviation 1 adds a sample to measure it.)
+
 ## Deviations
 
-None yet.
+### Deviation 1: a recall sample (4 October 2026, after matcher output existed)
+
+**What.** A second blind file, `audit/step7_recall.csv` (`make step7-recall-sample`), labelled
+in the same format and with the same question as the contamination file. Per query, 20 random
+titles from the group the any-order rule matches and the phrase rule does not (seed string
+`20261004:recall:<query>`; config block `recall_audit`). Reported per query: the share labelled
+"yes" with a 95% Wilson interval, and that share applied to the group size as an estimate of
+in-set titles the phrase rule loses. The contamination file is unchanged.
+
+| Query | Group size | Sampled |
+|---|---|---|
+| protein powder | 417 | 20 |
+| hand sanitizer | 24 | 20 |
+| toilet paper | 67 | 20 |
+| blood pressure monitor | 40 | 20 |
+| vitamin d | 327 | 20 |
+| dish soap | 175 | 20 |
+| baby wipes | 33 | 20 |
+| creatine | 0 | none: one word, so adjacency can't apply |
+
+**Why** (owner's reasons):
+
+- Dish soap (40%) and baby wipes (46%) are two of the three genuinely unexposed queries, so the
+  rules that can actually be tested are the ones adjacency hits hardest.
+- Baby wipes' small set is partly an artifact of the phrase rule, not only of the category,
+  which changes how a coherence failure there should be read.
+- An audit measuring precision but not recall flatters any filter: contamination can always be
+  driven to zero by excluding more.
+
+**What it does not change.** The matcher, the query set, the contamination sample and every
+other rule above stay as pre-registered. Interpretations made in drawing it are in DECISIONS 59.
